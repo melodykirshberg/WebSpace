@@ -1,0 +1,85 @@
+ /* This is the style sheet for the Home Page, the first page the user sees when arrive to our page   */
+
+
+body{
+    background-color: #363333;
+    
+  }
+  .appNav{
+    color: white;
+    padding: 20px !important;
+    background-color: white !important;
+  }
+  
+  .app-title{
+  margin-top: 2px;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 29px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #303030;
+  font-family: 'Montserrat'
+  }
+  .app-description{
+  margin-top: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  }
+  
+  .card-sign{
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  width: 400px;
+  height: 486px;
+  left: 350px;
+  top: 80px;
+  background-color: #D3D3D3 !important;
+  border-radius: 0px
+  }
+  
+  
+  .signInBtn{
+    font-weight: 600;
+   font-size: 15px;
+   line-height: 22px;
+    padding: 16px;
+    margin-top: 15px;
+    width: 250px;
+    background-color:white;
+    letter-spacing: 1px;
+    box-shadow:  1px 5px 3px rgba(0, 0, 0, 0.25);
+    justify-content: space-around;
+    border-radius: 0 !important;
+  }
+  .buttonRow{
+    margin-top: 20px;
+  }
+
+
+
+  
+  /* This is the footer, same footer to all pages------------Footer---------*/
+  
+  .appFooter{
+    font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;  
+    color: rgb(43, 43, 43);
+    text-align: center;
+   font-weight: 200;
+  background-color: #C4C4C4;
+  font-size: 15px;
+  }
+  /*------------Footer---------*/
+  
+  
