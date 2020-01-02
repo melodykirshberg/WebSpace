@@ -1,6 +1,9 @@
 import React, { Component } from "react"
 import Login from "./Login"
 import "./home.css"
+import GoogleBtnSignIn from "../components/Authentication/SignIn"
+import Amplify, { Auth } from 'aws-amplify';
+
 
 import {
     BrowserRouter as Router, Link,
@@ -42,7 +45,7 @@ class Home extends Component {
                                             </div>
                                             <div className="row text-center buttonRow">
                                                 <div className="col-12">
-                                                    <button className=" btn  button signInBtn">Sign Up with Google</button>
+                                                    <GoogleBtnSignIn className="" />
 
                                                 </div>
                                                 <div className="col-12">
