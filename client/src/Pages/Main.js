@@ -10,15 +10,12 @@ class Main extends Component {
                 <NavBarMain />
                 <div className="container">
 
+
                 </div>
             </span>
 
         )
     }
-
-
-
-
 }
 
 export default Main
