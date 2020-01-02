@@ -8,10 +8,7 @@ import Main from "./Pages/Main"
 // import UserModal from "./components/Modal"
 
 
-
 function App() {
-
-
   return (
     <Router>
       <div className="App">
