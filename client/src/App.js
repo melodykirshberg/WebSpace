@@ -15,8 +15,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* <Home /> */}
-        <Main />
+        <Home />
+        {/* <Main /> */}
         {/* <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} /> */}
