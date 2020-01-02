@@ -1,5 +1,5 @@
-import React, { Component } from "./node_modules/react"
-import "./login.css"
+import React, { Component } from "react";
+import "./login.css";
 
 class Login extends Component {
 

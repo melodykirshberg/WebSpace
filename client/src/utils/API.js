@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import axios from "axios";
 export default {
     // Gets all users
@@ -6,7 +5,6 @@ export default {
         return axios.get("https://randomuser.me/api/?results=200&nat=us");
     }
 };
-=======
 // import axios from "axios";
 
 // export default {
@@ -19,4 +17,3 @@ export default {
 //     }
     
 // };
->>>>>>> 8c319534aeac4500ae4c032ac0b775921a04c9e4
