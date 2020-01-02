@@ -27,7 +27,7 @@ Amplify.configure({
         oauth: {
             domain: 'webspace.auth.us-east-2.amazoncognito.com/',
             // scope: ['phone', 'email', 'profile', 'openid'],
-            redirectSignIn: 'http://localhost:3000/',
+            redirectSignIn: 'http://localhost:3000/home',
             redirectSignOut: 'http://localhost:3000/',
             responseType: 'token' // or 'token', note that REFRESH token will only be generated when the responseType is code
         }
