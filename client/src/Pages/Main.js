@@ -17,15 +17,12 @@ class Main extends Component {
                 </Wrapper>
                 <div className="container">
 
+
                 </div>
             </span>
 
         )
     }
-
-
-
-
 }
 
 export default Main
