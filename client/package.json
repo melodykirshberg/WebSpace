@@ -4,6 +4,8 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "aws-amplify": "^2.2.1",
+    "mongoose": "^5.8.3",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "^2.1.1"
