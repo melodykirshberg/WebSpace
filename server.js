@@ -11,7 +11,11 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/webspacedb", { useNewUrlParser: true });
+
+
+//Connection to DB
+mongoose.connect("mongodb + srv://cibellem:root@cluster0-nxnod.mongodb.net/webspacedb?retryWrites=true&w=majority",
+    { useNewUrlParser: true }, () => console.log("Connected to the webspaceDB!"));
 // Define API routes here
 
 // Send every other request to the React app
