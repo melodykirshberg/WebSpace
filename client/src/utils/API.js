@@ -15,5 +15,5 @@ export default {
 //     {
 //         return axios.get("/api/users/" + id);
 //     }
-    
+
 // };
