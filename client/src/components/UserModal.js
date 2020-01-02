@@ -1,5 +1,5 @@
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
+import { Modal, Button } from 'react-bootstrap/'
+// import Button from 'react-bootstrap/'
 import React, { useState } from "react";
 
 
@@ -8,7 +8,6 @@ function UserModal() {
 
 
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -50,4 +49,4 @@ function UserModal() {
     );
 }
 
-export default UserModal
+export default UserModal 

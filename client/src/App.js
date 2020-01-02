@@ -5,12 +5,12 @@ import Register from "./Pages/Register"
 import Footer from "./components/Footer"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from "./Pages/Main"
-// import UserModal from "./components/Modal"
+// import UserModal from "./components/UserModal"
+
 
 
 
 function App() {
-
 
   return (
     <Router>
@@ -20,7 +20,6 @@ function App() {
         {/* <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} /> */}
-
         <Footer />
       </div>
     </Router>
