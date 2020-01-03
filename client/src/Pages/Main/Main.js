@@ -9,19 +9,19 @@ import UserModal from "../../components/UserModal"
 
 class Main extends Component {
 
-    render() {
-        return (
-            <span>
-                <NavBarMain />
-                {/* <Wrapper>  */}
-                <UserModal />
-                {/* <MainComponent /> */} */}
+  render() {
+    return (
+      <span>
+        <NavBarMain />
+        {/* <Wrapper>  */}
+        <UserModal />
+        {/* <MainComponent /> */} */}
                 {/* </Wrapper> */}
 
-            </span>
+      </span>
 
-        )
-    }
+    )
+  }
 }
 
 export default Main 

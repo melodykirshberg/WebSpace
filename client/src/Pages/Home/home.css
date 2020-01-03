@@ -2,8 +2,7 @@
 
 
 body{
-    background-color: #363333;
-    
+    background-color: #363333;    
   }
   .appNav{
     color: white;
@@ -22,6 +21,7 @@ body{
   color: #303030;
   font-family: 'Montserrat'
   }
+
   .app-description{
   margin-top: 100px;
   font-family: 'Montserrat', sans-serif;
@@ -42,7 +42,7 @@ body{
   left: 350px;
   top: 80px;
   background-color: #D3D3D3 !important;
-  border-radius: 0px
+  border-radius: 0px;
   }
   
   
