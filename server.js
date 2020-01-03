@@ -18,16 +18,13 @@ if (process.env.NODE_ENV === "production") {
 }
 
 
-//Connection to DB
-mongoose.connect("mongodb + srv://cibellem:root@cluster0-nxnod.mongodb.net/webspacedb?retryWrites=true&w=majority",
-    { useNewUrlParser: true }, () => console.log("Connected to the webspaceDB!"));
-// Define API routes here
+// // Define API routes here
 
-// app.get("/", function (req, res) {
-//     res.send("Test");
-// })
 
 app.use(routes);
+//Connection to DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/webspacedb",
+    { useNewUrlParser: true }, () => console.log("Connected to the webspaceDB!"))
 
 app.listen(PORT, () => {
     console.log(`🌎 ==> App listenning on  ${PORT}!`);

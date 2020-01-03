@@ -1,11 +1,10 @@
-
-
 import Modal from 'react-bootstrap/Modal'
 import React, { useState } from "react";
+import "./pic.jpg"
 
 
 
-function UserModal() {
+function UserModal(props) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -29,8 +28,7 @@ function UserModal() {
 
                             <div className="col-4">
                                 <div className="row">
-
-
+                                    <img src="./pic.jpg" alt="pic" />
                                 </div>
 
                                 <div className="row">
