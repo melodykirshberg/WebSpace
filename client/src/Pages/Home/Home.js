@@ -3,9 +3,7 @@ import Login from "../Login/Login"
 import "./home.css"
 import GoogleBtnSignIn from "../../components/Authentication/SignIn"
 import Amplify, { Auth } from 'aws-amplify';
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import Register from "../Register/Register"
-
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 
 //When page loads set Usersignedin to false. If user it's signed in and authenticated, redirect to main page.
 
@@ -18,7 +16,6 @@ function Home() {
 
     return (
 
-        <Router>
             <span>
                 <nav className="appNav ">
 
@@ -58,9 +55,9 @@ function Home() {
                                             <div className="col-12">
 
 
-                                                <small>Already have an account?  <Link to='/login' >
-                                                    Log in!
-
+                                                <small>Already have an account?
+                                                    <Link to='/login' >
+                                                        Log in!
                                                     </Link>  </small>
 
 
@@ -79,12 +76,6 @@ function Home() {
 
                 </div>
             </span >
-
-
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-        </Router >
-
     )
 
 }
