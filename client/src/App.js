@@ -1,26 +1,19 @@
 import React from 'react';
-import Home from "./Pages/Home"
-import Login from "./Pages/Login"
-import Register from "./Pages/Register"
+import Home from "./Pages/Home/Home"
 import Footer from "./components/Footer"
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Main from "./Pages/Main"
-// import UserModal from "./components/Modal"
-
+import Main from "./Pages/Main/Main"
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        {/* <Home /> */}
-        <Main />
-        {/* <Route exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} /> */}
 
-        <Footer />
-      </div>
-    </Router>
+    <div className="App">
+
+      <Home /> />
+      {/* <Main /> */}
+
+      <Footer />
+    </div>
+
   );
 }
 
