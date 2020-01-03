@@ -21,12 +21,12 @@ export default class MainComponent extends Component {
 
     handleSearch = event => {
         const value = event.target.value;
-        this.setState({search: value});
+        this.setState({ search: value });
     }
 
     filterUsers = () => {
-        if(!this.state.search) return this.state.users;
-        
+        if (!this.state.search) return this.state.users;
+
         const regex = new RegExp(this.state.search.toLowerCase(), "g");
         const users = this.state.users.filter(user => {
             const username = (user.name.first + " " + user.name.last).toLowerCase();
