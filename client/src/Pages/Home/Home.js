@@ -13,7 +13,7 @@ import Register from "../Register/Register"
 
 function Home() {
 
-    const [user, setUser] = useState([])
+    const [user, setUser] = useState(false)
 
 
     return (
@@ -83,6 +83,7 @@ function Home() {
 
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            {/* <Route exact path="/main" component={Register} /> */}
         </Router >
 
     )

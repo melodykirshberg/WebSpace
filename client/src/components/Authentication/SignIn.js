@@ -53,7 +53,6 @@ Auth.currentSession()
 
 function GoogleBtnSignIn() {
 
-
     return (
         <div className="">
             <button className="signInBtn btn button" onClick={() => {
