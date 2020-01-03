@@ -6,24 +6,22 @@ import Header from "../../components/Header";
 import UserModal from "../../components/UserModal"
 
 
+
 class Main extends Component {
 
     render() {
         return (
             <span>
-                {/* <NavBarMain />
-                <Wrapper> */}
+                <NavBarMain />
+                {/* <Wrapper>  */}
                 <UserModal />
-                <MainComponent />
+                {/* <MainComponent /> */} */}
                 {/* </Wrapper> */}
-                <div className="container">
 
-
-                </div>
             </span>
 
         )
     }
 }
 
-export default Main
+export default Main 

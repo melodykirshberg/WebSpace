@@ -19,17 +19,14 @@ if (process.env.NODE_ENV === "production") {
 
 
 //Connection to DB
-mongoose.connect(process.env.DB_CONNECT,
+mongoose.connect("mongodb + srv://cibellem:root@cluster0-nxnod.mongodb.net/webspacedb?retryWrites=true&w=majority",
     { useNewUrlParser: true }, () => console.log("Connected to the webspaceDB!"));
 // Define API routes here
 
-// Send every other request to the React app
-// Define any API routes before this runs
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
+// app.get("/", function (req, res) {
+//     res.send("Test");
+// })
 
-// Add routes, both API and view
 app.use(routes);
 
 app.listen(PORT, () => {

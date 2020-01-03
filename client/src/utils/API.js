@@ -11,11 +11,9 @@ export default {
     getUsers: function () {
         return axios.get("/api/users");
     },
-    // getUser: function () {
-    //     return axios.get("/api/users/" + id);
-    // },
-    saveUser: function () {
-        return axios.post("/api/users");;
+
+    saveUser: function (userData) {
+        return axios.post("/api/users", userData);;
     }
 
 

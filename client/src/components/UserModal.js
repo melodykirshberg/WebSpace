@@ -6,7 +6,6 @@ import React, { useState } from "react";
 
 
 function UserModal() {
-
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -18,17 +17,61 @@ function UserModal() {
         </button>
 
             <Modal show={show} onHide={handleClose}>
+
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+
                 </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Body>
+
+                    <div className="container">
+
+                        <div className="row">
+
+                            <div className="col-4">
+                                <div className="row">
+
+
+                                </div>
+
+                                <div className="row">
+                                    <p>User Name</p>
+                                </div>
+
+                            </div>
+
+
+                            <div className="col-8">
+
+                                <div className="row">
+
+                                    <p>Email:</p>
+                                </div>
+                                <div className="row">
+
+                                    <p>Website:</p>
+                                </div>
+                                <div className="row">
+
+                                    <p>Company:</p>
+                                </div>
+
+                                <div className="row">
+
+                                    <p>What brings User here today?</p>
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </Modal.Body>
                 <Modal.Footer>
-                    <button variant="secondary" onClick={handleClose}>
-                        Close
-            </button>
-                    <button variant="primary" onClick={handleClose}>
-                        Save Changes
-            </button>
+
                 </Modal.Footer>
             </Modal>
         </>
