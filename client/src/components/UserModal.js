@@ -1,52 +1,39 @@
-import { Modal, Button } from 'react-bootstrap/'
-// import Button from 'react-bootstrap/'
+
+
+import Modal from 'react-bootstrap/Modal'
 import React, { useState } from "react";
 
 
 
 function UserModal() {
 
-
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-
     return (
         <>
-            <div className="container">
-                <Button className="button  btn" variant="primary" onClick={handleShow}>
-                    Launch demo modal
-      </Button>
+            <button variant="primary" onClick={handleShow}>
+                Launch demo modal
+        </button>
 
-            </div>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-
-                    <div className="col-12 text-center">
-
-                        <h5>Cibelle Montor</h5>
-                    </div>
-
+                    <Modal.Title>Modal heading</Modal.Title>
                 </Modal.Header>
-
-
-                <Modal.Body>
-                    Bio:<br />
-                    email:<br />
-                    Company:
-                </Modal.Body>
+                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <button variant="secondary" onClick={handleClose}>
                         Close
-              </Button>
-                    <Button onClick={handleClose}>
+            </button>
+                    <button variant="primary" onClick={handleClose}>
                         Save Changes
-              </Button>
+            </button>
                 </Modal.Footer>
             </Modal>
         </>
     );
 }
 
-export default UserModal 
+
+export default UserModal

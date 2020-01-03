@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
-// import { Field, Form, Formik } from "formik"
+import API from "../../utils/API";
 import Amplify, { Auth } from 'aws-amplify';
-// import awsconfig from './aws-exports';
-// Amplify.configure(awsconfig);
-import "./auth.css"
 
+import "./auth.css"
 
 
 Amplify.configure({
     Auth: {
-        // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
-        identityPoolId: "us-east-2:bea34141-1967-4ebb-8a88-133ef016b2ce",
+        // // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
+        // identityPoolId: "us-east-2:bea34141-1967-4ebb-8a88-133ef016b2ce",
 
         // REQUIRED - Amazon Cognito Region
         region: 'us-east-2',
@@ -27,7 +25,7 @@ Amplify.configure({
         oauth: {
             domain: 'webspace.auth.us-east-2.amazoncognito.com/',
             // scope: ['phone', 'email', 'profile', 'openid'],
-            redirectSignIn: 'http://localhost:3000/',
+            redirectSignIn: 'http://localhost:3000/home',
             redirectSignOut: 'http://localhost:3000/',
             responseType: 'token' // or 'token', note that REFRESH token will only be generated when the responseType is code
         }
@@ -35,27 +33,25 @@ Amplify.configure({
 });
 
 
-const signin = ({ email, password }, setUser) => {
-    Auth.signIn(email, password).then(user => {
-        console.log("Success", user)
-        setUser(user)
+Auth.currentSession()
+    .then(function (data) {
+        const userName = data.idToken.payload.name
+        const userEmail = data.idToken.payload.email
+        const userImage = data.idToken.payload.picture
+        console.log(data, userName, userEmail, userImage)
+        API.saveUser({
+            name: userName,
+            email: userEmail
+
+        })
+            .then(res => console.log(res, "New User Added to webspacedb"))
+            .catch(err => console.log(err));
+
     })
 
-        .catch(err => console.log("error", err));
-}
+
 
 function GoogleBtnSignIn() {
-
-    const [user, setUser] = useState(null)
-    useEffect(() => {
-
-        console.log("testing")
-        Auth.currentAuthenticatedUser({
-            bypassCache: false
-        }).then(user => console.log(user)).catch(err => console.log(err)
-        )
-    })
-
 
 
     return (
