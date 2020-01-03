@@ -18,19 +18,13 @@ if (process.env.NODE_ENV === "production") {
 }
 
 
-//Connection to DB
-mongoose.connect(process.env.DB_CONNECT,
-    { useNewUrlParser: true }, () => console.log("Connected to the webspaceDB!"));
-// Define API routes here
+// // Define API routes here
 
-// Send every other request to the React app
-// Define any API routes before this runs
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
 
-// Add routes, both API and view
 app.use(routes);
+//Connection to DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/webspacedb",
+    { useNewUrlParser: true }, () => console.log("Connected to the webspaceDB!"))
 
 app.listen(PORT, () => {
     console.log(`🌎 ==> App listenning on  ${PORT}!`);

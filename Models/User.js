@@ -1,31 +1,33 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = new Schema({
     name: {
         type: String,
-        trim: true,
-        required: "First Name is Required"
+        // trim: true,
+
     },
 
-    password: {
-        type: String,
-        trim: true,
-        required: "Password is Required",
-        validate: [({ length }) => length >= 6, "Password should be longer."]
-    },
+    // password: {
+    //     type: String
+    //     trim: true,
+
+    //     validate: [({ length }) => length >= 6, "Password should be longer."]
+    // },
 
     email: {
         type: String,
-        trim: true,
-        match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+        // trim: true,
+        // required: "Email is Required",
+        // match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
 
-    userCreated: {
-        type: Date,
-        default: Date.now
-    },
+    // userCreated: {
+    //     type: Date,
+    //     default: Date.now
+    // },
 
 });
 

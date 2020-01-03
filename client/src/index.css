@@ -41,7 +41,8 @@ height: 486px;
 left: 350px;
 top: 80px;
 background-color: #D3D3D3 !important;
-border-radius: 0px
+border-radius: 0px;
+margin-bottom: 100px;
 }
 
 
@@ -74,9 +75,9 @@ border-radius: 0px
   width: 100%;  
   color: rgb(43, 43, 43);
   text-align: center;
- font-weight: 200;
-background-color: #C4C4C4;
-font-size: 15px;
+  font-weight: 200;
+  background-color: #C4C4C4;
+  font-size: 15px;
 }
 /*------------Footer---------*/
 

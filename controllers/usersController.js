@@ -1,6 +1,6 @@
 const db = require("../models");
 
-// Defining methods for the booksController
+// Defining methods for the User Controller 
 module.exports = {
     findAll: function (req, res) {
         db.User
@@ -16,6 +16,7 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     create: function (req, res) {
+        console.log("create controller hit");
         db.User
             .create(req.body)
             .then(dbModel => res.json(dbModel))
