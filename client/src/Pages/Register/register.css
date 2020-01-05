@@ -1,0 +1,27 @@
+body {
+    background-image: url("./web.png");
+      /* Full height */
+  /* height: 100%; */
+  /* Center and scale the image nicely */
+   background-position-x: 50vh;
+  background-repeat: no-repeat;
+  background-size:100vh;
+}
+
+
+.modalDesign {
+  background-image: url("./design.png");
+  background-repeat: no-repeat;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+background-size: cover;
+
+
+}
+
+.modalBackground {
+  background-color: #F7F7F7;
+}
+
+
+/* Design Modal */
+

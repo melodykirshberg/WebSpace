@@ -41,7 +41,8 @@ Auth.currentSession()
         console.log(data, userName, userEmail, userImage)
         API.saveUser({
             name: userName,
-            email: userEmail
+            email: userEmail,
+            picture: userImage
 
         })
             .then(res => console.log(res, "New User Added to webspacedb"))

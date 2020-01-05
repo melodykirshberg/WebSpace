@@ -17,15 +17,14 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-
 // // Define API routes here
-
 
 app.use(routes);
 //Connection to DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/webspacedb",
-    { useNewUrlParser: true }, () => console.log("Connected to the webspaceDB!"))
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    () => console.log("Connected to the webspaceDB!"))
 
 app.listen(PORT, () => {
-    console.log(`🌎 ==> App listenning on  ${PORT}!`);
+    console.log(`======> App listenning on  ${PORT}!`);
 });
