@@ -1,13 +1,6 @@
-/*-------------- Home Component -------------*/
-
 body{
   background-color: #363333;
   
-}
-.appNav{
-  color: white;
-  padding: 10px;
-  background-color: white !important;
 }
 
 .app-title{
@@ -45,7 +38,6 @@ border-radius: 0px;
 margin-bottom: 100px;
 }
 
-
 .signInBtn{
   font-weight: 600;
  font-size: 15px;
@@ -62,25 +54,6 @@ margin-bottom: 100px;
 .buttonRow{
   margin-top: 20px;
 }
-/*-------------- Home Component -------------*/
-
-
-/*------------Footer---------*/
-
-.appFooter{
-  font-family: 'Montserrat', sans-serif;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;  
-  color: rgb(43, 43, 43);
-  text-align: center;
-  font-weight: 200;
-  background-color: #C4C4C4;
-  font-size: 15px;
-}
-/*------------Footer---------*/
-
 
 /* LoginForm Component  */
 
@@ -100,9 +73,4 @@ margin-bottom: 100px;
   width: 150px;
   border-radius: 20px;
   background-color: #72C850
-}
-.blueNav{
-  background-color: #454D58;
-  color: #454D58;
-  padding: 10px;
 }
