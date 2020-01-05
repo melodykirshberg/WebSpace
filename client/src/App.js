@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from "./Pages/Home/Home"
-import Footer from "./components/Footer"
+import Footer from "./components/Footer/Footer"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import UserModal from "./components/Modal";
 import Main from "./Pages/Main/Main";
