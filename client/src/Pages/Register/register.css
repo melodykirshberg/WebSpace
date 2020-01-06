@@ -3,6 +3,16 @@ body {
  
 }
 
+.registerForm{
+  border-radius: 25px !important;
+  background-color: black!important;
+}
+
+.modalWrap{
+  border-radius: 20px!important;
+  background-color: black;
+
+}
 
 .modalNav{
   background-color: #6F4FEF;;
