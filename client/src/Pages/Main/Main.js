@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavBarMain from "../../components/NavBar/NavBarMain";
+import NavBarMain from "../../components/Nav/Nav";
 import UserModal from "../../components/UserModal/UserModal"
 import API from "../../utils/API";
 
@@ -26,7 +26,6 @@ class Main extends Component {
   render() {
     return (
       <span>
-        <NavBarMain />
         <UserModal />
       </span>
 
