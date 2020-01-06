@@ -3,7 +3,8 @@ import Modal from 'react-bootstrap/Modal'
 import "./register.css"
 import API from "../../utils/API";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
-import FormErrors from "../../components/FormErrors"
+import FormErrors from "../../components/FormErrors";
+import { Redirect } from "react-router-dom";
 
 import Main from "../Main/Main";
 
@@ -78,7 +79,7 @@ class Register extends Component {
 
 
 
-      </form>
+      </form >
     )
   }
 }
