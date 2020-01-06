@@ -67,7 +67,7 @@ class Main extends Component {
     render() {
         return (
             <span>
-                {/* <Container
+                {/* { <Container
                     results={this.state.users}
                 /> */}
                 <UserCard results={this.state.users} />
