@@ -5,10 +5,10 @@
 // import Login from "./Pages/Login/Login";
 // import Register from "./Pages/Register/Register";
 
-import React, {useReducer, useEffect, useState } from 'react';
+import React, { useReducer, useEffect, useState } from 'react';
 import Nav from './Nav/Nav.js'
 import Buttons from './Buttons'
-import Footer from './Footer/Footer.js'
+import Footer from './components/Footer/Footer.js'
 import Form from './Form'
 import { Hub, Auth } from 'aws-amplify'
 import { FaSignOutAlt } from 'react-icons/fa'
@@ -54,10 +54,10 @@ function App() {
     <div>
       <Nav updateFormState={updateFormState} />
       {userState.loading && (
-          <div style={styles.body}>
-            <p>Loading...</p>
-          </div>
-        )
+        <div style={styles.body}>
+          <p>Loading...</p>
+        </div>
+      )
       }
       {
         !userState.user && !userState.loading && (
