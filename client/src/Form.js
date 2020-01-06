@@ -213,7 +213,6 @@ const styles = {
     },
     footer: {
         fontWeight: '600',
-        padding: '0px 25px',
         textAlign: 'center',
         backgroundColor: "#464646",
         color: 'white'
