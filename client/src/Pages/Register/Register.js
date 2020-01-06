@@ -5,13 +5,13 @@ import API from "../../utils/API";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
 import FormErrors from "../../components/FormErrors"
 
+import Main from "../Main/Main";
+
 
 
 class Register extends Component {
 
   //initial state of our form these are all the info we will require from the user. 
-
-
   state = {
     show: true,
     name: "",
@@ -28,52 +28,11 @@ class Register extends Component {
   }
 
 
-  // componentDidMount = () => {
-  //   this.setState({
-  //     bio: "hi"
-  //   })
-
-
-  // }
-  //validation function, name and e-mail cant be blank
-  validateField(fieldName, value) {
-    let fieldValidationErrors = this.state.formErrors;
-    let emailValid = this.state.emailValid;
-    let nameValid = this.state.nameValid;
-
-    switch (fieldName) {
-      case 'email':
-        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-        fieldValidationErrors.email = emailValid ? '' : ' is invalid';
-        break;
-      case 'name':
-        nameValid = value.length > 0;
-        fieldValidationErrors.name = nameValid ? '' : ' is too short';
-        break;
-      default:
-        break;
-    }
-    this.setState({
-      formErrors: fieldValidationErrors,
-      emailValid: emailValid,
-      nameValid: nameValid
-    }, this.validateForm);
-  }
-
-  validateForm() {
-    this.setState({ formValid: this.state.emailValid && this.state.nameValid });
-  }
-
-
   //when user insert a value 
   handleInputChange = (event) => {
     let nam = event.target.name;
     let val = event.target.value;
-    this.setState({ [nam]: val },
-      () => { this.validateField(nam, val) })
-
-
-
+    this.setState({ [nam]: val })
   }
 
 
@@ -94,7 +53,8 @@ class Register extends Component {
       show: false
     })
 
-
+    //redirects user to main page
+    this.props.history.push('/main')
 
   }
 
@@ -105,25 +65,15 @@ class Register extends Component {
     return (
 
       <form action="">
+
         <Modal aria-labelledby="contained-modal-title-vcenter"
           centered size="lg" show={this.state.show} onHide={this.handleClose}>
 
           <RegisterForm
-
             handleSubmit={this.handleSubmit}
             handleInputChange={this.handleInputChange}
             formErrors={this.state.formErrors}
-
           />
-          <div className="col float-right">
-            <button className=" button submitBtn" type="submit"
-              disabled={!this.state.formValid}
-              onClick={this.handleSubmit} >
-              <i className="fas fa-check"></i>
-            </button>
-          </div>
-
-
         </Modal>
 
 

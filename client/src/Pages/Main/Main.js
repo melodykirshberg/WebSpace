@@ -5,9 +5,6 @@ import "./main.css";
 import Container from "../../components/Container/Container"
 import UserCard from "../../components/UserCard/UserCard"
 
-// when page loads, I want to load all users from the database and pass as to ShowUserModal component
-
-
 // In this class we have written the logic that is going to happen in the Main page
 
 class Main extends Component {

@@ -11,7 +11,7 @@ function RegisterForm(props) {
 
     return (
         <span>
-            <Modal.Body className=" ">
+            <Modal.Body>
                 <nav className=" modalNav my-0 p-2"> We want to know more about you!</nav>
 
                 <div className="container modalStyle">
@@ -22,14 +22,18 @@ function RegisterForm(props) {
                                 <img className="userImage" src={require("./jen.png")} alt="userPicture" />
 
                             </div>
-                            <div className="row my-1 mx-1   ">
+                            <div className="row my-1 mx-1  input-container ">
+
                                 {/* <label htmlFor="name">Name:</label> */}
                                 <input type="text"
                                     value={props.name}
                                     type="text"
                                     name="name"
                                     id="userName"
-                                    onChange={props.handleInputChange} />
+                                    onChange={props.handleInputChange}
+                                    className="input-field"
+                                />
+                                <i className="fas fa-pen mx-2"></i>
                             </div>
                         </div>
 
@@ -52,7 +56,8 @@ function RegisterForm(props) {
                                     type="email"
                                     name="email"
                                     id="user_email"
-                                    onChange={props.handleInputChange} />
+                                    onChange={props.handleInputChange}
+                                    required />
                             </div>
 
                             <div className="row form-group">
@@ -85,10 +90,18 @@ function RegisterForm(props) {
                                     id="user_motive">
 
                                     <option value="Networking">Networking</option>
-                                    <option value="Position">Looking for a position</option>
-                                    <option value="Recruiter">I am a recruiter</option>
+                                    <option value="Looking for a position">Looking for a position</option>
+                                    <option value="I am a recruiter">I am a recruiter</option>
 
                                 </select>
+                            </div>
+
+                            <div className="col- float-right">
+                                <button className=" button submitBtn" type="submit"
+
+                                    onClick={props.handleSubmit} >
+                                    <i className="fas fa-check"></i>
+                                </button>
                             </div>
 
 
@@ -101,7 +114,7 @@ function RegisterForm(props) {
 
             </Modal.Body>
 
-        </span>
+        </span >
 
 
 

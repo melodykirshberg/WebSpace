@@ -72,9 +72,9 @@ export default userInfoSignIn
 
 //     return (
 //         <div className="">
-//             <button className="signInBtn btn button" onClick={() => {
+            // <button className="signInBtn btn button" onClick={() => {
 
-//                 Auth.federatedSignIn({ provider: "Google" })
+            //     Auth.federatedSignIn({ provider: "Google" })
 //             }}>Google signIn</button>
 
 //         </div >
