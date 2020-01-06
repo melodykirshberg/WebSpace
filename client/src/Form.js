@@ -48,7 +48,7 @@ async function signIn({ username, password }) {
     }
 }
 
-export default function Form() {
+export default function Form(props) {
     const [formType, updateFormType] = useState('signUp')
     const [formState, updateFormState] = useReducer(reducer, initialFormState)
     function renderForm() {

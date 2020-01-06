@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import NavBarMain from "../../components/Nav/Nav";
-import UserModal from "../../components/UserModal/UserModal"
+import Nav from "../../components/Nav/Nav";
+import {Auth} from "aws-amplify";
+// import UserModal from "../../components/UserModal/UserModal"
 import API from "../../utils/API";
 import "./main.css";
-import Container from "../../components/Container/Container"
+// import Container from "../../components/Container/Container"
 import UserCard from "../../components/UserCard/UserCard"
 
 // when page loads, I want to load all users from the database and pass as to ShowUserModal component
@@ -31,6 +32,12 @@ class Main extends Component {
             clickedUser: res.data
 
         })).catch(err => console.log(err))
+        Auth.currentSession()
+        .then(function (data) {
+            const userName = data.idToken.payload.name
+            const userEmail = data.idToken.payload.email
+            const userImage = data.idToken.payload.picture
+        });
 
     }
     // this function handles when a participant it's clicked
@@ -53,23 +60,14 @@ class Main extends Component {
     }
 
 
-<<<<<<< HEAD
-  render() {
-    return (
-      <span>
-        <UserModal />
-      </span>
-=======
     render() {
         return (
             <span>
-                <NavBarMain />
                 {/* <Container
                     results={this.state.users}
                 /> */}
                 <UserCard results={this.state.users} />
             </span>
->>>>>>> a776786c33396d5654a4d1b41798f572e3ceec5e
 
         )
     }

@@ -1,14 +1,14 @@
 import React, { useReducer, useEffect, useState } from 'react';
-import Nav from './Nav/Nav.js'
-import Buttons from './Buttons'
-import Footer from './components/Footer/Footer.js'
-import Form from './Form'
+import Nav from '../Nav/Nav.js'
+import Buttons from '../Button/Buttons.js'
+import Footer from '../Footer/Footer.js'
+import Form from '../../Form'
 import { Hub, Auth } from 'aws-amplify'
 import { FaSignOutAlt } from 'react-icons/fa'
 
 const initialUserState = { user: null, loading: true }
 
-function App() {
+function Authentication() {
 
     const [userState, dispatch] = useReducer(reducer, initialUserState)
     const [formState, updateFormState] = useState('base')
@@ -73,9 +73,9 @@ function App() {
                     </div>
                 )
             }
-            <Footer />
         </div>
     )
+}
 
 
     //REDUCER
@@ -151,3 +151,5 @@ function App() {
             backgroundColor: '#464646'
         }
     }
+
+    export default Authentication;
