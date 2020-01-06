@@ -1,14 +1,12 @@
-// import Home from "./Pages/Home/Home"
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// // import UserModal from "./components/Modal";
-// import Main from "./Pages/Main/Main";
-// import Login from "./Pages/Login/Login";
-// import Register from "./Pages/Register/Register";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import UserModal from "./components/Modal";
+import Main from "./Pages/Main/Main";
+import Register from "./Pages/Register/Register";
 
-import React, {useReducer, useEffect, useState } from 'react';
+import React, { useReducer, useEffect, useState } from 'react';
 import Nav from './Nav/Nav.js'
 import Buttons from './Buttons'
-import Footer from './Footer/Footer.js'
+import Footer from './components/Footer/Footer.js'
 import Form from './Form'
 import { Hub, Auth } from 'aws-amplify'
 import { FaSignOutAlt } from 'react-icons/fa'
@@ -17,105 +15,103 @@ const initialUserState = { user: null, loading: true }
 
 function App() {
 
-  const [userState, dispatch] = useReducer(reducer, initialUserState)
-  const [formState, updateFormState] = useState('base')
+  // const [userState, dispatch] = useReducer(reducer, initialUserState)
+  // const [formState, updateFormState] = useState('base')
 
-  useEffect(() => {
-    // set listener for auth events
-    Hub.listen('auth', (data) => {
-      const { payload } = data
-      if (payload.event === 'signIn') {
-        setImmediate(() => dispatch({ type: 'setUser', user: payload.data }))
-        setImmediate(() => window.history.pushState({}, null, 'http://localhost:3000/'))
-        updateFormState('base')
-      }
-      // this listener is needed for form sign ups since the OAuth will redirect & reload
-      if (payload.event === 'signOut') {
-        setTimeout(() => dispatch({ type: 'setUser', user: null }), 350)
-      }
-    })
-    // we check for the current user unless there is a redirect to ?signedIn=true 
-    if (!window.location.search.includes('?signedin=true')) {
-      checkUser(dispatch)
-    }
-  }, [])
+  // useEffect(() => {
+  //   // set listener for auth events
+  //   Hub.listen('auth', (data) => {
+  //     const { payload } = data
+  //     if (payload.event === 'signIn') {
+  //       setImmediate(() => dispatch({ type: 'setUser', user: payload.data }))
+  //       setImmediate(() => window.history.pushState({}, null, 'http://localhost:3000/'))
+  //       updateFormState('base')
+  //     }
+  //     // this listener is needed for form sign ups since the OAuth will redirect & reload
+  //     if (payload.event === 'signOut') {
+  //       setTimeout(() => dispatch({ type: 'setUser', user: null }), 350)
+  //     }
+  //   })
+  //   // we check for the current user unless there is a redirect to ?signedIn=true 
+  //   if (!window.location.search.includes('?signedin=true')) {
+  //     checkUser(dispatch)
+  //   }
+  // }, [])
 
-  // This renders the custom form
-  if (formState === 'email') {
-    return (
-      <div>
-        <Nav updateFormState={updateFormState} />
-        <Form />
-      </div>
-    )
-  }
-
-  return (
-    <div>
-      <Nav updateFormState={updateFormState} />
-      {userState.loading && (
-          <div style={styles.body}>
-            <p>Loading...</p>
-          </div>
-        )
-      }
-      {
-        !userState.user && !userState.loading && (
-          <Buttons updateFormState={updateFormState} />
-        )
-      }
-      {
-        userState.user && userState.user.signInUserSession && (
-          <div style={styles.body}>
-            <h4>
-              Welcome {userState.user.signInUserSession.idToken.payload.email}
-            </h4>
-            <button
-              style={{ ...styles.button, ...styles.signOut }}
-              onClick={signOut}
-            >
-              <FaSignOutAlt color='white' />
-              <p style={{ ...styles.text }}>Sign Out</p>
-            </button>
-          </div>
-        )
-      }
-      <Footer />
-    </div>
-  )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  // // This renders the custom form
+  // if (formState === 'email') {
+  //   return (
+  //     <div>
+  //       <Nav updateFormState={updateFormState} />
+  //       <Form />
+  //     </div>
+  //   )
+  // }
 
   // return (
-  //   <Router>
-  //     <div className="App">
-  //       <Switch>
-  //         {/* <Route exact path="/login" component={Login} />
-  //         <Route exact path="/register" component={Register} /> */}
-  //         <Home />
-  //         <Main />
-  //       </Switch>
-  //       <Footer />
-  //     </div>
-  //   </Router>
-  // );
+  //   <div>
+  //     <Nav updateFormState={updateFormState} />
+  //     {userState.loading && (
+  //       <div style={styles.body}>
+  //         <p>Loading...</p>
+  //       </div>
+  //     )
+  //     }
+  //     {
+  //       !userState.user && !userState.loading && (
+  //         <Buttons updateFormState={updateFormState} />
+  //       )
+  //     }
+  //     {
+  //       userState.user && userState.user.signInUserSession && (
+  //         <div style={styles.body}>
+  //           <h4>
+  //             Welcome {userState.user.signInUserSession.idToken.payload.email}
+  //           </h4>
+  //           <button
+  //             style={{ ...styles.button, ...styles.signOut }}
+  //             onClick={signOut}
+  //           >
+  //             <FaSignOutAlt color='white' />
+  //             <p style={{ ...styles.text }}>Sign Out</p>
+  //           </button>
+  //         </div>
+  //       )
+  //     }
+  //     <Footer />
+  //   </div>
+  // )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  return (
+    <Router>
+      <div className="App">
+        <Switch>
+            <Route exact path="/register" component={Register} />
+          <Main />
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
 
