@@ -1,6 +1,7 @@
-import Modal from 'react-bootstrap/Modal'
+import Modal from 'react-bootstrap/Modal';
 import React, { useState } from "react";
-import "./pic.jpg"
+import "../pic.jpg";
+import "./usermodal.css";
 
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import NavBarMain from "../../components/NavBarMain";
-import UserModal from "../../components/UserModal"
+import NavBarMain from "../../components/NavBar/NavBarMain";
+import UserModal from "../../components/UserModal/UserModal"
 import API from "../../utils/API";
 
 
