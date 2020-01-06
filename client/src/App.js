@@ -18,8 +18,8 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
         <Authentication />
+      <div className="App">
         <Switch>
           <Route exact path="/register" component={Register} />
           <Main />
