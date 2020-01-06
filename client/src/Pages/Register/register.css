@@ -1,27 +1,95 @@
 body {
-    background-image: url("./web.png");
-      /* Full height */
-  /* height: 100%; */
-  /* Center and scale the image nicely */
-   background-position-x: 50vh;
-  background-repeat: no-repeat;
-  background-size:100vh;
+  background-color: #464646;  
+ 
 }
 
 
-.modalDesign {
-  background-image: url("./design.png");
-  background-repeat: no-repeat;
-  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
-background-size: cover;
+.modalNav{
+  background-color: #6F4FEF;;
+  color: white;
+  font-size: 17px;
+  font-family: 'Montserrat';
+  text-align: center;
+  border-radius: 14px;
+  letter-spacing: 0.5px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+ 
+}
 
+.modalStyle{ 
+  font-size: 14px;
+  margin-bottom: 0;
+  
+}
+
+input{
+  border-radius: 12px;
+  border-style: none;
+  background-color: #dddddd;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  width: 250px;
+  font-family: 'Montserrat';
 
 }
 
-.modalBackground {
-  background-color: #F7F7F7;
+input:hover {
+  border: 1px solid silver;
+}
+
+.motivesLabel{
+  font-family: 'Montserrat';
+}
+
+label{
+ 
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+  font-family: 'Montserrat';
+
 }
 
 
-/* Design Modal */
 
+.bioBox{
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+background-color: #dddddd;  
+border-radius: 12px;
+width: 350px;
+border: none;
+
+}
+
+
+
+select{
+  font-size: 14px !important;
+  border-radius: 14px !important;
+  
+
+  letter-spacing: 0.5px;
+  
+  
+}
+select:hover{
+  background-color: #dddddd;  
+  border: 1px solid silver !important;
+}
+
+.submitBtn {
+  background-color:#72C850;
+  border-radius: 48%;
+  padding: 20px;
+  color: white; 
+  border: none;
+}
+.submitBtn:hover{
+  box-shadow: 0px 2px 4px gray;
+
+}
+
+.fa-check{
+  font-size: 22px;
+  text-shadow:  0px 1px 2px rgba(0, 0, 0, 0.3);
+  
+}

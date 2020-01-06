@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import NavBarMain from "../../components/NavBarMain";
-import UserCard from "../../components/UserCard"
+import NavBarMain from "../../components/NavBar/NavBarMain";
 import API from "../../utils/API";
 import "./main.css";
-import Container from "../../components/Container"
+import Container from "../../components/Container/Container"
+import UserCard from "../../components/UserCard/UserCard"
 
 // when page loads, I want to load all users from the database and pass as to ShowUserModal component
 
@@ -56,17 +56,10 @@ class Main extends Component {
         return (
             <span>
                 <NavBarMain />
-                <Container
+                {/* <Container
                     results={this.state.users}
-
-
-                />
-                <UserCard
-                    users={this.state.users}
-                />
-
-
-
+                /> */}
+                <UserCard results={this.state.users} />
             </span>
 
         )

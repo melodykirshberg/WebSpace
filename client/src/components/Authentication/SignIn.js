@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import API from "../../utils/API";
 import Amplify, { Auth } from 'aws-amplify';
+import RegisterForm from "../RegisterForm/RegisterForm"
 
 import "./auth.css"
 
@@ -8,8 +9,7 @@ import "./auth.css"
 Amplify.configure({
     Auth: {
         // // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
-        // identityPoolId: "us-east-2:bea34141-1967-4ebb-8a88-133ef016b2ce",
-
+        // identityPoolId: "us-east-2:bea34141-1967-4ebb-8a88-133ef016b2ce",/
         // REQUIRED - Amazon Cognito Region
         region: 'us-east-2',
 
@@ -32,36 +32,53 @@ Amplify.configure({
     }
 });
 
+function userInfoSignIn() {
 
-Auth.currentSession()
-    .then(function (data) {
-        const userName = data.idToken.payload.name
-        const userEmail = data.idToken.payload.email
-        const userImage = data.idToken.payload.picture
-        console.log(data, userName, userEmail, userImage)
-        API.saveUser({
-            name: userName,
-            email: userEmail,
-            picture: userImage
+    const [user, setUser] = useState("")
+    //I want to pass this as props to Register form
+    Auth.currentSession()
+        .then(function (data) {
+            const userName = data.idToken.payload.name
+            const userEmail = data.idToken.payload.email
+            const userImage = data.idToken.payload.picture
+            console.log(data, userName, userEmail, userImage)
+
+            API.saveUser({
+                name: userName,
+                email: userEmail,
+                picture: userImage
+
+            })
+                .then(res => console.log(res, "New User Added to webspacedb"))
+                .catch(err => console.log(err));
+
+
 
         })
-            .then(res => console.log(res, "New User Added to webspacedb"))
-            .catch(err => console.log(err));
-
-    })
 
 
-
-function GoogleBtnSignIn() {
 
     return (
-        <div className="">
-            <button className="signInBtn btn button" onClick={() => {
 
-                Auth.federatedSignIn({ provider: "Google" })
-            }}>Google signIn</button>
-        </div >
-    );
+        <RegisterForm
+            results={user} />
+
+    )
+
 }
+export default userInfoSignIn
 
-export default GoogleBtnSignIn;
+// function GoogleBtnSignIn() {
+
+//     return (
+//         <div className="">
+//             <button className="signInBtn btn button" onClick={() => {
+
+//                 Auth.federatedSignIn({ provider: "Google" })
+//             }}>Google signIn</button>
+
+//         </div >
+//     );
+// }
+
+// export default GoogleBtnSignIn;

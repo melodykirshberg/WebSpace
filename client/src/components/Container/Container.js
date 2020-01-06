@@ -1,5 +1,5 @@
 import React from "react"
-import UserCard from "./UserCard"
+import UserCard from "../UserCard/UserCard"
 
 
 
@@ -18,19 +18,13 @@ function Container(props) {
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <div className="row">
-
-
-                        <div className="col-1">
-
-
-                        </div>
-
-                    </div>
-
+                    <UserCard {...props} />
                 </div>
+
+
             </div>
-        </div>
+        </div >
+
 
     )
 

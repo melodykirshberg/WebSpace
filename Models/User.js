@@ -7,6 +7,7 @@ const UserSchema = new Schema({
     name: {
         type: String,
         trim: true,
+        required: "Name is Required",
 
     },
 
@@ -18,7 +19,7 @@ const UserSchema = new Schema({
     email: {
         type: String,
         trim: true,
-        // required: "Email is Required",
+        required: "Email is Required",
         // match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
 
@@ -35,7 +36,6 @@ const UserSchema = new Schema({
     },
     motives: {
         type: String,
-        trim: true,
 
     },
     userCreated: {
