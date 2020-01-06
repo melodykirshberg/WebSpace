@@ -1,4 +1,4 @@
-/* in this page we are designing the cards that will show up in the main page  */
+/* in this page we are designing the user cards that will show up in the main page  */
 
 .userCard{
     
@@ -48,6 +48,7 @@ color:#464646;
 small{
     font-weight: 600;     
 }
+
  /* Card zoom  */
 
 .userCard {

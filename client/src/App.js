@@ -7,7 +7,7 @@ import Authentication from "./components/Authentication/Authentication"
 import React, { useReducer, useEffect, useState } from 'react';
 import Nav from './components/Nav/Nav.js'
 import Buttons from './components/Button/Buttons.js'
-import Footer from './components/Footer/Footer.js'
+import Footer from './components/Footer/Footer'
 import Form from './Form'
 // import { Hub, Auth } from 'aws-amplify'
 // import { FaSignOutAlt } from 'react-icons/fa'
@@ -29,5 +29,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
