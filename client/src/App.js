@@ -8,7 +8,7 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import Nav from './Nav/Nav.js'
 import Buttons from './Buttons'
-import Footer from './Footer/Footer.js'
+import Footer from './components/Footer/Footer.js'
 import Form from './Form'
 import { Hub, Auth } from 'aws-amplify'
 import { FaSignOutAlt } from 'react-icons/fa'
