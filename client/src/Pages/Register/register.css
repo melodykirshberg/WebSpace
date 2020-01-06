@@ -3,6 +3,7 @@ body {
  
 }
 
+
 .registerForm{
   border-radius: 25px !important;
   background-color: black!important;
@@ -15,7 +16,7 @@ body {
 }
 
 .modalNav{
-  background-color: #6F4FEF;;
+  background-color: black;
   color: white;
   font-size: 17px;
   font-family: 'Montserrat';

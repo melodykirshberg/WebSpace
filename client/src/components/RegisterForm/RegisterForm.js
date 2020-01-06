@@ -58,6 +58,7 @@ function RegisterForm(props) {
                                     id="user_email"
                                     onChange={props.handleInputChange}
                                     required />
+                                <i className="fas fa-pen mx-2"></i>
                             </div>
 
                             <div className="row form-group">
@@ -68,16 +69,18 @@ function RegisterForm(props) {
                                     name="website"
                                     id="user_website"
                                     onChange={props.handleInputChange} />
+                                <i className="fas fa-pen mx-2"></i>
                             </div>
 
                             <div className="row form-group">
                                 <label htmlFor="company">Company:</label>
-                                <input className=""
+                                <input className="input-group-append"
                                     value={props.company}
                                     type="text"
                                     name="company"
                                     id="user_company"
                                     onChange={props.handleInputChange} />
+                                <i className="fas fa-pen mx-2"></i>
                             </div>
                             <div className="row form-group">
                                 {/* <label className="motivesLabel" htmlFor="motives">What brings you here today?</label> */}
@@ -92,6 +95,7 @@ function RegisterForm(props) {
                                     <option value="Networking">Networking</option>
                                     <option value="Looking for a position">Looking for a position</option>
                                     <option value="I am a recruiter">I am a recruiter</option>
+
 
                                 </select>
                             </div>
