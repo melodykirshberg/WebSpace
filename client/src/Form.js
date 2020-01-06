@@ -48,7 +48,7 @@ async function signIn({ username, password }) {
     }
 }
 
-export default function Form() {
+export default function Form(props) {
     const [formType, updateFormType] = useState('signUp')
     const [formState, updateFormState] = useReducer(reducer, initialFormState)
     function renderForm() {
@@ -213,7 +213,6 @@ const styles = {
     },
     footer: {
         fontWeight: '600',
-        padding: '0px 25px',
         textAlign: 'center',
         backgroundColor: "#464646",
         color: 'white'

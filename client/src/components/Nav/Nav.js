@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { Component } from "react";
+
 import "./Nav.css"
 
-export default function Nav(props) {
+
+function Nav(props) {
     return (
         <nav className='nav' onClick={() => props.updateFormState('base')}>WebSpace
             </nav>
     )
+
 }
+
+export default Nav
