@@ -26,7 +26,7 @@ function RegisterForm(props) {
 
                                 {/* <label htmlFor="name">Name:</label> */}
                                 <input type="text"
-                                    value={props.name}
+                                    value={props.nAme}
                                     type="text"
                                     name="name"
                                     id="userName"
