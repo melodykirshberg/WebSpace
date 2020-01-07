@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import Nav from "../../components/Nav/Nav";
-import { Auth } from "aws-amplify";
 import API from "../../utils/API.js";
 import "./main.css";
 import UserCard from "../../components/UserCard/UserCard"
-import ControlledCarousel from "../../components/Test"
+
 
 // In this class we have written the logic that is going to happen in the Main page
 
@@ -33,17 +32,12 @@ class Main extends Component {
 
     }
 
-
+    //then we passes the users to our UserCard component
 
     render() {
         return (
             <div>
                 <UserCard results={this.state.users} />
-                <ControlledCarousel
-
-
-
-                />
 
             </div>
 
