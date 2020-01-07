@@ -7,7 +7,7 @@ import { FaGoogle, FaEnvelope } from 'react-icons/fa'
 
 function Buttons(props) {
     return (
-        <div style={styles.main}>
+        <div className="main">
         <div style={styles.container}>
             <button
                 style={{ ...styles.button, ...styles.google }}
