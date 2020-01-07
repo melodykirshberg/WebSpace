@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./Pages/Main/Main.js";
 import Register from "./Pages/Register/Register";
 import Authentication from "./components/Authentication/Authentication"
-import React, { useReducer, useEffect, useState } from 'react';
+import React from 'react';
 import Nav from './components/Nav/Nav.js'
 import Buttons from './components/Button/Buttons.js'
 import Footer from './components/Footer/Footer'
@@ -19,8 +19,8 @@ function App() {
       <Authentication />
       <div className="App">
         <Switch>
-          <Route exact path="/register" component={Register} />
-          <Main />
+          {/* <Route exact path="/register" component={Register} />
+          <Main /> */}
         </Switch>
         <Footer />
       </div>
