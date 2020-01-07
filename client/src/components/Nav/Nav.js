@@ -1,29 +1,35 @@
-import React, { Component, useState, useReducer } from 'react';
-import { Auth } from 'aws-amplify';
+import React, { Component, useState, useReducer } from "react";
+import { Auth } from "aws-amplify";
+import { FaSignOutAlt } from "react-icons/fa";
 import "./Nav.module.css";
 
-const intialFormState = {
-    username: ''
-}
+import { useStoreContext } from "../../utils/Store";
 
-function reducer(state, action) {
-    switch(action.type) {
-        case 'updateFormState':
-            return {
-                ...state, [action.e.target.name]:
-                action.e.target.value
-            }
-            default:
-                return state
-    }
+//SIGN OUT FUNCTION
+function signOut() {
+  Auth.signOut()
+    .then(data => {
+      console.log("signed out: ", data);
+    })
+    .catch(err => console.log(err));
 }
 
 function Nav(props) {
-    return (
-        <nav className='nav' onClick={() => props.updateFormState('base')}>WebSpace
-            </nav>
-    )
-
+  const [state, dispatch] = useStoreContext();
+  return (
+    <nav className="nav" onClick={() => props.updateFormState("base")}>
+      WebSpace
+      {state.user && state.user.signInUserSession && (
+        <div>
+          <h4>Welcome {state.user.signInUserSession.idToken.payload.name}</h4>
+          <button className="signOut" onClick={signOut}>
+            <FaSignOutAlt color="white" />
+            <p className="text">Sign Out</p>
+          </button>
+        </div>
+      )}
+    </nav>
+  );
 }
 
-export default Nav
+export default Nav;
