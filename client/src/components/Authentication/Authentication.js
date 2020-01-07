@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import Nav from '../Nav/Nav.js'
 import Buttons from '../Button/Buttons.js'
-import Footer from '../Footer/Footer.js'
+
 import Form from '../../Form'
 import { Hub, Auth } from 'aws-amplify'
 import { FaSignOutAlt } from 'react-icons/fa'
@@ -78,78 +78,78 @@ function Authentication() {
 }
 
 
-    //REDUCER
-    function reducer(state, action) {
-        switch (action.type) {
-            case 'setUser':
-                return { ...state, user: action.user, loading: false }
-            case 'loaded':
-                return { ...state, loading: false }
-            default:
-                return state
-        }
+//REDUCER
+function reducer(state, action) {
+    switch (action.type) {
+        case 'setUser':
+            return { ...state, user: action.user, loading: false }
+        case 'loaded':
+            return { ...state, loading: false }
+        default:
+            return state
     }
+}
 
 
-    //CHECK USER FUNCTION
-    async function checkUser(dispatch) {
-        try {
-            const user = await Auth.currentAuthenticatedUser()
-            console.log('user: ', user)
-            dispatch({ type: 'setUser', user })
-        } catch (err) {
-            console.log('err: ', err)
-            dispatch({ type: 'loaded' })
-        }
+//CHECK USER FUNCTION
+async function checkUser(dispatch) {
+    try {
+        const user = await Auth.currentAuthenticatedUser()
+        console.log('user: ', user)
+        dispatch({ type: 'setUser', user })
+    } catch (err) {
+        console.log('err: ', err)
+        dispatch({ type: 'loaded' })
     }
+}
 
 
-    //SIGN OUT FUNCTION
-    function signOut() {
-        Auth.signOut()
-            .then(data => {
-                console.log('signed out: ', data)
-            })
-            .catch(err => console.log(err));
+//SIGN OUT FUNCTION
+function signOut() {
+    Auth.signOut()
+        .then(data => {
+            console.log('signed out: ', data)
+        })
+        .catch(err => console.log(err));
+}
+
+const styles = {
+    loading: {
+    },
+    button: {
+        marginTop: 15,
+        width: '100%',
+        maxWidth: 250,
+        marginBottom: 10,
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        padding: '0px 16px',
+        borderRadius: 2,
+        boxShadow: '0px 1px 3px rgba(0, 0, 0, .3)',
+        cursor: 'pointer',
+        outline: 'none',
+        border: 'none',
+        minHeight: 40
+    },
+    text: {
+        color: 'white',
+        fontSize: 14,
+        marginLeft: 10,
+        fontWeight: 'bold'
+    },
+    signOut: {
+        backgroundColor: 'black'
+    },
+    anchor: {
+        color: 'rgb(255, 153, 0)',
+        textDecoration: 'none'
+    },
+    body: {
+        padding: '0px 30px',
+        height: '78vh',
+        backgroundColor: '#464646'
     }
+}
 
-    const styles = {
-        loading: {
-        },
-        button: {
-            marginTop: 15,
-            width: '100%',
-            maxWidth: 250,
-            marginBottom: 10,
-            display: 'flex',
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            padding: '0px 16px',
-            borderRadius: 2,
-            boxShadow: '0px 1px 3px rgba(0, 0, 0, .3)',
-            cursor: 'pointer',
-            outline: 'none',
-            border: 'none',
-            minHeight: 40
-        },
-        text: {
-            color: 'white',
-            fontSize: 14,
-            marginLeft: 10,
-            fontWeight: 'bold'
-        },
-        signOut: {
-            backgroundColor: 'black'
-        },
-        anchor: {
-            color: 'rgb(255, 153, 0)',
-            textDecoration: 'none'
-        },
-        body: {
-            padding: '0px 30px',
-            height: '78vh',
-            backgroundColor: '#464646'
-        }
-    }
-
-    export default Authentication;
+export default Authentication;
