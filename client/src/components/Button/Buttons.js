@@ -8,7 +8,7 @@ import { FaGoogle, FaEnvelope } from 'react-icons/fa'
 function Buttons(props) {
     return (
         <div className="main">
-        <div className="container">
+        <div style={styles.container}>
             <button
                 style={{ ...styles.button, ...styles.google }}
                 onClick={() => Auth.federatedSignIn({ provider: 'Google' })}>
