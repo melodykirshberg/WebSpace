@@ -36,7 +36,7 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        backgroundColor: "red"
+        backgroundColor: "gainsboro"
     },
 
     container: {
