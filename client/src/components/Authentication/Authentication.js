@@ -5,7 +5,7 @@ import Buttons from "../Button/Buttons.js";
 import Form from "../../Form";
 import { Hub, Auth } from "aws-amplify";
 import { useStoreContext } from "../../utils/Store";
-import './Authentication.modules.css';
+import './Authentication.module.css';
 import styles from "./style.module.css";
 
 function Authentication(props) {
