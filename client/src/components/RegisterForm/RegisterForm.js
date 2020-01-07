@@ -1,6 +1,7 @@
-import React from "react"
-import Modal from 'react-bootstrap/Modal'
-import FormErrors from "../FormErrors"
+import React from "react";
+import Modal from 'react-bootstrap/Modal';
+import FormErrors from "../FormErrors";
+import "./registerform.css";
 
 
 
@@ -22,11 +23,11 @@ function RegisterForm(props) {
                                 <img className="userImage" src={require("./jen.png")} alt="userPicture" />
 
                             </div>
+                            <label htmlFor="name">Name:</label>
                             <div className="row my-1 mx-1  input-container ">
 
-                                {/* <label htmlFor="name">Name:</label> */}
                                 <input type="text"
-                                    value={props.nAme}
+                                    value={props.name}
                                     type="text"
                                     name="name"
                                     id="userName"
@@ -40,7 +41,7 @@ function RegisterForm(props) {
                         <div className="col-6">
 
                             <div className="row my-2 form-group">
-                                <label htmlFor=""></label>
+                                <label htmlFor="">Bio:</label>
                                 <textarea name="bio"
                                     className=" bioBox"
                                     value={props.bio}

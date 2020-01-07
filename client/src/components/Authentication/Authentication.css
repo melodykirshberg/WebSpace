@@ -1,34 +1,31 @@
+button {
+    margin-top: 15;
+    width: 10%;
+    max-width: 250;
+    margin-bottom: 10;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 16px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, .3);
+    cursor: pointer;
+    outline: none;
+    border: none;
+    min-height: 40;
+    background-color: black;
+    color: white
+}
 
-  button: {
-      marginTop: 15,
-      width: '100%',
-      maxWidth: 250,
-      marginBottom: 10,
-      display: 'flex',
-      justifyContent: 'flex-start',
-      alignItems: 'center',
-      padding: '0px 16px',
-      borderRadius: 2,
-      boxShadow: '0px 1px 3px rgba(0, 0, 0, .3)',
-      cursor: 'pointer',
-      outline: 'none',
-      border: 'none',
-      minHeight: 40
-  }
+h4 {
+    color: lightseagreen;
+    font-size: 14;
+    margin-left: 10;
+    font-weight: bold
+}
 
-  .text {
-      color: 'white',
-      fontSize: 14,
-      marginLeft: 10,
-      fontWeight: 'bold'
-  }
-
-  signOut: {
-      backgroundColor: 'black'
-  }
-
-  body{
-      padding: '0px 30px',
-      height: '78vh',
-      backgroundColor: '#464646'
-  }
+body {
+    padding: 0px 30px;
+    height: 20vh;
+    background-color: #464646
+}

@@ -1,0 +1,10 @@
+.modal-body {
+    background-color: white;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.button {
+    width: 100%;
+}

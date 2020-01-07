@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import UserModal from "./components/Modal";
 import Main from "./Pages/Main/Main.js";
-// import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import Authentication from "./components/Authentication/Authentication"
 import React, { useReducer, useEffect, useState } from 'react';
