@@ -62,7 +62,7 @@ function Authentication() {
                 userState.user && userState.user.signInUserSession && (
                     <div className="body">
                         <h4>
-                            Welcome {userState.user.signInUserSession.idToken.payload.email}
+                            Welcome {userState.user.signInUserSession.idToken.payload.name}
                         </h4>
                         <button
                             className="signOut"
