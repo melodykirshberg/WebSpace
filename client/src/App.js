@@ -9,8 +9,7 @@ import Nav from './components/Nav/Nav.js'
 import Buttons from './components/Button/Buttons.js'
 import Footer from './components/Footer/Footer'
 import Form from './Form'
-// import { Hub, Auth } from 'aws-amplify'
-// import { FaSignOutAlt } from 'react-icons/fa'
+
 
 
 function App() {
@@ -21,8 +20,8 @@ function App() {
         <Authentication />
       <div className="App">
         <Switch>
-          <Route exact path="/register" component={Register} />
-          <Main />
+          {/* <Route exact path="/register" component={Register} />
+          <Main /> */}
         </Switch>
         <Footer />
       </div>

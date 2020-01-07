@@ -4,7 +4,14 @@
         justify-content: 'center';
         align-items: 'center';
         flex-direction: 'column';
-    },
+        box-shadow: 0 10px 6px -3px black;;
+display: table;
+margin: 0 auto;
+height: 85%;
+width: 82%;
+vertical-align: middle;
+    }
+
     .button {
         width: '100%';
         max-width: 250;
