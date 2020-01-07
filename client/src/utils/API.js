@@ -7,7 +7,7 @@ export default {
     getUser: function (id) {
         return axios.get("/api/users/" + id);
     },
-    getUserByEmail: function(email){
+    getUserByEmail: function (email) {
         return axios.get("/api/users/email/" + email)
     },
     saveUser: function (userData) {

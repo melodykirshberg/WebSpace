@@ -7,9 +7,8 @@ import React from "react";
 import Nav from "./components/Nav/Nav.js";
 import Buttons from "./components/Button/Buttons.js";
 import Footer from "./components/Footer/Footer";
-import Form from "./Form";
-
 import { StoreProvider } from "./utils/Store";
+
 function App() {
   return (
     <StoreProvider>
