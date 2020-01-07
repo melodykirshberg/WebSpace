@@ -10,7 +10,6 @@ import Footer from "./components/Footer/Footer";
 import Form from "./Form";
 
 import { StoreProvider } from "./utils/Store";
-
 function App() {
   return (
     <StoreProvider>

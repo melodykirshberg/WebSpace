@@ -1,19 +1,16 @@
-import React, { useReducer, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import Nav from "../Nav/Nav.js";
 import Buttons from "../Button/Buttons.js";
-
 import Form from "../../Form";
-import "./Authentication.css";
 import styles from "./style.module.css";
 import { Hub, Auth } from "aws-amplify";
-
 import { useStoreContext } from "../../utils/Store";
+import API from "../../utils/API";
 
 function Authentication(props) {
   console.log(props);
   const [formState, updateFormState] = useState("base");
-  // TODO change userState -> state
   const [state, dispatch] = useStoreContext();
 
   useEffect(() => {
@@ -21,9 +18,30 @@ function Authentication(props) {
     Hub.listen("auth", data => {
       const { payload } = data;
       if (payload.event === "signIn") {
+        Auth.currentAuthenticatedUser()
+          .then(data => {
+            const userName = data.attributes.name
+            const userEmail = data.attributes.email
+            const userImage = data.attributes.picture
+            API.getUserByEmail(userEmail).then(userExist => {
+
+              if (!userExist.data) {
+                API.saveUser({
+                  name: userName,
+                  email: userEmail,
+                  picture: userImage
+                }).then(user => {
+                  console.log("User Created");
+                }).catch(err => {
+                  console.log("User creation failed");
+                });
+                props.history.push("/register");
+
+              }
+            })
+          })
+
         setImmediate(() => dispatch({ type: "SET_USER", user: payload.data }));
-        // TODO - Rework to use React Router instead of window object
-        setImmediate(() => props.history.push("/register"));
         updateFormState("base");
       }
       // this listener is needed for form sign ups since the OAuth will redirect & reload

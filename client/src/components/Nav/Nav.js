@@ -7,29 +7,29 @@ import { useStoreContext } from "../../utils/Store";
 
 //SIGN OUT FUNCTION
 function signOut() {
-  Auth.signOut()
-    .then(data => {
-      console.log("signed out: ", data);
-    })
-    .catch(err => console.log(err));
+    Auth.signOut()
+        .then(data => {
+            console.log("signed out: ", data);
+        })
+        .catch(err => console.log(err));
 }
 
 function Nav(props) {
-  const [state, dispatch] = useStoreContext();
-  return (
-    <nav className="nav" onClick={() => props.updateFormState("base")}>
-      WebSpace
+    const [state, dispatch] = useStoreContext();
+    return (
+        <nav className="nav" onClick={() => props.updateFormState("base")}>
+            WebSpace
       {state.user && state.user.signInUserSession && (
-        <div>
-          <h4>Welcome {state.user.signInUserSession.idToken.payload.name}</h4>
-          <button className="signOut" onClick={signOut}>
-            <FaSignOutAlt color="white" />
-            <p className="text">Sign Out</p>
-          </button>
-        </div>
-      )}
-    </nav>
-  );
+                <div>
+                    <h4>Welcome {state.user.signInUserSession.idToken.payload.name}</h4>
+                    <button className="signOut" onClick={signOut}>
+                        <FaSignOutAlt color="white" />
+                        <p className="text">Sign Out</p>
+                    </button>
+                </div>
+            )}
+        </nav>
+    );
 }
 
 export default Nav;

@@ -31,13 +31,13 @@ class Register extends Component {
         const userName = data.attributes.name
         const userEmail = data.attributes.email
         const userImage = data.attributes.picture
-        API.saveUser({
-          name: userName,
-          email: userEmail,
-          picture: userImage
-        })
-          .then(res => console.log(res, "New User Added to webspacedb"))
-          .catch(err => console.log(err));
+        // API.saveUser({
+        //   name: userName,
+        //   email: userEmail,
+        //   picture: userImage
+        // // })
+        //   .then(res => console.log(res, "New User Added to webspacedb"))
+        //   .catch(err => console.log(err));
 
       })
 
