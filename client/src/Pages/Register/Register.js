@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import Modal from 'react-bootstrap/Modal'
 import API from "../../utils/API";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
-import Jumbotron from 'react-bootstrap/Jumbotron'
-
+import Jumbotron from 'react-bootstrap/Jumbotron';
 import { Auth } from 'aws-amplify';
 
 

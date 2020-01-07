@@ -1,6 +1,6 @@
-import React, { Component, useState, useReducer } from 'react'
-import { Auth } from 'aws-amplify'
-import "./Nav.css"
+import React, { Component, useState, useReducer } from 'react';
+import { Auth } from 'aws-amplify';
+import "./Nav.module.css";
 
 const intialFormState = {
     username: ''

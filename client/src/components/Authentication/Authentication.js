@@ -1,11 +1,10 @@
 import React, { useReducer, useEffect, useState } from 'react';
-import Nav from '../Nav/Nav.js'
-import Buttons from '../Button/Buttons.js'
-
-import Form from '../../Form'
-import './Authentication.css'
-import { Hub, Auth } from 'aws-amplify'
-import { FaSignOutAlt } from 'react-icons/fa'
+import Nav from '../Nav/Nav.js';
+import Buttons from '../Button/Buttons.js';
+import Form from '../../Form';
+import { Hub, Auth } from 'aws-amplify;'
+import { FaSignOutAlt } from 'react-icons/fa';
+import './Authentication.modules.css';
 
 const initialUserState = { user: null, loading: true }
 

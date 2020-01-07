@@ -1,11 +1,10 @@
-import React, { useState, Component } from "react"
-import Modal from 'react-bootstrap/Modal'
-import "./register.css"
-
-import API from "../../utils/API"
-import { Formik } from "formik"
-import * as Yup from "yup"
+import React, { useState, Component } from "react";
+import Modal from 'react-bootstrap/Modal';
+import API from "../../utils/API";
+import { Formik } from "formik";
+import * as Yup from "yup";
 import Error from "./Error";
+import "./Register.module.css";
 
 
 
