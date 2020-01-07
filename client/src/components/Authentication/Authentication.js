@@ -3,6 +3,7 @@ import Nav from '../Nav/Nav.js'
 import Buttons from '../Button/Buttons.js'
 
 import Form from '../../Form'
+import './Authentication.css'
 import { Hub, Auth } from 'aws-amplify'
 import { FaSignOutAlt } from 'react-icons/fa'
 
@@ -36,7 +37,7 @@ function Authentication() {
     // This renders the custom form
     if (formState === 'email') {
         return (
-            <div>
+            <div className="container">
                 <Nav updateFormState={updateFormState} />
                 <Form />
             </div>
@@ -47,7 +48,7 @@ function Authentication() {
         <div>
             <Nav updateFormState={updateFormState} />
             {userState.loading && (
-                <div style={styles.body}>
+                <div className="body">
                     <p>Loading...</p>
                 </div>
             )
@@ -59,16 +60,16 @@ function Authentication() {
             }
             {
                 userState.user && userState.user.signInUserSession && (
-                    <div style={styles.body}>
+                    <div className="body">
                         <h4>
                             Welcome {userState.user.signInUserSession.idToken.payload.email}
                         </h4>
                         <button
-                            style={{ ...styles.button, ...styles.signOut }}
+                            className="signOut"
                             onClick={signOut}
                         >
                             <FaSignOutAlt color='white' />
-                            <p style={{ ...styles.text }}>Sign Out</p>
+                            <p className="text">Sign Out</p>
                         </button>
                     </div>
                 )
@@ -113,11 +114,16 @@ function signOut() {
         .catch(err => console.log(err));
 }
 
-const styles = {
-    loading: {
+   const styles = {
+    container: {
+        height: '80vh',
+        width: '100vw',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column'
     },
     button: {
-        marginTop: 15,
         width: '100%',
         maxWidth: 250,
         marginBottom: 10,
@@ -132,23 +138,36 @@ const styles = {
         border: 'none',
         minHeight: 40
     },
+    email: {
+        backgroundColor: '#db4437'
+    },
+    checkAuth: {
+        backgroundColor: '#02bd7e'
+    },
+    signOut: {
+        backgroundColor: 'black'
+    },
+    withAuthenticator: {
+        backgroundColor: '#FF9900'
+    },
+    icon: {
+        height: 16,
+        marginLeft: -1
+    },
     text: {
         color: 'white',
         fontSize: 14,
         marginLeft: 10,
         fontWeight: 'bold'
     },
-    signOut: {
-        backgroundColor: 'black'
+    blackText: {
+        color: 'black'
     },
-    anchor: {
-        color: 'rgb(255, 153, 0)',
-        textDecoration: 'none'
+    grayText: {
+        color: 'rgba(0, 0, 0, .75)'
     },
-    body: {
-        padding: '0px 30px',
-        height: '78vh',
-        backgroundColor: '#464646'
+    orangeText: {
+        color: '#FF9900'
     }
 }
 
