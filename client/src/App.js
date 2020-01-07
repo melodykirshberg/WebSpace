@@ -17,7 +17,7 @@ function App() {
 
   return (
     <Router>
-        <Authentication />
+      <Authentication />
       <div className="App">
         <Switch>
           {/* <Route exact path="/register" component={Register} />
