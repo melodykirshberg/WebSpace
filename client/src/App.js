@@ -8,8 +8,7 @@ import Nav from './components/Nav/Nav.js'
 import Buttons from './components/Button/Buttons.js'
 import Footer from './components/Footer/Footer'
 import Form from './Form'
-// import { Hub, Auth } from 'aws-amplify'
-// import { FaSignOutAlt } from 'react-icons/fa'
+
 
 
 function App() {

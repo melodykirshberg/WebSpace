@@ -1,5 +1,7 @@
 body{
   background-color: white;
+  height: 100vh;
+  width: 100vw;
   
 }
 
@@ -36,41 +38,4 @@ top: 80px;
 background-color: #D3D3D3 !important;
 border-radius: 0px;
 margin-bottom: 100px;
-}
-
-.signInBtn{
-  font-weight: 600;
- font-size: 15px;
- line-height: 22px;
-  padding: 16px;
-  margin-top: 15px;
-  width: 250px;
-  background-color:white;
-  letter-spacing: 1px;
-  box-shadow:  1px 5px 3px rgba(0, 0, 0, 0.25);
-  justify-content: space-around;
-  border-radius: 0 !important;
-}
-.buttonRow{
-  margin-top: 20px;
-}
-
-/* LoginForm Component  */
-
-.inputField{
-  border-radius: 20px;
-  margin-top: 10px;
-  width: 300px;
-  padding: 8px;
- 
-}
-
-.inputRow{
-  margin-top: 50px;
-}
-
-.login-btn{
-  width: 150px;
-  border-radius: 20px;
-  background-color: #72C850
 }
