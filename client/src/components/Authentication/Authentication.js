@@ -1,11 +1,10 @@
 import React, { useReducer, useEffect, useState } from 'react';
-import Nav from '../Nav/Nav.js';
-import Buttons from '../Button/Buttons.js';
-import Footer from '../Footer/Footer.js';
-import Form from '../../Form';
-import { Hub, Auth } from 'aws-amplify';
-import { FaSignOutAlt } from 'react-icons/fa';
-import "./Authentication.css";
+import Nav from '../Nav/Nav.js'
+import Buttons from '../Button/Buttons.js'
+
+import Form from '../../Form'
+import { Hub, Auth } from 'aws-amplify'
+import { FaSignOutAlt } from 'react-icons/fa'
 
 const initialUserState = { user: null, loading: true }
 
@@ -79,42 +78,42 @@ function Authentication() {
 }
 
 
-    //REDUCER
-    function reducer(state, action) {
-        switch (action.type) {
-            case 'setUser':
-                return { ...state, user: action.user, loading: false }
-            case 'loaded':
-                return { ...state, loading: false }
-            default:
-                return state
-        }
+//REDUCER
+function reducer(state, action) {
+    switch (action.type) {
+        case 'setUser':
+            return { ...state, user: action.user, loading: false }
+        case 'loaded':
+            return { ...state, loading: false }
+        default:
+            return state
     }
+}
 
 
-    //CHECK USER FUNCTION
-    async function checkUser(dispatch) {
-        try {
-            const user = await Auth.currentAuthenticatedUser()
-            console.log('user: ', user)
-            dispatch({ type: 'setUser', user })
-        } catch (err) {
-            console.log('err: ', err)
-            dispatch({ type: 'loaded' })
-        }
+//CHECK USER FUNCTION
+async function checkUser(dispatch) {
+    try {
+        const user = await Auth.currentAuthenticatedUser()
+        console.log('user: ', user)
+        dispatch({ type: 'setUser', user })
+    } catch (err) {
+        console.log('err: ', err)
+        dispatch({ type: 'loaded' })
     }
+}
 
 
-    //SIGN OUT FUNCTION
-    function signOut() {
-        Auth.signOut()
-            .then(data => {
-                console.log('signed out: ', data)
-            })
-            .catch(err => console.log(err));
-    }
+//SIGN OUT FUNCTION
+function signOut() {
+    Auth.signOut()
+        .then(data => {
+            console.log('signed out: ', data)
+        })
+        .catch(err => console.log(err));
+}
 
     const styles = {        
     }
 
-    export default Authentication;
+export default Authentication;

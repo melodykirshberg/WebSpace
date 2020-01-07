@@ -1,63 +1,49 @@
 import React, { Component } from "react";
 import Modal from 'react-bootstrap/Modal'
-import "./register.css"
 import API from "../../utils/API";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
-import FormErrors from "../../components/FormErrors";
-import { Redirect } from "react-router-dom";
+import Jumbotron from 'react-bootstrap/Jumbotron'
 
-import Main from "../Main/Main";
+import { Auth } from 'aws-amplify';
+
 
 
 
 class Register extends Component {
 
-  //initial state of our form these are all the info we will require from the user. 
   state = {
-    show: true,
-    name: "",
-    bio: "",
-    website: "",
-    company: "",
-    email: "",
-    motives: "",
-    formErrors: { name: '', email: '' },
-    nameValid: false,
-    emaildValid: false,
-    formValid: false
+    show: true
+  }
+
+  //this handles the modal closing
+
+  handleModalClose = () => {
+    this.setState({ show: false });
+  }
+
+  //When page register loads we get the information from the logged user and send to our DB we store name, email and picture
+
+  componentDidMount = () => {
+
+
+    Auth.currentAuthenticatedUser()
+      .then(function (data) {
+        const userName = data.attributes.name
+        const userEmail = data.attributes.email
+        const userImage = data.attributes.picture
+        API.saveUser({
+          name: userName,
+          email: userEmail,
+          picture: userImage
+        })
+          .then(res => console.log(res, "New User Added to webspacedb"))
+          .catch(err => console.log(err));
+
+      })
+
 
   }
 
-
-  //when user insert a value 
-  handleInputChange = (event) => {
-    let nam = event.target.name;
-    let val = event.target.value;
-    this.setState({ [nam]: val })
-  }
-
-
-  //when form it's submmited we make a Post request to our DB to save the info
-  handleSubmit = (e) => {
-
-    e.preventDefault()
-    API.saveUser({
-      name: this.state.name,
-      website: this.state.website,
-      company: this.state.company,
-      bio: this.state.bio,
-      email: this.state.email,
-      motives: this.state.motives
-
-    }).then(res => console.log(res.data))
-    this.setState({
-      show: false
-    })
-
-    //redirects user to main page
-    this.props.history.push('/main')
-
-  }
 
   //passing the data trough props to our components Modal and Register Form
 
@@ -65,21 +51,26 @@ class Register extends Component {
   render() {
     return (
 
-      <form action="">
 
-        <Modal aria-labelledby="contained-modal-title-vcenter"
-          centered size="lg" show={this.state.show} onHide={this.handleClose}>
+
+      <Modal aria-labelledby=""
+
+        centered size="lg" show={this.state.show} onHide={this.handleClose}>
+        <Modal.Body>
 
           <RegisterForm
-            handleSubmit={this.handleSubmit}
-            handleInputChange={this.handleInputChange}
-            formErrors={this.state.formErrors}
+            handleModalClose={this.handleModalClose}
           />
-        </Modal>
+
+
+        </Modal.Body>
+
+
+      </Modal >
 
 
 
-      </form >
+
     )
   }
 }
