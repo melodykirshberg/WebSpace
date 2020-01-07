@@ -12,7 +12,7 @@ function ControlledCarousel() {
     };
 
     return (
-        <Carousel className="bg-dark " activeIndex={index} direction={direction} onSelect={handleSelect}>
+        <Carousel className="bg-success " activeIndex={index} direction={direction} onSelect={handleSelect}>
             <Carousel.Item>
                 <card> HELLOOO</card>
                 <Carousel.Caption>
