@@ -14,7 +14,7 @@ function Authentication(props) {
   console.log(props);
   const [formState, updateFormState] = useState("base");
   // TODO change userState -> state
-  const [userState, dispatch] = useStoreContext();
+  const [state, dispatch] = useStoreContext();
 
   useEffect(() => {
     // set listener for auth events
@@ -50,12 +50,12 @@ function Authentication(props) {
   return (
     <div>
       <Nav updateFormState={updateFormState} />
-      {userState.loading && (
+      {state.loading && (
         <div className="body">
           <p>Loading...</p>
         </div>
       )}
-      {!userState.user && !userState.loading && (
+      {!state.user && !state.loading && (
         <Buttons updateFormState={updateFormState} />
       )}
     </div>
