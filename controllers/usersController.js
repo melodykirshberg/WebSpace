@@ -15,6 +15,16 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
+    findByEmail: function (req, res) {
+        db.User.findOne({ email: req.params.email })
+            .then(user => {
+                if (user) {
+                    return res.json(true);
+                } else {
+                    return res.json(false);
+                }
+            })
+    },
     create: function (req, res) {
         console.log("create controller hit");
         db.User
