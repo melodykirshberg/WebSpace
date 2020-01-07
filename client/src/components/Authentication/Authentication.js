@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect, useState } from "react";
+import { withRouter } from "react-router-dom";
 import Nav from "../Nav/Nav.js";
 import Buttons from "../Button/Buttons.js";
 
@@ -9,7 +10,8 @@ import { Hub, Auth } from "aws-amplify";
 
 import { useStoreContext } from "../../utils/Store";
 
-function Authentication() {
+function Authentication(props) {
+  console.log(props);
   const [formState, updateFormState] = useState("base");
   // TODO change userState -> state
   const [userState, dispatch] = useStoreContext();
@@ -21,9 +23,7 @@ function Authentication() {
       if (payload.event === "signIn") {
         setImmediate(() => dispatch({ type: "SET_USER", user: payload.data }));
         // TODO - Rework to use React Router instead of window object
-        setImmediate(() =>
-          window.history.pushState({}, null, "http://localhost:3000/")
-        );
+        setImmediate(() => props.history.push("/register"));
         updateFormState("base");
       }
       // this listener is needed for form sign ups since the OAuth will redirect & reload
@@ -74,4 +74,4 @@ async function checkUser(dispatch) {
   }
 }
 
-export default Authentication;
+export default withRouter(Authentication);
