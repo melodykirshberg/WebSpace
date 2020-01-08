@@ -5,31 +5,43 @@
 
 /*card*/
 .bCard {
-    margin-top: 60px;
-    box-shadow:0 10px 6px -3px  black;
+    margin-top: 80px;
+    box-shadow: 2px 10px 6px 3px  black;
     display: table;
     height: 65%;
-    width: 50%;
+    width: 45%;
     vertical-align: middle;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-style: solid;
+    background: rgb(255,153,102);
+    background: linear-gradient(90deg, rgba(255,153,102,1) 9%, rgba(255,153,102,1) 48%, rgba(255,94,98,0.8914916308320203) 100%);
+    border-radius: 5px;
+ 
+    
     text-align: center;
+  
    
 }
 
+.bTitle{
+    margin-top: 10px;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+
+}
 
 /* app bio  */
 
 .bBio {
-    font-size: 25px;
-    color: black;
+    font-size: 20px;
+    color: white;
     align-items: center;
-    font-family: 'Arimo', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 20px;
     margin-top: 20px;
+    letter-spacing: 0px;
 }   
 
 
@@ -40,15 +52,21 @@
 
     margin-bottom: 10px;
     display: flex;
+    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
+<<<<<<< HEAD
+=======
+    min-height: 40px;    
+>>>>>>> a6d03b3adb6fad225eeb7b32f0f9f272e7baa2c0
     border-radius: 4px;
     cursor: pointer;
     border: none;
     width: 250px;
+    padding: 0px 12px;
 }
 
-.bGoogle:hover{
-    box-shadow: gray;
+.bGoogle:hover, .bEmail:hover{
+    box-shadow: 0px 2px 3px rgb(105, 105, 105);
 }
  /* --------google button---------  */
 
@@ -56,56 +74,61 @@
 
  /* --------sign in with email button---------  */
 .bEmail {
-    background-color: #db4437;
+    background-color: #d8db37;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, .3);
     width: 250px;
-  
+    font-family: 'Montserrat', sans-serif;  
     margin-bottom: 10px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0px 9px;
-    border-radius: 4;
+    padding: 0px 12px;
+    border-radius: 4px;
     cursor: pointer;
     outline: none;
     border: none;
-    min-height: 40;
+    min-height: 40px;
 }
  /* --------sign in with email button---------  */
 
- /* text around email button */
-.bEmailtext {
-    color: yellow;
-    font-size: 14;
-    margin-left: 10;
-    font-weight: bold;
+
+
+ /* text inside email button */
+ .bEmailtext {
+    color:white;
+    font-family: 'Montserrat', sans-serif;  
+    font-size: 15px;
+    margin-left: 10px;
+ 
 }
 
- /* text around email button */
+ /* text inside email button */
 
 
 
- /* text around google button */
+ /* text inside google button */
 
 .bGoogletext {
     align-items: center;
-    color: rgba(0, 0, 0, .75),
+    color: rgba(0, 0, 0, .75);
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;  
+    margin-left: 10px;
+    
 }
 
-.icon {
-    height: 16;
-    margin-left: -1;
-    align-items: center;
-}
+ /* text inside google button */
+
+
 
 
 /* -----initial page picture---- */
 .bPic {
 width: 200px;
 left: 44.12%;
- right: 44.17%;
-top: 26%;
-bottom: 54.14%;
+right: 44.17%;
+margin-top: 18px;
+margin-bottom: 10px;
 }
 
 

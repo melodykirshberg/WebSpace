@@ -51,6 +51,7 @@ class RegisterForm extends Component {
                         console.log(userEmail)
                         ///update the user in the db
 
+
                         API.saveUser({
                             name: values.name,
                             website: values.website,
