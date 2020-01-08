@@ -3,10 +3,10 @@ import { withRouter } from "react-router-dom";
 import Nav from "../Nav/Nav.js";
 import Buttons from "../Button/Buttons.js";
 import Form from "../../Form";
-import styles from "./style.module.css";
 import { Hub, Auth } from "aws-amplify";
 import { useStoreContext } from "../../utils/Store";
 import API from "../../utils/API";
+import styles from "./style.module.css";
 
 function Authentication(props) {
   console.log(props);
