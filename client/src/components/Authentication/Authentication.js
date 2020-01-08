@@ -14,10 +14,17 @@ function Authentication(props) {
   const [state, dispatch] = useStoreContext();
 
   useEffect(() => {
+
+
+
     // set listener for auth events
+
+
     Hub.listen("auth", data => {
       const { payload } = data;
       if (payload.event === "signIn") {
+
+
         Auth.currentAuthenticatedUser()
           .then(data => {
             const userName = data.attributes.name
@@ -35,9 +42,10 @@ function Authentication(props) {
                 }).catch(err => {
                   console.log("User creation failed");
                 });
-                props.history.push("/register");
+
 
               }
+              props.history.push("/register");
             })
           })
 

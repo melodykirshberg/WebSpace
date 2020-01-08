@@ -4,10 +4,11 @@ import Main from "./Pages/Main/Main.js";
 import Register from "./Pages/Register/Register";
 import Authentication from "./components/Authentication/Authentication";
 import React from "react";
-import Nav from "./components/Nav/Nav.js";
+// import Nav from "./components/Nav/Nav.js";
 import Buttons from "./components/Button/Buttons.js";
 import Footer from "./components/Footer/Footer";
-import { StoreProvider } from "./utils/Store";
+import { StoreProvider } from "./utils/Store"
+
 
 function App() {
   return (
@@ -16,8 +17,8 @@ function App() {
         <Authentication />
         <div className="App">
           <Switch>
-            {/* <Route exact path="/register" component={Register} />
-            <Main /> */}
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/main" component={Main} />
           </Switch>
           <Footer />
         </div>
