@@ -56,14 +56,11 @@ const styles = {
         letterSpacing: "0.11em"
     },
     navSignOut: {
-        position: "absolute",
         background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #D6D5D5",
         mixBlendMode: "normal",
         fontFamily: "Montserrat",
-        fontStyle: "normal",
         fontWeight: "500",
         fontSize: "18px",
-        lineHeight: "22px",
         display: "flex",
         alignItems: "center",
         textAlign: "center",
