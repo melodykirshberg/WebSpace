@@ -5,11 +5,9 @@ import "./Footer.css";
 function Footer() {
     return (
 
-        <div className="appFooter">
+        <div className="footer">
             <footer>
-                <div className="container">
-                    <small>Copyright 2019</small>
-                </div>
+                    <small>Copyright 2019 ©</small>
             </footer>
         </div>
     )

@@ -7,94 +7,99 @@ import { FaGoogle, FaEnvelope } from 'react-icons/fa'
 
 function Buttons(props) {
     return (
-        <div className="main">
-            <div style={styles.container}>
-                <button
-                    style={{ ...styles.button, ...styles.google }}
-                    onClick={() => Auth.federatedSignIn({ provider: 'Google' })}>
-                    <FaGoogle color='red' />
-                    <p style={{ ...styles.text, ...styles.grayText }}>Sign Up with Google</p>
-                </button>
+        <div style={styles.bCard}>
+            <h2 style={styles.bTitle}>Web Space</h2>
+            <img src="https://files.slack.com/files-pri/TNVE1EJD6-FS20PJ51R/image.png" style={styles.bPic} />
+            <h4 style={styles.bBio}>Get to know better the people you are about to network with.. ? toughts?</h4>
+            <button
+                style={styles.bGoogle}
+                onClick={() => Auth.federatedSignIn({ provider: 'Google' })}>
+                <FaGoogle color='red' />
+                <p style={styles.bGoogletext}>Sign Up with Google</p>
+            </button>
 
-                <button
-                    style={{ ...styles.button, ...styles.email }}
-                    onClick={() => props.updateFormState('email')}
-                >
-                    <FaEnvelope color='white' />
-                    <p style={{ ...styles.text }}>Sign Up with Email</p>
-                </button>
-            </div>
-        </div >
+            <button
+                style={styles.bEmail}
+                onClick={() => props.updateFormState('email')}
+            >
+                <FaEnvelope color='white' />
+                <p style={{ ...styles.text }}>Sign Up with Email</p>
+            </button>
+        </div>
     );
 }
 
 const styles = {
-    main: {
-        height: '100vh',
-        width: '100vw',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        backgroundColor: "gainsboro"
-    },
 
-    container: {
+    bCard: {
         boxShadow: "0 10px 6px -3px black",
-        display: "table",
-        height: "65%",
-        width: "50%",
-        verticalAlign: "middle",
+        height: "100%",
+        width: "100%",
         display: 'flex',
-        justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        borderStyle: "solid"
+        borderStyle: "solid",
+        backgroundColor: "#D3D3D3"
     },
-    button: {
-        width: '100%',
+    bTitle: {
+        fontSize: "200",
+        fontWeight: "bold"
+    },
+    bPic: {
+        width: "200px",
+        // left: "44.12%",
+        // right: "44.17%",
+        // top: "26%",
+        // bottom: "54.14%",
+    },
+    bBio: {
+        fontSize: "10",
+        color: "black",
+        alignItems: "center"
+    },
+    bGoogle: {
+        width: '120%',
+        boxShadow: '0px 1px 3px rgba(0, 0, 0, .3)',
         maxWidth: 250,
         marginBottom: 10,
         display: 'flex',
         alignItems: 'center',
-        // justifyContent: 'flex-start',
         padding: '0px 9px',
         borderRadius: 4,
-        boxShadow: '0px 1px 3px rgba(0, 0, 0, .3)',
         cursor: 'pointer',
         border: 'none'
-        // minHeight: 20
+
     },
-    email: {
-        backgroundColor: '#db4437'
+    bGoogletext: {
+        alignItems: "center",
+        color: "rgba(0, 0, 0, .75)"
     },
-    checkAuth: {
-        backgroundColor: '#02bd7e'
+    bEmail: {
+        backgroundColor: '#db4437',
+        boxShadow: '0px 1px 3px rgba(0, 0, 0, .3)',
+        width: '120%',
+        maxWidth: 250,
+        marginBottom: 10,
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        padding: '0px 9px',
+        borderRadius: 4,
+        cursor: 'pointer',
+        outline: 'none',
+        border: 'none',
+        minHeight: 40
     },
-    signOut: {
-        backgroundColor: 'black'
-    },
-    withAuthenticator: {
-        backgroundColor: '#FF9900'
+    bEmailtext: {
+        color: 'yellow',
+        fontSize: 14,
+        marginLeft: 10,
+        fontWeight: 'bold',
     },
     icon: {
         height: 16,
         marginLeft: -1,
         alignItems: "center"
-    },
-    text: {
-        color: 'white',
-        fontSize: 14,
-        marginLeft: 10,
-        fontWeight: 'bold'
-    },
-    blackText: {
-        color: 'black',
-        alignItems: 'center'
-    },
-    grayText: {
-        color: 'rgba(0, 0, 0, .75)',
-        alignItems: 'center'
     }
 }
 

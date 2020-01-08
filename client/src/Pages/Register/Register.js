@@ -19,7 +19,6 @@ class Register extends Component {
     this.setState({ show: false });
     this.props.history.push("/main");
   }
-
   //passing the data trough props to our components Modal and Register Form
   render() {
     return (
