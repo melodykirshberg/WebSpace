@@ -7,11 +7,11 @@ import { useStoreContext } from "../../utils/Store";
 
 //SIGN OUT FUNCTION
 function signOut() {
-  Auth.signOut()
-    .then(data => {
-      console.log("signed out: ", data);
-    })
-    .catch(err => console.log(err));
+    Auth.signOut()
+        .then(data => {
+            console.log("signed out: ", data);
+        })
+        .catch(err => console.log(err));
 }
 
 function Nav(props) {

@@ -14,15 +14,15 @@ function Buttons(props) {
                 <p style={{ ...styles.text, ...styles.grayText }}>Sign Up with Google</p>
             </button>
 
-            <button
-                style={{ ...styles.button, ...styles.email }}
-                onClick={() => props.updateFormState('email')}
-            >
-                <FaEnvelope color='white' />
-                <p style={{ ...styles.text }}>Sign Up with Email</p>
-            </button>
-        </div>
-            </div >
+                <button
+                    style={{ ...styles.button, ...styles.email }}
+                    onClick={() => props.updateFormState('email')}
+                >
+                    <FaEnvelope color='white' />
+                    <p style={{ ...styles.text }}>Sign Up with Email</p>
+                </button>
+            </div>
+        </div >
     );
 }
 
