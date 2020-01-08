@@ -11,9 +11,6 @@ export default {
         return axios.get("/api/users/email/" + email)
     },
 
-    updateUser: function (userData) {
-        return axios.put("/api/users/" + userData);;
-    },
     saveUser: function (userData) {
         return axios.post("/api/users", userData);
     },
