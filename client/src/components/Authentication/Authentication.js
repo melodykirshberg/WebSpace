@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import Nav from "../Nav/Nav.js";
 import Buttons from "../Button/Buttons.js";
 import Form from "../../Form/Form";
-import styles from "./style.module.css";
+import "./authentication.css";
 import { Hub, Auth } from "aws-amplify";
 import { useStoreContext } from "../../utils/Store";
 import API from "../../utils/API";
@@ -66,7 +66,7 @@ function Authentication(props) {
   // This renders the custom form
   if (formState === "email") {
     return (
-      <div className={styles.container}>
+      <div className="authContain">
         <Nav updateFormState={updateFormState} />
         <Form />
       </div>

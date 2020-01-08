@@ -37,7 +37,7 @@ class Main extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div>
                 <UserCard results={this.state.users} />
 
             </div>
