@@ -54,10 +54,7 @@
     display: flex;
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
-<<<<<<< HEAD
-=======
     min-height: 40px;    
->>>>>>> a6d03b3adb6fad225eeb7b32f0f9f272e7baa2c0
     border-radius: 4px;
     cursor: pointer;
     border: none;
@@ -118,10 +115,6 @@
 }
 
  /* text inside google button */
-
-
-
-
 /* -----initial page picture---- */
 .bPic {
 width: 200px;

@@ -18,7 +18,7 @@ function Nav(props) {
     const [state, dispatch] = useStoreContext();
 
     return (
-        <nav className="navbar" onClick={() => props.updateFormState("base")}>
+        <nav className="navBar" onClick={() => props.updateFormState("base")}>
             <h1 className="navTitle" href="#">Web Space</h1>
             {state.user && state.user.signInUserSession && (
                 <div>
