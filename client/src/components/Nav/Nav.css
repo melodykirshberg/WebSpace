@@ -1,13 +1,36 @@
-.nav {
-    font-size: 24px;
-    margin: 0px;
-    margin-left: 0px;
+.navbar {
+    font-size: "24px";
     font-weight: '400px';
-    color: '#000000';
-    padding: "10px";
+    color: #000000;
     background-color: ghostwhite;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.25);
 }
-
-.btnSignOut {
-    background-color: green;
+/*
+navTitle: {
+    fontFamily: "Bodoni MT",
+    fontWeight: "bold",
+    fontSize: "36px",
+    lineHeight: "43px",
+    letterSpacing: "0.11em"
+},
+navGreet: {
+    fontFamily: "Bodoni MT",
+    fontWeight: "bold",
+    fontSize: "26px",
+    display: "flex",
+    textAlign: "right",
+    letterSpacing: "0.11em"
+},
+navSignOut: {
+    background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #D6D5D5",
+    mixBlendMode: "normal",
+    fontFamily: "Montserrat",
+    fontWeight: "500",
+    fontSize: "18px",
+    display: "flex",
+    alignItems: "center",
+    textAlign: "center",
+    color: "#999999"
 }
+} */

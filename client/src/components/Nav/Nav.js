@@ -16,7 +16,7 @@ function signOut() {
 function Nav(props) {
     const [state, dispatch] = useStoreContext();
     return (
-        <nav style={styles.navbar} onClick={() => props.updateFormState("base")}>
+        <nav className="nav" onClick={() => props.updateFormState("base")}>
             <h1 style={styles.navTitle}>Web Space</h1>
             {state.user && state.user.signInUserSession && (
                 <div>
