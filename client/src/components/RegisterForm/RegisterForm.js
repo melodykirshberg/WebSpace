@@ -43,6 +43,7 @@ class RegisterForm extends Component {
     return (
       <div>
 
+<<<<<<< HEAD
         <Formik
           initialValues={{ name: "", email: "", bio: "" }}
           validationSchema={validationSchema}
@@ -73,13 +74,39 @@ class RegisterForm extends Component {
               } else {
                 this.props.handleModalClose();
               }
+=======
+                <Formik
+                    initialValues={{ name: "", email: "", bio: "" }}
+                    validationSchema={validationSchema}
+                    onSubmit={(values, { setSubtmitting }) => {
+                        const userEmail = values.email
+                        console.log(userEmail)
+                        ///update the user in the db
 
+>>>>>>> a6d03b3adb6fad225eeb7b32f0f9f272e7baa2c0
 
+                        API.saveUser({
+                            name: values.name,
+                            website: values.website,
+                            company: values.company,
+                            bio: values.bio,
+                            email: values.email,
+                            motives: values.motives
+
+<<<<<<< HEAD
             })
 
 
 
           }}
+=======
+                        }).then(res => {
+                            this.props.handleModalClose();
+                            console.log("Saved to database")
+                        })
+
+                    }}
+>>>>>>> a6d03b3adb6fad225eeb7b32f0f9f272e7baa2c0
 
 
         >
