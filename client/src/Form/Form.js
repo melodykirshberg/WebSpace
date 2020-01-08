@@ -1,6 +1,6 @@
 import React, { useState, useReducer } from 'react'
-
 import { Auth } from 'aws-amplify'
+import "./Form.css";
 
 const initialFormState = {
     username: '', password: '', email: '', confirmationCode: ''
@@ -86,9 +86,9 @@ export default function Form(props) {
                 {renderForm(formState)}
             </div>
             { formType === 'signUp' && (
-                    <p style={styles.other}>
+                    <p className="other">
                         Already have an account? <span
-                            style={styles.anchor}
+                            className="anchor"
                             onClick={() => updateFormType('signIn')}
                         >Sign In</span>
                     </p>
@@ -96,9 +96,9 @@ export default function Form(props) {
             }
             
             { formType === 'signIn' && (
-                    <p style={styles.footer}>
+                    <p className="footer">
                         Need an account? <span
-                            style={styles.anchor}
+                            className="anchor"
                             onClick={() => updateFormType('signUp')}
                         >Sign Up</span>
                     </p>
@@ -110,27 +110,27 @@ export default function Form(props) {
 
 function SignUp(props) {
     return (
-        <div style={styles.formCard}>
+        <div className="container">
             <input
                 name='username'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                style={styles.input}
+                className="input"
                 placeholder='username'
             />
             <input
                 name='email'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                style={styles.input}
+                className="input"
                 placeholder='email'
             />
             <input
                 type='password'
                 name='password'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                style={styles.input}
+                className="input"
                 placeholder='password'
             />
-            <button onClick={props.signUp} style={styles.button}>
+            <button onClick={props.signUp} className="button">
                 Sign Up
       </button>
         </div>
@@ -139,21 +139,21 @@ function SignUp(props) {
 
 function SignIn(props) {
     return (
-        <div style={styles.container}>
+        <div className="container">
             <input
                 name='username'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                style={styles.input}
+                className="input"
                 placeholder='username'
             />
             <input
                 type='password'
                 name='password'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                style={styles.input}
+                className="input"
                 placeholder='password'
             />
-            <button style={styles.button} onClick={props.signIn}>
+            <button className="button" onClick={props.signIn}>
                 Sign In
       </button>
         </div>
@@ -162,62 +162,17 @@ function SignIn(props) {
 
 function ConfirmSignUp(props) {
     return (
-        <div style={styles.container}>
+        <div className="container">
             <input
                 name='confirmationCode'
                 placeholder='Confirmation Code'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                style={styles.input}
+                className="input"
             />
-            <button onClick={props.confirmSignUp} style={styles.button}>
+            <button onClick={props.confirmSignUp} className="button">
                 Confirm Sign Up
       </button>
         </div>
     )
 }
 
-const styles = {
-    formCard: {
-        display: 'flex',
-        flexDirection: 'column',
-        marginTop: 150,
-        justifyContent: 'center',
-        alignItems: 'center',
-        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"
-    },
-    input: {
-        height: 45,
-        marginTop: 8,
-        width: 300,
-        maxWidth: 300,
-        padding: '0px 8px',
-        fontSize: 16,
-        outline: 'none',
-        border: 'none',
-        borderBottom: '2px solid rgba(0, 0, 0, .3)'
-    },
-    button: {
-        backgroundColor: '#006bfc',
-        color: 'white',
-        width: 316,
-        height: 45,
-        marginTop: 10,
-        fontWeight: '600',
-        fontSize: 14,
-        cursor: 'pointer',
-        border: 'none',
-        outline: 'none',
-        borderRadius: 3,
-        boxShadow: '0px 1px 3px rgba(0, 0, 0, .3)',
-    },
-    other: {
-        fontWeight: '600',
-        textAlign: 'center',
-        backgroundColor: "#464646",
-        color: 'white'
-    },
-    anchor: {
-        color: '#006bfc',
-        cursor: 'pointer'
-    }
-}
