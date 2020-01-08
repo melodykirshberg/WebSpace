@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import Nav from "../Nav/Nav.js";
 import Buttons from "../Button/Buttons.js";
-import Form from "../../Form";
+import Form from "../../Form/Form";
 import styles from "./style.module.css";
 import { Hub, Auth } from "aws-amplify";
 import { useStoreContext } from "../../utils/Store";
