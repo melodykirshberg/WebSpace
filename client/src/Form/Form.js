@@ -1,11 +1,9 @@
 import React, { useState, useReducer } from 'react'
 import { Auth } from 'aws-amplify'
 import "./Form.css";
-
 const initialFormState = {
     username: '', password: '', email: '', confirmationCode: ''
 }
-
 function reducer(state, action) {
     switch (action.type) {
         case 'updateFormState':
@@ -16,7 +14,6 @@ function reducer(state, action) {
             return state
     }
 }
-
 async function signUp({ username, password, email }, updateFormType) {
     try {
         await Auth.signUp({
@@ -28,7 +25,6 @@ async function signUp({ username, password, email }, updateFormType) {
         console.log('error signing up..', err)
     }
 }
-
 async function confirmSignUp({ username, confirmationCode }, updateFormType) {
     try {
         await Auth.confirmSignUp(username, confirmationCode)
@@ -38,7 +34,6 @@ async function confirmSignUp({ username, confirmationCode }, updateFormType) {
         console.log('error signing up..', err)
     }
 }
-
 async function signIn({ username, password }) {
     try {
         await Auth.signIn(username, password)
@@ -47,7 +42,6 @@ async function signIn({ username, password }) {
         console.log('error signing up..', err)
     }
 }
-
 export default function Form(props) {
     const [formType, updateFormType] = useState('signUp')
     const [formState, updateFormState] = useReducer(reducer, initialFormState)
@@ -78,36 +72,33 @@ export default function Form(props) {
                 return null
         }
     }
-
-
     return (
         <div>
             <div>
                 {renderForm(formState)}
             </div>
-            { formType === 'signUp' && (
-                    <p className="other">
-                        Already have an account? <span
-                            className="anchor"
-                            onClick={() => updateFormType('signIn')}
-                        >Sign In</span>
-                    </p>
-                )
+            {formType === 'signUp' && (
+                <p className="other">
+                    Already have an account? <span
+                        className="anchor"
+                        onClick={() => updateFormType('signIn')}
+                    >Sign In</span>
+                </p>
+            )
             }
-            
-            { formType === 'signIn' && (
-                    <p className="footer">
-                        Need an account? <span
-                            className="anchor"
-                            onClick={() => updateFormType('signUp')}
-                        >Sign Up</span>
-                    </p>
-                )
+
+            {formType === 'signIn' && (
+                <p className="footer">
+                    Need an account? <span
+                        className="anchor"
+                        onClick={() => updateFormType('signUp')}
+                    >Sign Up</span>
+                </p>
+            )
             }
         </div>
     )
 }
-
 function SignUp(props) {
     return (
         <div className="container">
@@ -136,7 +127,6 @@ function SignUp(props) {
         </div>
     )
 }
-
 function SignIn(props) {
     return (
         <div className="container">
@@ -159,7 +149,6 @@ function SignIn(props) {
         </div>
     )
 }
-
 function ConfirmSignUp(props) {
     return (
         <div className="container">
@@ -175,4 +164,3 @@ function ConfirmSignUp(props) {
         </div>
     )
 }
-

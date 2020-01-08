@@ -6,7 +6,7 @@
   align-items: "center";
   flex-direction: "column";
 }
-
+​
 .button {
   margin-top: 15;
   width: "100%";
@@ -23,20 +23,29 @@
   border: "none";
   min-height: 40;
 }
-
+​
 .text {
   color: "white";
   font-size: 14;
   margin-left: 10;
   font-weight: "bold";
 }
-
+​
 .signOut {
   background-color: "black";
 }
-
+​
 .body {
   padding: "0px 30px";
   height: "78vh";
   background-color: "#464646";
 }
+/* .authContain{
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} */
+

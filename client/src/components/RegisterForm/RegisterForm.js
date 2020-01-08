@@ -49,7 +49,7 @@ class RegisterForm extends Component {
           onSubmit={(values, { setSubtmitting }) => {
             const userEmail = values.email
             console.log(userEmail)
-            ///update the user in the db
+            ///update the user in the DB
 
 
             API.saveUser({
@@ -64,7 +64,6 @@ class RegisterForm extends Component {
               this.props.handleModalClose();
               console.log("Saved to database")
             })
-
           }}
 
 
@@ -131,6 +130,7 @@ class RegisterForm extends Component {
                       <div className="row form-group">
                         <label htmlFor="Email"> Email: </label>
                         <input
+                          valu={values.email}
                           type="email"
                           name="email"
                           id="user_email"
