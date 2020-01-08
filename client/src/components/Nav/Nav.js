@@ -19,7 +19,7 @@ function Nav(props) {
 
     return (
         <nav className="nav" onClick={() => props.updateFormState("base")}>
-            <h1 className="navTitle">Web Space</h1>
+            <h1 className="navTitle" href="#">Web Space</h1>
             {state.user && state.user.signInUserSession && (
                 <div>
                     <h4 className="navGreet">Welcome {state.user.signInUserSession.idToken.payload.name}</h4>
