@@ -2,7 +2,6 @@ import React, { Component, useState, useReducer } from "react";
 import { Auth } from "aws-amplify";
 import "./Nav.css";
 import { FaSignOutAlt } from "react-icons/fa";
-
 import { useStoreContext } from "../../utils/Store";
 
 //SIGN OUT FUNCTION
@@ -15,7 +14,9 @@ function signOut() {
 }
 
 function Nav(props) {
+
     const [state, dispatch] = useStoreContext();
+
     return (
         <nav className="nav" onClick={() => props.updateFormState("base")}>
             WebSpace

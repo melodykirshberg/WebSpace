@@ -8,7 +8,9 @@ import Error from "./Error";
 
 
 
-//here we have some schema for the validation
+//here we have some schema for the validation we are usin YUP a npm package that does that for us. 
+// We can change what it will be displayed to the usere!
+
 const validationSchema = Yup.object().shape({
     name: Yup.string()
         .min(5, "Too Short!")
@@ -26,11 +28,14 @@ const validationSchema = Yup.object().shape({
 
 })
 
-//this class has the form with the user profile when form it's submited
-//  it's sent to th DB but it neds to pass the validation first
+//this class has the form with the user profile when form it's submited 
+//  it will send to our DB after pass the validation we set up above
 
 
 class RegisterForm extends Component {
+
+
+
 
     render() {
 
@@ -39,21 +44,37 @@ class RegisterForm extends Component {
             <div>
 
                 <Formik
-                    initialValues={{ name: "", email: "", bio: "write a brief description about you.." }}
+                    initialValues={{ name: "", email: "", bio: "" }}
                     validationSchema={validationSchema}
                     onSubmit={(values, { setSubtmitting }) => {
+                        const userEmail = values.email
+                        console.log(userEmail)
+                        ///update the user in the db
+                        API.getUserByEmail(userEmail).then(userExist => {
 
-                        API.saveUser({
-                            name: values.name,
-                            website: values.website,
-                            company: values.company,
-                            bio: values.bio,
-                            email: values.email,
-                            motives: values.motives
+                            if (userExist.data) {
 
-                        }).then(res => {
-                            this.props.handleModalClose();
-                            console.log("Saved to database" + res.data)
+                                API.updateUser({
+                                    name: values.name,
+                                    website: values.website,
+                                    company: values.company,
+                                    bio: values.bio,
+                                    email: values.email,
+                                    motives: values.motives
+
+                                }).then(res => {
+                                    this.props.handleModalClose();
+                                    console.log("Saved to database")
+                                })
+
+
+
+
+                            } else {
+                                this.props.handleModalClose();
+                            }
+
+
                         })
 
 
@@ -81,7 +102,7 @@ class RegisterForm extends Component {
                                         <div className="col-6">
                                             <div className="row my-4 mx-5">
 
-                                                <img className="userImage" src={require("./jen.png")} alt="userPicture" />
+                                                <img className="" src={require("./jen.png")} alt="userPicture" />
 
                                             </div>
 
@@ -137,7 +158,7 @@ class RegisterForm extends Component {
 
 
                                             </div>
-
+                                            {/* 
                                             <div className="row form-group">
                                                 <label htmlFor="website"> Website: </label>
                                                 <input className=""
@@ -148,7 +169,7 @@ class RegisterForm extends Component {
                                                     onChange={handleChange}
                                                 />
                                                 <i className="fas fa-pen mx-2"></i>
-                                            </div>
+                                            </div> */}
 
                                             <div className="row form-group">
                                                 <label htmlFor="company">Company:</label>

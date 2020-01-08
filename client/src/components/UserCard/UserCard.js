@@ -1,38 +1,51 @@
-import React, { useReducer } from "react"
+import React, { useState } from "react"
 import Card from 'react-bootstrap/Card'
 import "./usercard.css"
 
 
 // here we will map over our users and for each of them we will create a card that will hav name, bio, email, etc 
 
+
+
 function UserCard(props) {
 
+
+
+
+
   return (
-    <div className="container">
+
+    <div className="col">
       <div className="row">
+
         {
           props.results.map(user => (
 
 
-            <Card className="userCard flip-box" style={{ width: '14rem' }} >
+            <Card className="userCard flip-box" style={{ width: '14rem', height: '20rem' }} >
               <div className="flip-box-inner">
                 <div className="flip-box-front">
-                  <div className="col text-center">
-                    <img className=" my-2 userImage" src={require("./jen.png")} alt="userPicture" width="100" />
-                    {/* <h6 className="user-name text-center">{user.name}</h6> */}
+                  <div className=" ">
+
+                    <img className="  userImage" src={user.picture} alt="userPicture" />
+                    <h6 className="user-name text-center">{user.name}</h6>
+                    <small className="smallMotives text-center">What brings {user.name} here today?</small>
+                    <span className="align-center">
+                      <p className=" text-center motives">{user.motives}</p>
+                    </span>
                   </div>
                 </div>
 
+
                 <Card.Body className="flip-box-back">
-                  <h6 className="user-name text-center">{user.name}</h6>
+                  <p className="user-name text-center"> About </p>
+                  <p className="bio text-center">{user.bio}</p>
                   <Card.Text>
-                    <p className="bio text-center">{user.bio}</p>
                     <div className=" profile-info     ">
-                      <p className="email"> <small>Email:</small> <a href="mailto:">{user.email}</a> </p>
-                      <p className="site"><small>Website:</small>{user.website}</p>
-                      <p className="company"><small>Company:</small> {user.company}</p>
-                      <small className="text-center">What brings {user.name} here today?</small>
-                      <p className="motives">{user.motives}</p>
+                      <p className="email"> <a href="mailto:">{user.email}</a> </p>
+                      <p className="site"> <a href="http://">{user.website}</a> </p>
+                      <p className="company"><small className="smallCompany">Company:</small> {user.company}</p>
+
                     </div>
                   </Card.Text>
                 </Card.Body>
@@ -42,6 +55,8 @@ function UserCard(props) {
         }
       </div>
     </div>
+
+
 
   )
 }

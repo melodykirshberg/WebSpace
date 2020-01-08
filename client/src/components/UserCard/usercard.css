@@ -1,23 +1,89 @@
 /* in this page we are designing the user cards that will show up in the main page  */
 
+
+.userCardContainer {
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
 .userCard{
     
-    background-color: #F7F7F7;
+    background-color: #a08ee7;
     box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10;
     margin-top: 5px;
-    margin-right: 2px;
-    transition: transform .8s; /* Animation */
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor:grab;
+   
 }
 
-.userCard:hover {
-  transform: scale(1.3); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-  z-index: 1;
+
+.profile-info {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+
+/*----- card flip ------  */
+
+.flip-box-inner {
+  position: relative;
+  text-align: center;
+  transition: transform 1.9s;
+  transform-style: preserve-3d;
+ 
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+  cursor:grab;
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 4px;
+  cursor:grab;
+}
+.flip-box-front {
+  padding-top: 20px;
+  cursor:grab;
+
+}
+
+.flip-box-back {
+  transform: rotateY(180deg);
+  cursor:grab;
+
+}
+
+/*----- card flip ------  */
+
+
+
+.userImage{
+  border-radius: 50%; 
+  width: 120px;
+  height: 120px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.5);
+  align-content: center !important;
+  
+  
+}
+
 
 .user-name{
     font-family: 'Montserrat';  
-    color:#464646;
+    color: white;
+    font-size: 25px;
 }
 
 .profile-info{
@@ -39,21 +105,43 @@ color:#464646;
 .site , .email , .company {
   line-height: 0;
   font-family: 'Montserrat';
-  font-size: 10px;
- 
- 
+  font-size: 12px;
+  margin-top: 5px;
+  letter-spacing: 0vh;
   
 }
+
+
+
+.site, .email {
+
+  text-align: center;
+}
+
 .motives{
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
-    text-align: center;
+
     background-color: #DDDDDD;
     border-radius: 20px;
-    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 10px;
+    font-size: 12px;
+    width: 200px;
 }
-small{
-    font-weight: 600;     
+
+.smallMotives{
+  font-weight: 400;
+  font-size: 13px;
+  color: white;
 }
+
+.smallCompany{
+  font-weight: 600;
+
+}
+
 
 /* .flip-box {
   width: 275px;
