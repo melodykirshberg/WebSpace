@@ -27,15 +27,18 @@ const UserSchema = new Schema({
         type: String,
         trim: true,
 
+
     },
 
     company: {
         type: String,
         trim: true,
+        default: "n/a"
 
     },
     motives: {
         type: String,
+        default: "Networking"
 
     },
     userCreated: {
@@ -43,9 +46,10 @@ const UserSchema = new Schema({
         default: Date.now
     },
     picture: {
-        type: String
+        type: String,
+        default: "https://alumni.crg.eu/sites/default/files/default_images/default-picture_0_0.png"
     }
-
+    ,
 
 });
 
