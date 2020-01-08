@@ -1,5 +1,5 @@
 import React from 'react';
-import './Button.css'
+import './button.css'
 import { Auth } from 'aws-amplify'
 import { FaGoogle, FaEnvelope } from 'react-icons/fa'
 
