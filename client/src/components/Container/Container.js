@@ -1,5 +1,5 @@
-import React from "react";
-import UserCard from "../UserCard/UserCard";
+import React from "react"
+import UserCard from "../UserCard/UserCard"
 
 
 

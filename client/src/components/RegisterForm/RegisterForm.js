@@ -1,10 +1,11 @@
-import React, { useState, Component } from "react";
-import Modal from 'react-bootstrap/Modal';
-import API from "../../utils/API";
-import { Formik } from "formik";
-import * as Yup from "yup";
+import React, { useState, Component } from "react"
+import Modal from 'react-bootstrap/Modal'
+import "./register.css"
+
+import API from "../../utils/API"
+import { Formik } from "formik"
+import * as Yup from "yup"
 import Error from "./Error";
-import styles from "./Register.module.css";
 
 
 
@@ -39,7 +40,7 @@ class RegisterForm extends Component {
             <div>
 
                 <Formik
-                    initialValues={{ name: "", email: "", bio: "" }}
+                    initialValues={{ name: "", email: "", bio: "write a brief description about you.." }}
                     validationSchema={validationSchema}
                     onSubmit={(values, { setSubtmitting }) => {
 
@@ -73,23 +74,22 @@ class RegisterForm extends Component {
                         isSubmitting }) => (
 
                             <form onSubmit={handleSubmit}>
-                                <nav className={styles.modalNav + " " + ["p-1"]}>Your Profile</nav>
+                                <nav className=" modalNav  p-1">Your Profile</nav>
 
-                                <div className={styles["container"] + " " + ["modalStyle"]}>
-                                    <div className={styles["row"]}>
+                                <div className="container modalStyle">
+                                    <div className="row">
 
                                         <div className="col-6">
                                             <div className="row my-4 mx-5">
 
-                                                <img className={styles["userImage"]} src={require("./jen.png")} alt="userPicture" />
+                                                <img className="userImage" src={require("./jen.png")} alt="userPicture" />
 
                                             </div>
 
-                                            <div className={styles["row"] + " " + ["my-1"] + " " + [" mx-0"] + " " + ["input-container"]}>
+                                            <div className="row my-1 mx-0 input-container ">
                                                 <div><label htmlFor="name">Name:</label></div>
 
-                                                <input className={styles.input}
-                                                    type="text"
+                                                <input type="text"
                                                     value={values.name}
                                                     name="name"
                                                     id="name"
@@ -97,7 +97,7 @@ class RegisterForm extends Component {
                                                     onBlur={handleBlur}
                                                     className={touched.name && errors.name ? "has-error" : null}
                                                 />
-                                                <div className={styles.row + " " + styles.inputError}>
+                                                <div className=" row inputError">
                                                     <Error touched={touched.name} message={errors.name} />
                                                 </div>
                                             </div>
@@ -105,12 +105,11 @@ class RegisterForm extends Component {
 
                                         <div className="col-6">
 
-                                            <div className="row my-2 form-group">
-                                                <label htmlFor="">Bio:</label>
-                                                <textarea className={styles.textarea}
-                                                    name="bio"
-                                                    placeholder="Write a brief description about yourself..."
+                                            <div className="row   my-2 form-group">
+                                                <label htmlFor=""></label>
+                                                <textarea name="bio"
                                                     label="Select a color"
+
                                                     value={values.bio}
                                                     rows="4"
                                                     cols="45"
@@ -118,59 +117,59 @@ class RegisterForm extends Component {
                                                     className={touched.bio && errors.bio ? "has-error" : null}
 
                                                 > </textarea>
-                                                <div className={styles["inputError"]}>
+                                                <div className="inputError">
                                                     <Error touched={touched.bio} message={errors.bio} />
                                                 </div>
                                             </div>
 
-                                            <div className={styles["row form-group"]}>
+                                            <div className="row form-group">
                                                 <label htmlFor="Email"> Email: </label>
-                                                <input className={styles.input}
+                                                <input
                                                     type="email"
                                                     name="email"
                                                     id="user_email"
                                                     onChange={handleChange}
                                                     className={touched.email && errors.email ? "has-error" : null}
                                                 />
-                                                <i className={styles["fas"] + " " + ["fa-pen"] + " " + ["mx-2"]}></i>
-                                                <div className={styles["inputError"]}>
+                                                <i className="fas fa-pen mx-2"></i>
+                                                <div className="inputError">
                                                     <Error touched={touched.email} message={errors.email} />
                                                 </div>
 
 
                                             </div>
 
-                                            <div className={styles["row"] + " " + ["form-group"]}>
+                                            <div className="row form-group">
                                                 <label htmlFor="website"> Website: </label>
-                                                <input className={styles.input}
+                                                <input className=""
                                                     value={values.website}
                                                     type="text"
                                                     name="website"
                                                     id="user_website"
                                                     onChange={handleChange}
                                                 />
-                                                <i className={styles["fas"] + " " + ["fa-pen"] + " " + ["mx-2"]}></i>
+                                                <i className="fas fa-pen mx-2"></i>
                                             </div>
 
-                                            <div className={styles["row"] + " " + ["form-group"]}>
+                                            <div className="row form-group">
                                                 <label htmlFor="company">Company:</label>
-                                                <input className={styles["input-group-append"]}
+                                                <input className="input-group-append"
                                                     value={this.company}
                                                     type="text"
                                                     name="company"
                                                     id="user_company"
                                                     onChange={handleChange}
                                                 />
-                                                <i className={styles["fas"] + " " + ["fa-pen"] + " " + ["mx-2"]}></i>
+                                                <i className="fas fa-pen mx-2"></i>
 
                                             </div>
-                                            <div className={styles["form-group"]}>
-                                                {/* <label className={styles["motivesLabel"]} htmlFor="motives">What brings you here today?</label> */}
-                                                <p className={styles["motivesLabel"]}>What brings you here today?</p>
+                                            <div className=" form-group">
+                                                {/* <label className="motivesLabel" htmlFor="motives">What brings you here today?</label> */}
+                                                <p className="motivesLabel">What brings you here today?</p>
 
                                                 <select onChange={handleChange}
                                                     onBlur={handleBlur}
-                                                    className={styles["custom-select"] + " " + ["col-8"] + " " + ["form-select"]}
+                                                    className="custom-select col-8 form-select"
                                                     name="motives"
                                                     value={values.motives}
                                                     id="user_motive">
@@ -181,8 +180,8 @@ class RegisterForm extends Component {
 
 
                                                 </select>
-                                                <div className={styles["float-right"]}>
-                                                    <button className={styles["button"] + " " + ["submitBtn"]}
+                                                <div className="  float-right">
+                                                    <button className=" button submitBtn"
                                                         type="submit"
 
                                                         disabled={isSubmitting}
@@ -190,7 +189,7 @@ class RegisterForm extends Component {
 
 
 
-                                                        <i className={styles["fas"] + " " + ["fa-check"]}></i>
+                                                        <i className="fas fa-check"></i>
                                                     </button>
                                                 </div>
                                             </div>
