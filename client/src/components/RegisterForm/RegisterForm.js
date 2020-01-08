@@ -50,34 +50,20 @@ class RegisterForm extends Component {
                         const userEmail = values.email
                         console.log(userEmail)
                         ///update the user in the db
-                        API.getUserByEmail(userEmail).then(userExist => {
-
-                            if (userExist.data) {
-
-                                API.updateUser({
-                                    name: values.name,
-                                    website: values.website,
-                                    company: values.company,
-                                    bio: values.bio,
-                                    email: values.email,
-                                    motives: values.motives
-
-                                }).then(res => {
-                                    this.props.handleModalClose();
-                                    console.log("Saved to database")
-                                })
 
 
+                        API.saveUser({
+                            name: values.name,
+                            website: values.website,
+                            company: values.company,
+                            bio: values.bio,
+                            email: values.email,
+                            motives: values.motives
 
-
-                            } else {
-                                this.props.handleModalClose();
-                            }
-
-
+                        }).then(res => {
+                            this.props.handleModalClose();
+                            console.log("Saved to database")
                         })
-
-
 
                     }}
 
