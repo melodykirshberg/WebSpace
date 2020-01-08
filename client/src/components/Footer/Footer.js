@@ -5,7 +5,7 @@ import "./Footer.css";
 function Footer() {
     return (
 
-        <div className="footer">
+        <div className="footerF">
             <footer>
                 <small>Copyright 2019 ©</small>
             </footer>
@@ -13,4 +13,4 @@ function Footer() {
     )
 }
 
-export default Footer
+export default Footer;
