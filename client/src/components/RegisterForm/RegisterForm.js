@@ -40,7 +40,7 @@ class RegisterForm extends Component {
             <div>
 
                 <Formik
-                    initialValues={{ name: "", email: "", bio: "write a brief description about you.." }}
+                    initialValues={{ name: "", email: "", bio: "" }}
                     validationSchema={validationSchema}
                     onSubmit={(values, { setSubtmitting }) => {
 
@@ -109,7 +109,7 @@ class RegisterForm extends Component {
                                                 <label htmlFor=""></label>
                                                 <textarea name="bio"
                                                     label="Select a color"
-
+                                                    placeholder="Write a brief description about yourself..."
                                                     value={values.bio}
                                                     rows="4"
                                                     cols="45"
