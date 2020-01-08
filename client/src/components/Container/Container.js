@@ -1,33 +1,33 @@
-import React from "react"
-import UserCard from "../UserCard/UserCard"
+// import React from "react"
+// import UserCard from "../UserCard/UserCard"
 
 
 
 
 
 
-function Container(props) {
+// function Container(props) {
 
 
 
 
-    return (
+//     return (
 
 
 
-        <div className="container">
-            <div className="row">
-                <div className="col">
-                    <UserCard {...props} />
-                </div>
+//         <div className="container">
+//             <div className="row">
+//                 <div className="col">
+//                     <UserCard {...props} />
+//                 </div>
 
 
-            </div>
-        </div >
+//             </div>
+//         </div >
 
 
-    )
+//     )
 
-}
+// }
 
-export default Container
+// export default Container

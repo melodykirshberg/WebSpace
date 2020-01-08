@@ -85,9 +85,8 @@ export default function Form(props) {
             <div>
                 {renderForm(formState)}
             </div>
-            {
-                formType === 'signUp' && (
-                    <p style={styles.footer}>
+            { formType === 'signUp' && (
+                    <p style={styles.other}>
                         Already have an account? <span
                             style={styles.anchor}
                             onClick={() => updateFormType('signIn')}
@@ -95,8 +94,8 @@ export default function Form(props) {
                     </p>
                 )
             }
-            {
-                formType === 'signIn' && (
+            
+            { formType === 'signIn' && (
                     <p style={styles.footer}>
                         Need an account? <span
                             style={styles.anchor}
@@ -111,7 +110,7 @@ export default function Form(props) {
 
 function SignUp(props) {
     return (
-        <div style={styles.container}>
+        <div style={styles.formCard}>
             <input
                 name='username'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
@@ -178,13 +177,13 @@ function ConfirmSignUp(props) {
 }
 
 const styles = {
-    container: {
+    formCard: {
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: "#464646",
         marginTop: 150,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"
     },
     input: {
         height: 45,
@@ -211,7 +210,7 @@ const styles = {
         borderRadius: 3,
         boxShadow: '0px 1px 3px rgba(0, 0, 0, .3)',
     },
-    footer: {
+    other: {
         fontWeight: '600',
         textAlign: 'center',
         backgroundColor: "#464646",

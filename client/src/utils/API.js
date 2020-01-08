@@ -10,7 +10,11 @@ export default {
     getUserByEmail: function (email) {
         return axios.get("/api/users/email/" + email)
     },
+
     saveUser: function (userData) {
-        return axios.post("/api/users", userData);;
+        return axios.post("/api/users", userData);
+    },
+    updateUser: function (userData) {
+        return axios.put("/api/user", userData);
     }
 };

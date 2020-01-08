@@ -1,101 +1,40 @@
 import React from 'react';
-import './Button.css'
-
-
+import './button.css'
 import { Auth } from 'aws-amplify'
 import { FaGoogle, FaEnvelope } from 'react-icons/fa'
 
 function Buttons(props) {
-    return (
-        <div className="main">
-            <div style={styles.container}>
-                <button
-                    style={{ ...styles.button, ...styles.google }}
-                    onClick={() => Auth.federatedSignIn({ provider: 'Google' })}>
-                    <FaGoogle color='red' />
-                    <p style={{ ...styles.text, ...styles.grayText }}>Sign Up with Google</p>
-                </button>
 
-                <button
-                    style={{ ...styles.button, ...styles.email }}
-                    onClick={() => props.updateFormState('email')}
-                >
-                    <FaEnvelope color='white' />
-                    <p style={{ ...styles.text }}>Sign Up with Email</p>
+
+
+    return (
+        <div className=" container bCard">
+            <h2 className="bTitle">Web Space</h2>
+            <img src={require("./image.png")} className="bPic" />
+            <h4 className="bBio">Get to know better the people you are about to network with</h4>
+            <div className="text-center">
+                <button className="bGoogle"
+
+                    onClick={() => Auth.federatedSignIn({ provider: 'Google' })}>
+                    <FaGoogle className="mx-2 my-1" color='red' />
+                    <p className="bGoogletext">Sign Up with Google</p>
                 </button>
             </div>
-        </div >
+
+            <button
+                className="bEmail"
+
+                onClick={() => props.updateFormState('email')}
+            >
+                <FaEnvelope className=" mx-2 my-1 text-white" />
+                <p className="bEmailtext">Sign Up with Email</p>
+            </button>
+        </div>
     );
 }
 
-const styles = {
-    main: {
-        height: '100vh',
-        width: '100vw',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        backgroundColor: "gainsboro"
-    },
 
-    container: {
-        boxShadow: "0 10px 6px -3px black",
-        display: "table",
-        height: "65%",
-        width: "50%",
-        verticalAlign: "middle",
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        borderStyle: "solid"
-    },
-    button: {
-        width: '100%',
-        maxWidth: 250,
-        marginBottom: 10,
-        display: 'flex',
-        alignItems: 'center',
-        // justifyContent: 'flex-start',
-        padding: '0px 9px',
-        borderRadius: 4,
-        boxShadow: '0px 1px 3px rgba(0, 0, 0, .3)',
-        cursor: 'pointer',
-        border: 'none'
-        // minHeight: 20
-    },
-    email: {
-        backgroundColor: '#db4437'
-    },
-    checkAuth: {
-        backgroundColor: '#02bd7e'
-    },
-    signOut: {
-        backgroundColor: 'black'
-    },
-    withAuthenticator: {
-        backgroundColor: '#FF9900'
-    },
-    icon: {
-        height: 16,
-        marginLeft: -1,
-        alignItems: "center"
-    },
-    text: {
-        color: 'white',
-        fontSize: 14,
-        marginLeft: 10,
-        fontWeight: 'bold'
-    },
-    blackText: {
-        color: 'black',
-        alignItems: 'center'
-    },
-    grayText: {
-        color: 'rgba(0, 0, 0, .75)',
-        alignItems: 'center'
-    }
-}
+
+
 
 export default Buttons;

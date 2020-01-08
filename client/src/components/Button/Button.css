@@ -1,81 +1,112 @@
-.main {
-    display: 'flex';
-    justify-content: 'center';
-    align-items: 'center';
-    flex-direction: 'column';
-    box-shadow: 0 10px 6px -3px black;
-    ;
+/* ------------this file holds the style of the sign in page -------- */
+/* ------------ it's the first page it's taken to -----------------  */
+
+
+
+/*card*/
+.bCard {
+    margin-top: 60px;
+    box-shadow:0 10px 6px -3px  black;
     display: table;
-    margin: 0 auto;
-    /* height: 85%;
-    width: 82%; */
+    height: 65%;
+    width: 50%;
     vertical-align: middle;
-    height: '100vh';
-    width: '100vw';
-    background-color: "gainsboro"
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-style: solid;
+    text-align: center;
+   
 }
 
-.container {
-    box-shadow: "0 10px 6px -3px black";
-    display: "table";
-    height: "65%";
-    width: "50%";
-    vertical-align: "middle";
-    display: 'flex';
-    justify-content: 'center';
-    align-items: 'center';
-    flex-direction: 'column';
-    border-style: 'solid';
-}
 
-.button {
-    width: '100%';
-    box-shadow: '0px 1px 3px rgba(0, 0, 0, .3)';
-    max-width: 250;
-    margin-bottom: 10;
-    display: 'flex';
-    align-items: 'center';
-    padding: '0px 9px';
+/* app bio  */
+
+.bBio {
+    font-size: 25px;
+    color: black;
+    align-items: center;
+    font-family: 'Arimo', sans-serif;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}   
+
+
+ /* --------google button---------  */
+.bGoogle {
+
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, .3);
+    
+    margin-bottom: 10px;
+    display: flex;
+    font-size: 15px;
+    
     border-radius: 4;
-    cursor: 'pointer';
-    outline: 'none';
-    border: 'none';
+    cursor: pointer;
+    border: none;
+    width: 250px;
+}
+
+.bGoogle:hover{
+    box-shadow: gray;
+}
+ /* --------google button---------  */
+
+
+
+ /* --------sign in with email button---------  */
+.bEmail {
+    background-color: #db4437;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, .3);
+    width: 250px;
+  
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 9px;
+    border-radius: 4;
+    cursor: pointer;
+    outline: none;
+    border: none;
     min-height: 40;
 }
+ /* --------sign in with email button---------  */
 
-.text {
-    color: 'white';
-    font-size: 14px;
-    margin-left: 10px;
-    font-weight: 'bold';
+ /* text around email button */
+.bEmailtext {
+    color: yellow;
+    font-size: 14;
+    margin-left: 10;
+    font-weight: bold;
 }
 
-.email {
-    background-color: '#db4437';
-    width: '100%';
-    max-width: 250;
-    margin-bottom: 10;
-    display: 'flex';
-    justify-content: 'flex-start';
-    align-items: 'center';
-    padding: '0px 9px';
-    border-radius: 4;
-    cursor: 'pointer';
-    outline: 'none';
-    border: 'none';
-    min-height: 40;
+ /* text around email button */
+
+
+
+ /* text around google button */
+
+.bGoogletext {
+    align-items: center;
+    color: rgba(0, 0, 0, .75),
 }
 
 .icon {
     height: 16;
     margin-left: -1;
-    align-items: "center";
+    align-items: center;
 }
 
-.grayText {
-    align-items: 'center';
-    color: 'white';
-    font-size: 14;
-    margin-left: 10;
-    font-weight: 'bold';
+
+/* -----initial page picture---- */
+.bPic {
+width: 200px;
+left: 44.12%;
+ right: 44.17%;
+top: 26%;
+bottom: 54.14%;
 }
+
+

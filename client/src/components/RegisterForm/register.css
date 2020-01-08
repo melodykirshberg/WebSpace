@@ -16,7 +16,7 @@ body {
 }
 
 .modalNav{
-  background-color: rgb(212, 41, 41);
+  background-color: #7c5cff;
   color: white;
   font-size: 17px;
   font-family: 'Montserrat';
@@ -108,17 +108,19 @@ select:hover{
    color: silver
  }
 .inputError{
-  color: orangered;
+  color: rgb(255, 0, 98);
   font-size: 10px;
   
 }
 
+/* uncommenting for now */
+/* 
 .modal-body {
   background-color: white;
   border-radius: 4px;
   margin-top: 10px;
   margin-bottom: 30px;
-}
+} */
 
 .button {
   width: 100%;
