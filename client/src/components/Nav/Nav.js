@@ -5,7 +5,6 @@ import { FaSignOutAlt } from "react-icons/fa";
 
 import { useStoreContext } from "../../utils/Store";
 
-//SIGN OUT FUNCTION
 function signOut() {
     Auth.signOut()
         .then(data => {

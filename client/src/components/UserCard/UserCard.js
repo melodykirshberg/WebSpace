@@ -18,7 +18,7 @@ function UserCard(props) {
                 <div className="flip-box-inner">
                   <div className="flip-box-front">
                     <div className="col text-center">
-                      <img className=" user-card-img " src="https://via.placeholder.com/180x160" width="" />
+                    <img className="  userImage" src={user.picture} alt="userPicture"/>
                     <h6 className="user-name text-center">{user.name}</h6>
                     </div>
                   </div>

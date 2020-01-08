@@ -12,10 +12,10 @@ class Register extends Component {
   }
 
   //this handles the modal closing
-
   handleModalClose = () => {
     this.setState({ show: false });
   }
+  
   //When page register loads we get the information from the logged user and send to our DB we store name, email and picture
   componentDidMount = () => {
     Auth.currentAuthenticatedUser()

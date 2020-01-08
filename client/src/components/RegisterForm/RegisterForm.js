@@ -56,12 +56,7 @@ class RegisterForm extends Component {
                             this.props.handleModalClose();
                             console.log("Saved to database" + res.data)
                         })
-
-
-
                     }}
-
-
                 >
 
                     {({ values,
