@@ -88,7 +88,7 @@ export default function Form(props) {
             }
 
             {formType === 'signIn' && (
-                <p className="bottom">
+                <p className="footer">
                     Need an account? <span
                         className="anchor"
                         onClick={() => updateFormType('signUp')}
@@ -101,27 +101,27 @@ export default function Form(props) {
 }
 function SignUp(props) {
     return (
-        <div className="formContainer">
-            {/* <input
+        <div className="container">
+            <input
                 name='username'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                className="formInput"
+                className="input"
                 placeholder='username'
-            /> */}
+            />
             <input
                 name='email'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                className="formInput"
+                className="input"
                 placeholder='email'
-            />  
+            />
             <input
                 type='password'
                 name='password'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                className="formInput"
+                className="input"
                 placeholder='password'
             />
-            <button onClick={props.signUp} className="formButton">
+            <button onClick={props.signUp} className="button">
                 Sign Up
       </button>
         </div>
@@ -129,21 +129,21 @@ function SignUp(props) {
 }
 function SignIn(props) {
     return (
-        <div className="formContainer">
+        <div className="container">
             <input
                 name='username'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                className="formInput"
+                className="input"
                 placeholder='username'
             />
             <input
                 type='password'
                 name='password'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                className="formInput"
+                className="input"
                 placeholder='password'
             />
-            <button className="formButton" onClick={props.signIn}>
+            <button className="button" onClick={props.signIn}>
                 Sign In
       </button>
         </div>
@@ -151,14 +151,14 @@ function SignIn(props) {
 }
 function ConfirmSignUp(props) {
     return (
-        <div className="formContainer">
+        <div className="container">
             <input
                 name='confirmationCode'
                 placeholder='Confirmation Code'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                className="formInput"
+                className="input"
             />
-            <button onClick={props.confirmSignUp} className="formButton">
+            <button onClick={props.confirmSignUp} className="button">
                 Confirm Sign Up
       </button>
         </div>

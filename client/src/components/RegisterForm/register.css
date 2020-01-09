@@ -33,7 +33,7 @@ body {
   
 }
 
-.registerInput{
+input{
   border-radius: 12px;
   border-style: none;
   background-color: #dddddd;
