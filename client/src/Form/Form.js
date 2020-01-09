@@ -73,22 +73,23 @@ export default function Form(props) {
         }
     }
     return (
-        <div>
+        <div className="">
             <div>
                 {renderForm(formState)}
             </div>
             {formType === 'signUp' && (
-                <p className="other">
-                    Already have an account? <span
-                        className="anchor"
-                        onClick={() => updateFormType('signIn')}
-                    >Sign In</span>
+                <p className="have-acct ">
+                    Already have an account?
+                    <span className="signIn-link mx-1" onClick={() => updateFormType('signIn')} >Sign in.</span>
+
                 </p>
+
+
             )
             }
 
             {formType === 'signIn' && (
-                <p className="footer">
+                <p className="need-acctount">
                     Need an account? <span
                         className="anchor"
                         onClick={() => updateFormType('signUp')}
@@ -99,66 +100,89 @@ export default function Form(props) {
         </div>
     )
 }
+
+//SignUp form 
+//----- TODO  ---- ADD NOTIFICATIONS SO USER WILL KNOW ABOUT THE REQUIREMENTS.. 
+// user name and email are a both mandatory and need to be same(can we change that?)
+// user does not know if signs attemps are succesfull or not. 
 function SignUp(props) {
     return (
-        <div className="container">
+
+
+        <div className="signUpContainer container">
+
+            <h6 className="create-acct">Create an Account</h6>
+
+
             <input
                 name='username'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                className="input"
+                className="userNameInput"
                 placeholder='username'
             />
             <input
                 name='email'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                className="input"
+                className=" emaiInput"
                 placeholder='email'
             />
             <input
                 type='password'
                 name='password'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                className="input"
+                className="  passwordInput"
                 placeholder='password'
             />
-            <button onClick={props.signUp} className="button">
+            <button onClick={props.signUp} className="signUpButton">
                 Sign Up
       </button>
+
         </div>
+
     )
 }
+
+//Sign in
+// When user already has an account
+
+
 function SignIn(props) {
     return (
-        <div className="container">
+        <div className="container signInContainer">
+            <h6 className="log-acct">Log in</h6>
             <input
                 name='username'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                className="input"
+                className="   userNameInput"
                 placeholder='username'
             />
             <input
                 type='password'
                 name='password'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                className="input"
+                className="   passwordInput"
                 placeholder='password'
             />
-            <button className="button" onClick={props.signIn}>
+            <button className="signInbutton" onClick={props.signIn}>
                 Sign In
       </button>
         </div>
     )
 }
+
+
+//this function handles the code that will be sent to user via email
+// once user add
 function ConfirmSignUp(props) {
     return (
-        <div className="container">
+        <div className="">
             <input
                 name='confirmationCode'
                 placeholder='Confirmation Code'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
-                className="input"
+                className="confirmSignInput"
             />
-            <button onClick={props.confirmSignUp} className="button">
+            <button onClick={props.confirmSignUp} className="confirmSignInButton">
                 Confirm Sign Up
       </button>
         </div>

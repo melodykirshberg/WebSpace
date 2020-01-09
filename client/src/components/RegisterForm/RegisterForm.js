@@ -1,11 +1,12 @@
-import React, { useState, Component } from "react"
-import Modal from 'react-bootstrap/Modal'
+import React, { Component } from "react"
 import "./register.css"
 import API from "../../utils/API"
 import { useStoreContext } from "../../utils/Store";
 import { Formik } from "formik"
 import * as Yup from "yup"
 import Error from "./Error";
+import { useStoreContext } from "../../utils/Store";
+
 
 
 
@@ -14,7 +15,7 @@ import Error from "./Error";
 
 const validationSchema = Yup.object().shape({
     name: Yup.string()
-        .min(5, "Too Short!")
+        .min(3, "Too Short!")
         .max(255, "Too Long!")
         .required("Required"),
     email: Yup.string()
@@ -22,7 +23,7 @@ const validationSchema = Yup.object().shape({
         .max(255, "Too Long!")
         .required("Required"),
     bio: Yup.string()
-        .min(2, "C'mon , we want to know more about you!")
+        .min(10, "C'mon , we want to know more about you!")
         .max(255, "Too Long!")
         .required("Required"),
 
@@ -35,25 +36,26 @@ const validationSchema = Yup.object().shape({
 
 function RegisterForm(props) {
 
-    const [state, dispatch] = useStoreContext();
-    console.log(state);
+    // render() {
+
 
     return (
         <div>
 
             <Formik
-                initialValues={{ name: state.user.signInUserSession.idToken.payload.name, email: state.user.signInUserSession.idToken.payload.email}}
+                initialValues={{ name: state.user.signInUserSession.idToken.payload.name, email: state.user.signInUserSession.idToken.payload.email }}
                 validationSchema={validationSchema}
                 onSubmit={(values, { setSubtmitting }) => {
                     const userEmail = values.email
                     console.log(userEmail)
-                    ///update the user in the db
+                    ///update the user in the DB
 
+                    const [state, dispatch] = useStoreContext();
+                    console.log(state);
 
-                    API.saveUser({
+                    API.updateUser({
                         name: values.name,
-                        website: values.website,
-                        company: values.company,
+                        profession: values.position,
                         bio: values.bio,
                         email: values.email,
                         motives: values.motives
@@ -71,6 +73,7 @@ function RegisterForm(props) {
                     errors,
                     touched,
                     handleChange,
+
                     handleBlur,
                     handleSubmit,
                     isSubmitting }) => (
@@ -110,7 +113,7 @@ function RegisterForm(props) {
                                         <div className="row   my-2 form-group">
                                             <label htmlFor=""></label>
                                             <textarea name="bio"
-                                                label="Select a color"
+
                                                 placeholder="Write a brief description about yourself..."
                                                 value={values.bio}
                                                 rows="4"
@@ -127,10 +130,10 @@ function RegisterForm(props) {
                                         <div className="row form-group">
                                             <label htmlFor="Email"> Email: </label>
                                             <input
+                                                value={values.email}
                                                 type="email"
                                                 name="email"
                                                 id="user_email"
-                                                value={values.email}
                                                 onChange={handleChange}
                                                 className={touched.email && errors.email ? "has-error" : null}
                                             />
@@ -141,33 +144,21 @@ function RegisterForm(props) {
 
 
                                         </div>
-                                        {/* 
-                                            <div className="row form-group">
-                                                <label htmlFor="website"> Website: </label>
-                                                <input className=""
-                                                    value={values.website}
-                                                    type="text"
-                                                    name="website"
-                                                    id="user_website"
-                                                    onChange={handleChange}
-                                                />
-                                                <i className="fas fa-pen mx-2"></i>
-                                            </div> */}
 
                                         <div className="row form-group">
-                                            <label htmlFor="company">Company:</label>
+                                            <label htmlFor="profession">Profession:</label>
                                             <input className="input-group-append"
-                                                // value={this.company}
+                                                value={values.profession}
                                                 type="text"
-                                                name="company"
-                                                id="user_company"
+                                                name="profession"
+                                                id="user_profession"
                                                 onChange={handleChange}
                                             />
                                             <i className="fas fa-pen mx-2"></i>
 
                                         </div>
                                         <div className=" form-group">
-                                            {/* <label className="motivesLabel" htmlFor="motives">What brings you here today?</label> */}
+
                                             <p className="motivesLabel">What brings you here today?</p>
 
                                             <select onChange={handleChange}
@@ -216,7 +207,7 @@ function RegisterForm(props) {
 
 
     )
-
 }
+
 
 export default RegisterForm

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import Nav from "../Nav/Nav.js";
 import Buttons from "../Button/Buttons.js";
-import Form from "../../Form/Form";
-import styles from "./authentication.css";
+import Form from "../../Form/Form"
+
 import { Hub, Auth } from "aws-amplify";
 import { useStoreContext } from "../../utils/Store";
 import API from "../../utils/API";
@@ -12,6 +12,7 @@ function Authentication(props) {
   console.log(props);
   const [formState, updateFormState] = useState("base");
   const [state, dispatch] = useStoreContext();
+  const [user, setUser] = useState({})
 
   useEffect(() => {
 
@@ -66,7 +67,7 @@ function Authentication(props) {
   // This renders the custom form
   if (formState === "email") {
     return (
-      <div className={styles.container}>
+      <div >
         <Nav updateFormState={updateFormState} />
         <Form />
       </div>
@@ -77,7 +78,7 @@ function Authentication(props) {
     <div>
       <Nav updateFormState={updateFormState} />
       {state.loading && (
-        <div className="body">
+        <div className="">
           <p>Loading...</p>
         </div>
       )}
