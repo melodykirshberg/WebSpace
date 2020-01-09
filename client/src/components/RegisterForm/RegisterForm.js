@@ -50,7 +50,7 @@ function RegisterForm() {
           ///update the user in the DB
 
 
-          API.updateUser({
+          API.saveUser({
             name: values.name,
             profession: values.position,
             bio: values.bio,
@@ -70,7 +70,6 @@ function RegisterForm() {
           errors,
           touched,
           handleChange,
-
           handleBlur,
           handleSubmit,
           isSubmitting }) => (
