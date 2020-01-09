@@ -100,8 +100,10 @@ class RegisterForm extends Component {
                           id="name"
                           onChange={handleChange}
                           onBlur={handleBlur}
-                          className={touched.name && errors.name ? "has-error" : null}
-                        />
+                          className="registerInput"
+                          />
+                          {touched.name && errors.name ? "has-error" : null}
+
                         <div className=" row inputError">
                           <Error touched={touched.name} message={errors.name} />
                         </div>
@@ -134,8 +136,10 @@ class RegisterForm extends Component {
                           name="email"
                           id="user_email"
                           onChange={handleChange}
-                          className={touched.email && errors.email ? "has-error" : null}
-                        />
+                          className="registerInput"
+                          />
+                          {touched.email && errors.email ? "has-error" : null}
+
                         <i className="fas fa-pen mx-2"></i>
                         <div className="inputError">
                           <Error touched={touched.email} message={errors.email} />
@@ -146,7 +150,7 @@ class RegisterForm extends Component {
                       {/* 
                                             <div className="row form-group">
                                                 <label htmlFor="website"> Website: </label>
-                                                <input className=""
+                                                <input className="registerInput"
                                                     value={values.website}
                                                     type="text"
                                                     name="website"
@@ -158,7 +162,7 @@ class RegisterForm extends Component {
 
                       <div className="row form-group">
                         <label htmlFor="company">Company:</label>
-                        <input className="input-group-append"
+                        <input className="registerInput input-group-append"
                           value={this.company}
                           type="text"
                           name="company"
