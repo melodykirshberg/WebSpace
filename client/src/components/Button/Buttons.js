@@ -10,7 +10,7 @@ function Buttons(props) {
     return (
         <div className=" container bCard">
             {/* <h2 className="bTitle">Web Space</h2> */}
-            <img src={require("./image.png")} className="bPic" />
+            <img src={require("./image1.png")} className="bPic" />
             <h4 className="bBio">Get to know better the people you are about to network with</h4>
             <div className="text-center">
                 <button className="bGoogle"
