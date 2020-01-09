@@ -59,7 +59,7 @@ function RegisterForm(props) {
                         motives: values.motives
 
                     }).then(res => {
-                        this.props.handleModalClose();
+                        props.handleModalClose();
                         console.log("Saved to database")
                     })
                 }}
