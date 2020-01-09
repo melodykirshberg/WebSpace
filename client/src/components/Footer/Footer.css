@@ -1,6 +1,7 @@
 /* ------------Same footer to all pages------------*/
 .footerF {
   font-family: "Montserrat", sans-serif;
+  position: fixed;
   width: 100%;
   color: rgb(43, 43, 43);
   text-align: center;
@@ -8,8 +9,4 @@
   background-color: #c4c4c4;
   font-size: 15px;
   margin-top: 20px;
-  position:fixed;
-  left:0;
-  bottom:0;
-  right:0;
 }

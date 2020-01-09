@@ -5,8 +5,8 @@ import "./Footer.css";
 function Footer() {
     return (
 
-        <div className="footerContainer">
-            <footer className="footerF">
+        <div className="footerF">
+            <footer>
                 <small>Copyright 2019 ©</small>
             </footer>
         </div>
