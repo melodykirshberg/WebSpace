@@ -31,9 +31,6 @@ class Register extends Component {
             handleModalClose={this.handleModalClose} />
         </Modal.Body>
       </Modal >
-
-
-
     )
   }
 }
