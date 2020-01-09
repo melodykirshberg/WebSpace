@@ -23,19 +23,15 @@ const UserSchema = new Schema({
         // match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
 
-    website: {
-        type: String,
-        trim: true,
-
-
-    },
-
-    company: {
+    profession: {
         type: String,
         trim: true,
         default: "n/a"
 
+
     },
+
+
     motives: {
         type: String,
         default: "Networking"

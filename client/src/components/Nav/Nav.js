@@ -1,34 +1,36 @@
-import React, { Component, useState, useReducer } from "react";
-import { Auth } from "aws-amplify";
-import { FaSignOutAlt } from "react-icons/fa";
+import React from "react";
 import "./Nav.css";
-
+import SignOutBttn from "../Nav/SignOut"
 import { useStoreContext } from "../../utils/Store";
 
-function signOut() {
-    Auth.signOut()
-        .then(data => {
-            console.log("signed out: ", data);
-        })
-        .catch(err => console.log(err));
-}
+
 
 function Nav(props) {
 
     const [state, dispatch] = useStoreContext();
 
     return (
-        <nav className="navBar" onClick={() => props.updateFormState("base")}>
-            <h1 className="navTitle" href="#">Web Space</h1>
-            {state.user && state.user.signInUserSession && (
-                <div>
-                    <h4 className="navGreet">Welcome {state.user.signInUserSession.idToken.payload.name}</h4>
-                    <button className="navSignOut" onClick={signOut}>
-                        <FaSignOutAlt color="grey" />
-                        <p className="text">Sign Out</p>
-                    </button>
+        <nav className="navBar " onClick={() => props.updateFormState("base")}>
+
+            <div className="row">
+
+                <div className="col ">
+                    <h1 className=" my-1 navTitle col" href="#">Web Space</h1>
+
                 </div>
-            )}
+
+                {state.user && state.user.signInUserSession && (
+                    <div >
+                        <SignOutBttn />
+                    </div>
+                )}
+
+
+            </div>
+
+
+
+
         </nav>
     );
 }
