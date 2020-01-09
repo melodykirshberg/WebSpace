@@ -1,15 +1,20 @@
 import React from "react";
-import "../../index.css";
+
 import "./Footer.css";
 
 function Footer() {
     return (
 
-        <div className="footerContainer">
-            <footer className="footerF">
+        <div className=" sticky ">
+
+
+            <nav className=" appFooter  navbar justify-content-center fixed-bottom ">
                 <small>Copyright 2019 ©</small>
-            </footer>
+            </nav>
+
         </div>
+
+
     )
 }
 

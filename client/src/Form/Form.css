@@ -1,75 +1,114 @@
-.formContainer {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    flex-direction: column;
-    margin-top: 150;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
-    width: 400px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding-top: 40px;
+/* link to  the little sign in at the bottom of the form  */
+
+
+.signIn-link {
+    color: rgb(63, 184, 83);
+    cursor: pointer;
+    font-size: 14px;   
+
+
+}
+.signIn-link:hover{
+    text-decoration: underline;
+
 }
 
-.formInput {
-    background-color: #dddddd;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
-    font-family: 'Montserrat';
-    height: 45px;
+
+ /* the container where the forms are in  */
+.signInContainer,    .signUpContainer{
+    text-align: center;
+    width: 200px;
+    height: 400px;
+    padding: 20px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px black;    
+    margin-top: 80px;    
+    display: table;
+
+       
+
+
+}
+
+
+
+.have-acct {
+     
+    font-size: 14px;
+    font-weight: bold;   
+    font-family: 'Montserrat', sans-serif; 
+    margin-left :750px;   
+    margin-top: 0;
+
+}
+.anchor{
+    color: orange;
+    cursor: pointer;
+    font-size: 18px;   
+
+}
+
+.anchor:hover{
+    text-decoration: underline;
+
+}
+
+.need-acctount{
+    font-size: 15;
+    font-size: 13px;
+    font-weight: bold;   
+    font-family: 'Montserrat', sans-serif; 
+    margin-left :680px;
+
+}
+
+.create-acct , .log-acct {
+    font-size: 45px;
+    font-family: 'Muli', sans-serif;
+    text-align: left;
+    margin-bottom: 30px;
+    font-weight: 500;
+    color: #464646;
+    letter-spacing: 0;
+
+}
+
+
+ /* all the inputs  */
+.userNameInput, .emaiInput, .passwordInput , .confirmSignInput {
+    height: 50px;
     margin-top: 8px;
-    width: 300px;
+    width: 380px;
+    border-radius: 5px;   
     padding: 0px 8px;
-    font-size: 16px;
+    font-size: 16;
     outline: none;
-    border-radius: 4px;
     border: none;
-    border-style: none;
-}
-
-.formButton {
-    background-color: #006bfc;
-    color: white;
-    width: 85px;
-    height: 35px;
-    margin-top: 8px;
-    margin-bottom: 15px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 2px #666
-}
-
-.formButton:hover {background-color: #0260e4}
-
-.formButton:active {
-  box-shadow: 0 1px #666;
-  transform: translateY(2px);
-}
-
-.other {
-    font-weight: 600;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    background-color: #cc00ff;
-    color: black;
-    width:300px;
+    font-size: 14px;
+    border-bottom: 2px solid rgba(0, 0, 0, .3);
     align-content: center;
-    border-radius: 2px;
+    
 }
 
-.anchor {
-    color: #006bfc;
+
+
+
+/* all the buttons  */
+.signInbutton , .confirmSignInButton , .signUpButton {
+    background-color: #FF9A8B;
+    background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+    
+    color: white;
+    width: 380px;
+    height: 45px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: 600px;
+    font-size: 14px;
     cursor: pointer;
-    font-weight: bold;
-}
-
-.bottom {
-    font-weight: 600;
-    padding: 0px 25px;
-    text-align: center;
-    color: black
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, .3)
 }
