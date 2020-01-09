@@ -1,7 +1,6 @@
 /* ------------Same footer to all pages------------*/
 .appFooter {
-  font-family: "Montserrat", sans-serif;  
- 
+  font-family: "Montserrat", sans-serif;
   width: 100%;
   color: orange;
   text-align: center;
@@ -9,7 +8,6 @@
   background-color: #464646;
   font-size: 17px;
   margin-top: 0;
-
   padding: 10px;
   letter-spacing: 1px;
 }
