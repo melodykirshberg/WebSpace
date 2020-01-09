@@ -1,11 +1,11 @@
-import React, { Component } from "react"
+import React, { useState, Component } from "react"
+import Modal from 'react-bootstrap/Modal'
 import "./register.css"
 import API from "../../utils/API"
+import { useStoreContext } from "../../utils/Store";
 import { Formik } from "formik"
 import * as Yup from "yup"
 import Error from "./Error";
-import { useStoreContext } from "../../utils/Store";
-
 
 
 
@@ -14,7 +14,7 @@ import { useStoreContext } from "../../utils/Store";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
-    .min(3, "Too Short!")
+    .min(5, "Too Short!")
     .max(255, "Too Long!")
     .required("Required"),
   email: Yup.string()
@@ -22,7 +22,7 @@ const validationSchema = Yup.object().shape({
     .max(255, "Too Long!")
     .required("Required"),
   bio: Yup.string()
-    .min(10, "C'mon , we want to know more about you!")
+    .min(2, "C'mon , we want to know more about you!")
     .max(255, "Too Long!")
     .required("Required"),
 
@@ -33,26 +33,31 @@ const validationSchema = Yup.object().shape({
 //  it will send to our DB after pass the validation we set up above
 
 
-function RegisterForm() {
+function RegisterForm(props) {
 
-  // render() {
-
+  const [state, dispatch] = useStoreContext();
+  console.log(state);
 
   return (
     <div>
 
       <Formik
-        initialValues={{ name: "", email: "", bio: "" }}
+        initialValues={{
+          picture: state.user.signInUserSession.idToken.payload.picture,
+          name: state.user.signInUserSession.idToken.payload.name,
+          email: state.user.signInUserSession.idToken.payload.email
+        }}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubtmitting }) => {
           const userEmail = values.email
-          console.log(userEmail)
-          ///update the user in the DB
+          ///update the user in the db
 
 
           API.saveUser({
+            picture: values.picture,
             name: values.name,
-            profession: values.position,
+            website: values.website,
+            company: values.company,
             bio: values.bio,
             email: values.email,
             motives: values.motives
@@ -83,7 +88,7 @@ function RegisterForm() {
                   <div className="col-6">
                     <div className="row my-4 mx-5">
 
-                      <img className="" src={require("./jen.png")} alt="userPicture" />
+                      <img className="" src={values.picture} alt="userPicture" />
 
                     </div>
 
@@ -109,7 +114,7 @@ function RegisterForm() {
                     <div className="row   my-2 form-group">
                       <label htmlFor=""></label>
                       <textarea name="bio"
-
+                        label="Select a color"
                         placeholder="Write a brief description about yourself..."
                         value={values.bio}
                         rows="4"
@@ -126,10 +131,10 @@ function RegisterForm() {
                     <div className="row form-group">
                       <label htmlFor="Email"> Email: </label>
                       <input
-                        value={values.email}
                         type="email"
                         name="email"
                         id="user_email"
+                        value={values.email}
                         onChange={handleChange}
                         className={touched.email && errors.email ? "has-error" : null}
                       />
@@ -140,21 +145,33 @@ function RegisterForm() {
 
 
                     </div>
+                    {/* 
+                                            <div className="row form-group">
+                                                <label htmlFor="website"> Website: </label>
+                                                <input className=""
+                                                    value={values.website}
+                                                    type="text"
+                                                    name="website"
+                                                    id="user_website"
+                                                    onChange={handleChange}
+                                                />
+                                                <i className="fas fa-pen mx-2"></i>
+                                            </div> */}
 
                     <div className="row form-group">
-                      <label htmlFor="profession">Profession:</label>
+                      <label htmlFor="company">Company:</label>
                       <input className="input-group-append"
-                        value={values.profession}
+                        // value={this.company}
                         type="text"
-                        name="profession"
-                        id="user_profession"
+                        name="company"
+                        id="user_company"
                         onChange={handleChange}
                       />
                       <i className="fas fa-pen mx-2"></i>
 
                     </div>
                     <div className=" form-group">
-
+                      {/* <label className="motivesLabel" htmlFor="motives">What brings you here today?</label> */}
                       <p className="motivesLabel">What brings you here today?</p>
 
                       <select onChange={handleChange}
@@ -203,7 +220,7 @@ function RegisterForm() {
 
 
   )
-}
 
+}
 
 export default RegisterForm

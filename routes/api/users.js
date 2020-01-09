@@ -4,15 +4,16 @@ const usersController = require("../../controllers/usersController");
 
 router.route("/")
     .get(usersController.findAll)
-    .post(usersController.create);
+    .post(usersController.create)
 
 
 router
     .route("/:id")
     .get(usersController.findById)
     .put(usersController.update)
-    .delete(usersController.remove);
+    .delete(usersController.remove)
 
-router.get("/email/:email", usersController.findByEmail)
+router
+    .get("/email/:email", usersController.findByEmail)
 
 module.exports = router;
