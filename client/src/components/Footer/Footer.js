@@ -5,7 +5,7 @@ import "./Footer.css";
 function Footer() {
     return (
 
-        <div className=" sticky ">
+        <div>
 
 
             <nav className=" appFooter  navbar justify-content-center fixed-bottom ">
