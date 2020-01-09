@@ -45,10 +45,9 @@ function UserCard(props) {
                   <p className="user-name text-center"> About </p>
                   <p className="bio text-center">{user.bio}</p>
                   <Card.Text>
-                    <div className=" profile-info     ">
+                    <div className=" profile-info  ">
                       <p className="email"> <a href="mailto:">{user.email}</a> </p>
-                      <p className="site"> <a href="http://">{user.website}</a> </p>
-                      <p className="company"><small className="smallCompany">Company:</small> {user.company}</p>
+                      <p className="profession"> <a href="http://">{user.profession}</a> </p>
 
                     </div>
                   </Card.Text>

@@ -34,6 +34,7 @@ const validationSchema = Yup.object().shape({
 
 
 function RegisterForm(props) {
+  console.log(props)
 
   const [state, dispatch] = useStoreContext();
   console.log(state);
@@ -45,7 +46,9 @@ function RegisterForm(props) {
         initialValues={{
           picture: state.user.signInUserSession.idToken.payload.picture,
           name: state.user.signInUserSession.idToken.payload.name,
-          email: state.user.signInUserSession.idToken.payload.email
+          email: state.user.signInUserSession.idToken.payload.email,
+          bio:""
+
         }}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubtmitting }) => {
@@ -56,14 +59,13 @@ function RegisterForm(props) {
           API.saveUser({
             picture: values.picture,
             name: values.name,
-            website: values.website,
-            company: values.company,
             bio: values.bio,
+            profession: values.profession,
             email: values.email,
             motives: values.motives
 
           }).then(res => {
-            this.props.handleModalClose();
+            props.handleModalClose();
             console.log("Saved to database")
           })
         }}
@@ -82,31 +84,40 @@ function RegisterForm(props) {
             <form onSubmit={handleSubmit}>
               <nav className=" modalNav  p-1">Your Profile</nav>
 
-              <div className="container modalStyle">
-                <div className="row">
 
-                  <div className="col-6">
-                    <div className="row my-4 mx-5">
 
-                      <img className="" src={values.picture} alt="userPicture" />
+              <div className="container  modalStyle">
+                <div className="row ">
 
-                    </div>
+                  <div className="col-6 text-center">
 
-                    <div className="row my-1 mx-0 input-container ">
-                      <div><label htmlFor="name">Name:</label></div>
 
-                      <input type="text"
-                        value={values.name}
-                        name="name"
-                        id="name"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        className={touched.name && errors.name ? "has-error" : null}
-                      />
-                      <div className=" row inputError">
-                        <Error touched={touched.name} message={errors.name} />
-                      </div>
-                    </div>
+                    <img className="userImageForm" src={values.picture} alt="userPicture" />
+
+
+
+
+
+
+                    <p className=" 
+nameRegisterForm text-center "
+                      name="name"
+                      id="name"
+                    > {values.name}</p>
+
+
+
+                    <p className=" emailRegisterForm text-center"
+                      type="email"
+                      name="email"
+                      id="user_email"
+                    >{values.email}</p>
+
+
+
+
+
+
                   </div>
 
                   <div className="col-6">
@@ -128,43 +139,15 @@ function RegisterForm(props) {
                       </div>
                     </div>
 
-                    <div className="row form-group">
-                      <label htmlFor="Email"> Email: </label>
-                      <input
-                        type="email"
-                        name="email"
-                        id="user_email"
-                        value={values.email}
-                        onChange={handleChange}
-                        className={touched.email && errors.email ? "has-error" : null}
-                      />
-                      <i className="fas fa-pen mx-2"></i>
-                      <div className="inputError">
-                        <Error touched={touched.email} message={errors.email} />
-                      </div>
-
-
-                    </div>
-                    {/* 
-                                            <div className="row form-group">
-                                                <label htmlFor="website"> Website: </label>
-                                                <input className=""
-                                                    value={values.website}
-                                                    type="text"
-                                                    name="website"
-                                                    id="user_website"
-                                                    onChange={handleChange}
-                                                />
-                                                <i className="fas fa-pen mx-2"></i>
-                                            </div> */}
 
                     <div className="row form-group">
-                      <label htmlFor="company">Company:</label>
+                      <label htmlFor="profession">Profession:</label>
                       <input className="input-group-append"
                         // value={this.company}
                         type="text"
-                        name="company"
-                        id="user_company"
+                        name="profession"
+                        id="user_profession"
+                        value={values.profession}
                         onChange={handleChange}
                       />
                       <i className="fas fa-pen mx-2"></i>

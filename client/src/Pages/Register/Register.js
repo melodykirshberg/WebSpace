@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Modal from 'react-bootstrap/Modal'
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
+import "../../components/RegisterForm/register.css"
 
 
 
@@ -22,6 +23,7 @@ class Register extends Component {
     return (
 
       <Modal
+        className="registerModal"
         aria-labelledby=""
         centered size="lg"
         show={this.state.show}
