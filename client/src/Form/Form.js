@@ -1,6 +1,7 @@
 import React, { useState, useReducer } from 'react'
 import { Auth } from 'aws-amplify'
 import "./Form.css";
+
 const initialFormState = {
     username: '', password: '', email: '', confirmationCode: ''
 }
@@ -80,7 +81,7 @@ export default function Form(props) {
             {formType === 'signUp' && (
                 <p className="have-acct ">
                     Already have an account?
-                    <span className="signIn-link mx-1" onClick={() => updateFormType('signIn')} >Sign in.</span>
+                    <span className="signIn-link mx-1" onClick={() => updateFormType('signIn')} >Sign In</span>
 
                 </p>
 
@@ -89,7 +90,7 @@ export default function Form(props) {
             }
 
             {formType === 'signIn' && (
-                <p className="need-acctount">
+                <p className="need-acct">
                     Need an account? <span
                         className="anchor"
                         onClick={() => updateFormType('signUp')}
@@ -149,7 +150,7 @@ function SignUp(props) {
 function SignIn(props) {
     return (
         <div className="container signInContainer">
-            <h6 className="log-acct">Log in</h6>
+            <h6 className="log-acct">Log In</h6>
             <input
                 name='username'
                 onChange={e => { e.persist(); props.updateFormState(e) }}
