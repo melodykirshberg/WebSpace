@@ -56,7 +56,7 @@ function RegisterForm(props) {
           ///update the user in the db
 
 
-          API.saveUser({
+          API.updateUser({
             picture: values.picture,
             name: values.name,
             bio: values.bio,

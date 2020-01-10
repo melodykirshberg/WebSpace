@@ -43,10 +43,20 @@ function Authentication(props) {
                 }).catch(err => {
                   console.log("User creation failed");
                 });
-
-
+                props.history.push("/register");
               }
-              props.history.push("/register");
+              if (userExist.data) {
+                API.getUser({
+                  name: userName,
+                  email: userEmail,
+                  picture: userImage
+                }).then(user => {
+                  console.log("User Created");
+                }).catch(err => {
+                  console.log("User creation failed")
+                });
+                props.history.push("/main")
+              }
             })
           })
 
