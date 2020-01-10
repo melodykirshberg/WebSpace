@@ -14,7 +14,7 @@
 .signUpContainer {
   text-align: center;
   width: 200px;
-  height: 400px;
+  height: 300px;
   padding: 20px;
   border: 1px solid silver;
   border-radius: 10px;
@@ -101,4 +101,10 @@
   outline: none;
   border-radius: 3px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.errorStyle {
+    color: red;
+    font-size: 12px;
+    text-align: left;
 }
