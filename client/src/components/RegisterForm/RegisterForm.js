@@ -42,20 +42,22 @@ function RegisterForm(props) {
         <div>
 
             <Formik
-                initialValues={{ picture: state.user.signInUserSession.idToken.payload.picture, name: state.user.signInUserSession.idToken.payload.name, email: state.user.signInUserSession.idToken.payload.email}}
+                initialValues={{
+                     picture: state.user.signInUserSession.idToken.payload.picture, 
+                    name: state.user.signInUserSession.idToken.payload.name, 
+                    email: state.user.signInUserSession.idToken.payload.email, 
+                    bio:""}}
                 validationSchema={validationSchema}
                 onSubmit={(values, { setSubtmitting }) => {
                     const userEmail = values.email
                     ///update the user in the db
 
 
-                    API.saveUser({
-                        picture: values.picture,
+                    API.updateUser({
                         name: values.name,
                         website: values.website,
                         company: values.company,
                         bio: values.bio,
-                        email: values.email,
                         motives: values.motives
 
                     }).then(res => {
@@ -63,10 +65,7 @@ function RegisterForm(props) {
                         console.log("Saved to database")
                     })
                 }}
-
-
             >
-
                 {({ values,
                     errors,
                     touched,
@@ -110,7 +109,6 @@ function RegisterForm(props) {
                                         <div className="row   my-2 form-group">
                                             <label htmlFor=""></label>
                                             <textarea name="bio"
-                                                label="Select a color"
                                                 placeholder="Write a brief description about yourself..."
                                                 value={values.bio}
                                                 rows="4"

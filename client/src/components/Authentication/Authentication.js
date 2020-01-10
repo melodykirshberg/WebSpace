@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import Nav from "../Nav/Nav.js";
 import Buttons from "../Button/Buttons.js";
 import Form from "../../Form/Form"
-
 import { Hub, Auth } from "aws-amplify";
 import { useStoreContext } from "../../utils/Store";
 import API from "../../utils/API";
@@ -15,16 +14,10 @@ function Authentication(props) {
   const [user, setUser] = useState({})
 
   useEffect(() => {
-
-
-
     // set listener for auth events
-
-
     Hub.listen("auth", data => {
       const { payload } = data;
       if (payload.event === "signIn") {
-
 
         Auth.currentAuthenticatedUser()
           .then(data => {
@@ -73,7 +66,6 @@ function Authentication(props) {
       checkUser(dispatch);
     }
   }, []);
-
   // This renders the custom form
   if (formState === "email") {
     return (
@@ -83,7 +75,6 @@ function Authentication(props) {
       </div>
     );
   }
-
   return (
     <div>
       <Nav updateFormState={updateFormState} />
@@ -99,7 +90,6 @@ function Authentication(props) {
   );
 }
 
-//CHECK USER FUNCTION
 async function checkUser(dispatch) {
   try {
     const user = await Auth.currentAuthenticatedUser();
