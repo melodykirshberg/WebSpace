@@ -11,10 +11,7 @@ function Footer() {
             <nav className=" appFooter  navbar justify-content-center fixed-bottom ">
                 <small>Copyright 2019 ©</small>
             </nav>
-
         </div>
-
-
     )
 }
 
