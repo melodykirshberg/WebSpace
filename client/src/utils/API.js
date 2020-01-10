@@ -1,5 +1,4 @@
 import axios from "axios";
-
 export default {
     getUsers: function () {
         return axios.get("/api/users");
@@ -10,11 +9,11 @@ export default {
     getUserByEmail: function (email) {
         return axios.get("/api/users/email/" + email)
     },
-
     saveUser: function (userData) {
         return axios.post("/api/users", userData);
     },
     updateUser: function (userData) {
-        return axios.put("/api/user", userData);
-    }
+        return axios.put("/api/users/user", userData);
+    },
+
 };
