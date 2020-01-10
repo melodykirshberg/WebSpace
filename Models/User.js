@@ -8,13 +8,11 @@ const UserSchema = new Schema({
         type: String,
         trim: true,
         required: "Name is Required",
-
     },
-
     bio: {
         type: String,
-
-
+        trim: true,
+        default: "N/A"
     },
     email: {
         type: String,
@@ -22,16 +20,11 @@ const UserSchema = new Schema({
         required: "Email is Required",
         // match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
-
     profession: {
         type: String,
         trim: true,
         default: "n/a"
-
-
     },
-
-
     motives: {
         type: String,
         default: "Networking"
@@ -45,8 +38,6 @@ const UserSchema = new Schema({
         type: String,
         default: "https://alumni.crg.eu/sites/default/files/default_images/default-picture_0_0.png"
     }
-    ,
-
 });
 
 
