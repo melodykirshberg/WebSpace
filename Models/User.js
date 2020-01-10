@@ -27,8 +27,6 @@ const UserSchema = new Schema({
         type: String,
         trim: true,
         default: "n/a"
-
-
     },
 
 

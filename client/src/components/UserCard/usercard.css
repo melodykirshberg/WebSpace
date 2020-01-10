@@ -8,7 +8,8 @@
 }
 
 .userCard{
-    background-color: #a08ee7;
+  background-color: #f39f86;
+  background-image: linear-gradient(300deg, #f39f86 0%, #f9d976 74%);
     box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     margin-top: 5px;
@@ -20,7 +21,7 @@
 
 
 .profile-info {
-  background-color: yellow;
+  background-color: orange;
   padding: 10px;
   border-radius: 10px;
   box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -70,17 +71,18 @@
   border-radius: 50%; 
   width: 120px;
   height: 120px;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 10px;
   box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.5);
   align-content: center !important;
+  background-color: white;
   
   
 }
 
 
 .user-name{
-    font-family: 'Montserrat';  
+  font-family: 'Muli', sans-serif;
     color: white;
     font-size: 25px;
 }
@@ -98,7 +100,7 @@ letter-spacing: 1px;
 line-height: 1px;
 border-radius: 10px;
 font-size: 14px;
-color:#464646;
+color:white;
 }
 
 .site , .email , .company {
@@ -119,12 +121,14 @@ color:#464646;
 .motives{
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
     background-color: #DDDDDD;
+    color: #464646;
     border-radius: 20px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
     font-size: 12px;
-    width: 200px;
+    width: 150px;
+    letter-spacing: 0.5px;
 }
 
 .smallMotives{
@@ -132,6 +136,3 @@ color:#464646;
   color: white;
 }
 
-.smallCompany{
-
-}
