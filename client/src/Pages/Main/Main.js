@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API.js";
-import UserCard from "../../components/UserCard/UserCard"
+import Card from "../../components/UserCard/UserCard"
+
 
 
 
@@ -14,7 +15,9 @@ class Main extends Component {
     state = {
         users: [],
 
+
     }
+
 
 
     // this is the initialization, what do you want the page to do when page it's first loaded
@@ -38,7 +41,8 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <UserCard results={this.state.users} />
+                <Card results={this.state.users} />
+
 
             </div>
 

@@ -65,7 +65,7 @@ function RegisterForm(props) {
             motives: values.motives
 
           }).then(res => {
-            props.handleModalClose();
+             props.handleModalClose();
             console.log("Saved to database")
           })
         }}
@@ -125,7 +125,7 @@ nameRegisterForm text-center "
                     <div className="row   my-2 form-group">
                       <label htmlFor=""></label>
                       <textarea name="bio"
-                        label="Select a color"
+                       
                         placeholder="Write a brief description about yourself..."
                         value={values.bio}
                         rows="4"

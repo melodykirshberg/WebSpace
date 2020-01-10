@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import Card from 'react-bootstrap/Card'
 import "./usercard.css"
-import Carousel from "react-bootstrap/Carousel"
+
+
 
 
 // here we will map over our users and for each of them we will create a card that will hav name, bio, email, etc 
@@ -18,7 +19,7 @@ function UserCard(props) {
 
   return (
 
-    <div className="col">
+    <div className="container">
       <div className="row">
 
 
@@ -26,7 +27,7 @@ function UserCard(props) {
           props.results.map(user => (
 
 
-            <Card className="userCard flip-box" style={{ width: '14rem', height: '20rem' }} >
+            <Card className="userCard flip-box" style={{ width: '13rem', height: '20rem' }} >
               <div className="flip-box-inner">
                 <div className="flip-box-front">
                   <div className=" ">
@@ -54,9 +55,7 @@ function UserCard(props) {
                 </Card.Body>
               </div>
             </Card>
-          ))
-        }
-
+          ))}
       </div>
     </div>
 
