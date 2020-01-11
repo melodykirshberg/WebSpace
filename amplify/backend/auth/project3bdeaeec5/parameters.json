@@ -72,5 +72,5 @@
             ]
         }
     ],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://rocky-atoll-63520.herokuapp.com/main/\"],\"LogoutURLs\":[\"https://rocky-atoll-63520.herokuapp.com/\"]}"
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://rocky-atoll-63520.herokuapp.com/\"],\"LogoutURLs\":[\"https://rocky-atoll-63520.herokuapp.com/\"]}"
 }
