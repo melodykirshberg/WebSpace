@@ -39,11 +39,9 @@ function Authentication(props) {
                 props.history.push("/register");
               }
               if (userExist.data) {
-                API.getUser({
-                  name: userName,
-                  email: userEmail,
-                  picture: userImage
-                }).then(user => {
+                API.getUserByEmail(
+                  userEmail
+                ).then(user => {
                   console.log("User Created");
                 }).catch(err => {
                   console.log("User creation failed")
