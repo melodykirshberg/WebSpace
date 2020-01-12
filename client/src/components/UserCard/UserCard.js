@@ -12,11 +12,6 @@ import "./usercard.css"
 function UserCard(props) {
 
 
-
-
-
-
-
   return (
 
     <div className="container">
@@ -24,7 +19,8 @@ function UserCard(props) {
 
 
         {
-          props.results.map(user => (
+          props.results && props.results.map(user => (
+
 
 
             <Card className="userCard flip-box" style={{ width: '13rem', height: '20rem' }} >
