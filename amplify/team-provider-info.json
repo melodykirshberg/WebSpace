@@ -14,7 +14,7 @@
         "categories": {
             "function": {
                 "project3bdeaeec5CustomMessage": {
-                    "REDIRECTURL": "http://localhost:3000/",
+                    "REDIRECTURL": "https://rocky-atoll-63520.herokuapp.com/",
                     "EMAILSUBJECT": "Confirmation ",
                     "EMAILMESSAGE": "Here is your confirmation link"
                 }
