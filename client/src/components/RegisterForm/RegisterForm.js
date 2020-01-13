@@ -143,7 +143,7 @@ nameRegisterForm text-center "
                     <div className="row form-group">
                       <label htmlFor="profession">Profession:</label>
                       <input className="input-group-append"
-                       className="user_profession"
+                        // value={this.company}
                         type="text"
                         name="profession"
                         id="user_profession"

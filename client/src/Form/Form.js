@@ -1,16 +1,12 @@
 import React, { useState, useReducer } from "react";
 import { Auth } from "aws-amplify";
 import "./Form.css";
-
-
 const initialFormState = {
   username: "",
   password: "",
   email: "",
   confirmationCode: ""
 };
-
-
 function reducer(state, action) {
   switch (action.type) {
     case "updateFormState":
@@ -22,9 +18,6 @@ function reducer(state, action) {
       return state;
   }
 }
-
-// I want to send the err.message to the front end!
-//this function handles the user sign up with email. It will render an error if user does not meet the criteria we set 
 async function signUp({ username, password, email }, updateFormType) {
   try {
     await Auth.signUp({
@@ -34,34 +27,27 @@ async function signUp({ username, password, email }, updateFormType) {
     });
     console.log("sign up success!");
     updateFormType("confirmSignUp");
-
   } catch (err) {
-    alert(err.message);
+    console.log("error signing up..", err);
   }
 }
-
-// I want to send the err.message to the front end!
 async function confirmSignUp({ username, confirmationCode }, updateFormType) {
   try {
     await Auth.confirmSignUp(username, confirmationCode);
     console.log("confirm sign up success!");
     updateFormType("signIn");
   } catch (err) {
-    alert(err.message);;
+    console.log("error signing up..", err);
   }
 }
-
-// I want to send the err.message to the front end!
 async function signIn({ username, password }) {
   try {
     await Auth.signIn(username, password);
     console.log("sign in success!");
   } catch (err) {
-    alert(err.message);;
+    console.log("error signing up..", err);
   }
 }
-
-
 export default function Form(props) {
   const [formType, updateFormType] = useState("signUp");
   const [formState, updateFormState] = useReducer(reducer, initialFormState);
@@ -134,10 +120,15 @@ function SignUp(props) {
     <div className="signUpContainer container">
       <h6 className="create-acct">Create an Account</h6>
 
-
-
-
-      {/* <label className="labelsForm" htmlFor="email">email:</label>
+      <input
+        name="username"
+        onChange={e => {
+          e.persist();
+          props.updateFormState(e);
+        }}
+        className="userNameInput"
+        placeholder="username"
+      />
       <input
         name="email"
         onChange={e => {
@@ -146,25 +137,7 @@ function SignUp(props) {
         }}
         className="emaiInput"
         placeholder="email"
-      /> */}
-
-
-
-      <label className="labelsForm" htmlFor="email">username/email:</label>
-      <input
-
-        name="username"
-
-        onChange={e => {
-          e.persist();
-          props.updateFormState(e);
-        }}
-        className="userNameInput"
-        placeholder="email"
       />
-
-
-      <label className="labelsForm" htmlFor="password">password:</label>
       <input
         type="password"
         name="password"
@@ -175,7 +148,6 @@ function SignUp(props) {
         className="passwordInput"
         placeholder="password"
       />
-
       <button onClick={props.signUp} className="signUpButton">
         Sign Up
       </button>
@@ -190,7 +162,6 @@ function SignIn(props) {
   return (
     <div className="container signInContainer">
       <h6 className="log-acct">Log in</h6>
-      <label className="labelsForm" htmlFor="email">email:</label>
       <input
         name="username"
         onChange={e => {
@@ -198,10 +169,8 @@ function SignIn(props) {
           props.updateFormState(e);
         }}
         className="userNameInput"
-        placeholder="email"
+        placeholder="username"
       />
-
-      <label className="labelsForm" htmlFor="password">password:</label>
       <input
         type="password"
         name="password"
