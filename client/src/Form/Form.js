@@ -192,10 +192,9 @@ function SignIn(props) {
   );
 }
 //this function handles the code that will be sent to user via email
-// once user add
 function ConfirmSignUp(props) {
   return (
-    <div className="">
+    <div className="container-confirm container ">
       <input
         name="confirmationCode"
         placeholder="Confirmation Code"
@@ -203,7 +202,7 @@ function ConfirmSignUp(props) {
           e.persist();
           props.updateFormState(e);
         }}
-        className="confirmSignInput"
+        className="confirmSignInput input-group"
       />
       <button onClick={props.confirmSignUp} className="confirmSignInButton">
         Confirm Sign Up
