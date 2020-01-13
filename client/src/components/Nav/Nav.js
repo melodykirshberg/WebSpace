@@ -8,10 +8,10 @@ function Nav(props) {
 
   return (
     <nav className="navBar" onClick={() => props.updateFormState("base")}>
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
           <div className="col ">
-            <h1 className="  navTitle col" href="#">
+            <h1 className=" my-1 navTitle col" href="#">
               Web Space
             </h1>
           </div>
