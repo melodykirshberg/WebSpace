@@ -17,7 +17,7 @@ function Buttons(props) {
           onClick={() => Auth.federatedSignIn({ provider: "Google" })}
         >
           <FaGoogle className="mx-2 my-2" color="red" />
-          <p className="bGoogletext  my-2">Sign Up with Google</p>
+          <p className="bGoogletext  my-2">Sign in with Google</p>
         </button>
       </div>
 
