@@ -7,7 +7,7 @@ function Buttons(props) {
   return (
     <div className="container bCard">
       {/* <h2 className="bTitle">Web Space</h2> */}
-      <img src={require("./image1.png")} className="bPic" />
+      <img src={require("./WebSpace.png")} className="bPic" />
       <h4 className="bBio">
       Build and engage in your personal network circle
       </h4>
