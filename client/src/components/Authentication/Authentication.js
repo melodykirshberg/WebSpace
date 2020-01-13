@@ -34,6 +34,7 @@ function Authentication(props) {
                   picture: userImage
                 }).then(user => {
                   console.log("User Created");
+
                 }).catch(err => {
                   console.log("User creation failed");
                 });
@@ -46,8 +47,10 @@ function Authentication(props) {
                   picture: userImage
                 }).then(user => {
                   console.log("User already exist");
+
                 }).catch(err => {
-                  console.log("User creation failed")
+                  console.log("User creation failed");
+
                 });
                 props.history.push("/main")
               }

@@ -8,8 +8,7 @@
 }
 
 .userCard{
-  background-color: silver;
-  
+    background-color: silver;  
     box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     margin-top: 5px;
@@ -21,7 +20,7 @@
 
 
 .profile-info {
-  background-color: orange;
+  background-color: #464646;
   padding: 10px;
   border-radius: 10px;
   box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -90,8 +89,7 @@
 .profile-info{
     font-size: 12px;
     font-family: 'Montserrat';
-    color:#464646;
-    
+    color:#464646;    
 }
 
 .bio{
@@ -103,7 +101,7 @@ font-size: 14px;
 color:white;
 }
 
-.site , .email , .company {
+.site , .email , .profession {
   line-height: 0;
   font-family: 'Montserrat';
   font-size: 12px;

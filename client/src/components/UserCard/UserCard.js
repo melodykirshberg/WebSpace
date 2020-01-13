@@ -11,12 +11,6 @@ import "./usercard.css"
 
 function UserCard(props) {
 
-
-
-
-
-
-
   return (
 
     <div className="container">
@@ -48,7 +42,7 @@ function UserCard(props) {
                   <Card.Text>
                     <div className=" profile-info  ">
                       <p className="email"> <a href="mailto:">{user.email}</a> </p>
-                      <p className="profession"> <a href="http://">{user.profession}</a> </p>
+                      <p className="profession">{user.profession} </p>
 
                     </div>
                   </Card.Text>

@@ -39,7 +39,7 @@
   align-items: center;
   font-family: "Montserrat", sans-serif;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: -20px;
   letter-spacing: 0px;
 }
 
@@ -107,9 +107,10 @@
 /* text inside google button */
 /* -----initial page picture---- */
 .bPic {
-  width: 200px;
-  left: 44.12%;
-  right: 44.17%;
-  margin-top: 18px;
-  margin-bottom: 10px;
+  width: 350px;
+  height: 350px;
+  /* left: 44.12%;
+  right: 44.17%; */
+ 
+  margin-bottom: 0px;
 }
