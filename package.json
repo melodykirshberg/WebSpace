@@ -4,7 +4,6 @@
     "engines": {
         "node": "12.13.0"
     },
-    "homepage": ".",
     "main": "server.js",
     "scripts": {
         "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
