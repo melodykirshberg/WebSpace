@@ -18,6 +18,8 @@ function reducer(state, action) {
       return state;
   }
 }
+// I want to send the err.message to the front end!
+//this function handles the user sign up with email. It will render an error if user does not meet the criteria we set 
 async function signUp({ username, password, email }, updateFormType) {
   try {
     await Auth.signUp({
@@ -28,24 +30,26 @@ async function signUp({ username, password, email }, updateFormType) {
     console.log("sign up success!");
     updateFormType("confirmSignUp");
   } catch (err) {
-    console.log("error signing up..", err);
+    alert(err.message);
   }
 }
+// I want to send the err.message to the front end!
 async function confirmSignUp({ username, confirmationCode }, updateFormType) {
   try {
     await Auth.confirmSignUp(username, confirmationCode);
     console.log("confirm sign up success!");
     updateFormType("signIn");
   } catch (err) {
-    console.log("error signing up..", err);
+    alert(err.message);;
   }
 }
+// I want to send the err.message to the front end!
 async function signIn({ username, password }) {
   try {
     await Auth.signIn(username, password);
     console.log("sign in success!");
   } catch (err) {
-    console.log("error signing up..", err);
+    alert(err.message);;
   }
 }
 export default function Form(props) {
@@ -98,7 +102,6 @@ export default function Form(props) {
           </span>
         </p>
       )}
-
       {formType === "signIn" && (
         <p className="need-acct">
           Need an account?{" "}
@@ -110,7 +113,6 @@ export default function Form(props) {
     </div>
   );
 }
-
 //SignUp form
 //----- TODO  ---- ADD NOTIFICATIONS SO USER WILL KNOW ABOUT THE REQUIREMENTS..
 // user name and email are a both mandatory and need to be same(can we change that?)
@@ -119,16 +121,7 @@ function SignUp(props) {
   return (
     <div className="signUpContainer container">
       <h6 className="create-acct">Create an Account</h6>
-
-      <input
-        name="username"
-        onChange={e => {
-          e.persist();
-          props.updateFormState(e);
-        }}
-        className="userNameInput"
-        placeholder="username"
-      />
+      {/* <label className="labelsForm" htmlFor="email">email:</label>
       <input
         name="email"
         onChange={e => {
@@ -137,7 +130,18 @@ function SignUp(props) {
         }}
         className="emaiInput"
         placeholder="email"
+      /> */}
+      <label className="labelsForm" htmlFor="email">username/email:</label>
+      <input
+        name="username"
+        onChange={e => {
+          e.persist();
+          props.updateFormState(e);
+        }}
+        className="userNameInput"
+        placeholder="email"
       />
+      <label className="labelsForm" htmlFor="password">password:</label>
       <input
         type="password"
         name="password"
@@ -154,14 +158,13 @@ function SignUp(props) {
     </div>
   );
 }
-
 //Sign in
 // When user already has an account
-
 function SignIn(props) {
   return (
     <div className="container signInContainer">
       <h6 className="log-acct">Log in</h6>
+      <label className="labelsForm" htmlFor="email">email:</label>
       <input
         name="username"
         onChange={e => {
@@ -169,8 +172,9 @@ function SignIn(props) {
           props.updateFormState(e);
         }}
         className="userNameInput"
-        placeholder="username"
+        placeholder="email"
       />
+      <label className="labelsForm" htmlFor="password">password:</label>
       <input
         type="password"
         name="password"
@@ -187,12 +191,10 @@ function SignIn(props) {
     </div>
   );
 }
-
 //this function handles the code that will be sent to user via email
-// once user add
 function ConfirmSignUp(props) {
   return (
-    <div className="">
+    <div className="container-confirm container ">
       <input
         name="confirmationCode"
         placeholder="Confirmation Code"
@@ -200,7 +202,7 @@ function ConfirmSignUp(props) {
           e.persist();
           props.updateFormState(e);
         }}
-        className="confirmSignInput"
+        className="confirmSignInput input-group"
       />
       <button onClick={props.confirmSignUp} className="confirmSignInButton">
         Confirm Sign Up

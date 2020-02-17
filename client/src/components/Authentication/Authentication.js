@@ -25,6 +25,7 @@ function Authentication(props) {
             const userEmail = data.attributes.email
             const userImage = data.attributes.picture
             API.getUserByEmail(userEmail).then(userExist => {
+              console.log(userExist);
               //checks if user is in the data base and stores information that will be passed to the modal
               if (!userExist.data) {
                 API.saveUser({
@@ -39,11 +40,9 @@ function Authentication(props) {
                 props.history.push("/register");
               }
               if (userExist.data) {
-                API.getUser({
-                  name: userName,
-                  email: userEmail,
-                  picture: userImage
-                }).then(user => {
+                API.getUserByEmail(
+                  userEmail
+                ).then(user => {
                   console.log("User Created");
                 }).catch(err => {
                   console.log("User creation failed")

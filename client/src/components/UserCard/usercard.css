@@ -1,32 +1,20 @@
 /* in this page we are designing the user cards that will show up in the main page  */
 
-
 .userCardContainer {
   margin-right: auto;
   margin-left: auto;
-
 }
 
-.userCard{
+.userCard {
   background-color: #f39f86;
   background-image: linear-gradient(300deg, #f39f86 0%, #f9d976 74%);
-    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    margin-top: 5px;
-    margin-right: 10px;
-    margin-top: 10px;
-    cursor:grab;
-
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-top: 10px;
+  cursor: grab;
 }
-
-
-.profile-info {
-  background-color: orange;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
 
 /*----- card flip ------  */
 
@@ -35,12 +23,11 @@
   text-align: center;
   transition: transform 1.9s;
   transform-style: preserve-3d;
-
 }
 
 .flip-box:hover .flip-box-inner {
   transform: rotateY(180deg);
-  cursor:grab;
+  cursor: grab;
 }
 
 .flip-box-front, .flip-box-back {
@@ -49,26 +36,23 @@
   height: 100%;
   backface-visibility: hidden;
   border-radius: 4px;
-  cursor:grab;
+  cursor: grab;
 }
+
 .flip-box-front {
   padding-top: 20px;
-  cursor:grab;
-
+  cursor: grab;
 }
 
 .flip-box-back {
   transform: rotateY(180deg);
-  cursor:grab;
-
+  cursor: grab;
 }
 
 /*----- card flip ------  */
 
-
-
-.userImage{
-  border-radius: 50%; 
+.userImage {
+  border-radius: 50%;
   width: 120px;
   height: 120px;
   margin-top: 20px;
@@ -76,63 +60,67 @@
   box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.5);
   align-content: center !important;
   background-color: white;
-  
-  
 }
 
-
-.user-name{
+.user-name {
   font-family: 'Muli', sans-serif;
-    color: white;
-    font-size: 25px;
+  color: white;
+  font-size: 25px;
 }
 
-.profile-info{
-    font-size: 12px;
-    font-family: 'Montserrat';
-    color:#464646;
-    
+.about {
+  color: #ffffff;
+  font-size: 28px;
+  font-family: 'Muli', sans-serif;
+  margin-bottom: 5px;
 }
 
-.bio{
-font-style: italic;
-letter-spacing: 1px;
-line-height: 1px;
-border-radius: 10px;
-font-size: 14px;
-color:white;
+.profile-info {
+  background-color: #ffffff;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
 }
 
-.site , .email , .company {
-  line-height: 0;
-  font-family: 'Montserrat';
+.bio {
+  font-style: italic;
+  font-size: 14px;
+  color: white;
+  font-family: 'Muli', sans-serif;
+}
+
+.email {
+  font-family: 'Muli', sans-serif;
   font-size: 12px;
   margin-top: 5px;
-  letter-spacing: 0vh;
-  
 }
 
-
-
-.site, .email {
-  text-align: center;
+.profession {
+  font-family: 'Muli', sans-serif;
+  font-size: 14px;
 }
 
-.motives{
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
-    background-color: #DDDDDD;
-    color: #464646;
-    border-radius: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    font-size: 12px;
-    width: 150px;
-    letter-spacing: 0.5px;
+.smallProfession {
+  color: silver;
+  font-family: 'Muli', sans-serif;
+  font-size: 10px;
 }
 
-.smallMotives{
+.motives {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  background-color: #DDDDDD;
+  color: #464646;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  font-size: 12px;
+  width: 150px;
+  letter-spacing: 0.5px;
+}
+
+.smallMotives {
   font-size: 13px;
   color: white;
 }
-

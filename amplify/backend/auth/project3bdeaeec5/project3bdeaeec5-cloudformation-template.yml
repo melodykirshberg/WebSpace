@@ -112,16 +112,10 @@ Parameters:
       
   hostedUIProviderMeta:
     Type: String
-              
-  hostedUIProviderCreds:
-    Type: String
-              
-  oAuthMetadata:
-    Type: String
                       
   userPoolGroupList:
     Type: CommaDelimitedList
-                  
+      
   verificationBucketName:
     Type: String
                     
@@ -133,7 +127,13 @@ Parameters:
               
   dependsOn:
     Type: CommaDelimitedList
-    
+      
+  hostedUIProviderCreds:
+    Type: String
+              
+  oAuthMetadata:
+    Type: String
+                        
 Conditions:
   ShouldNotCreateEnvResources: !Equals [ !Ref env, NONE ]
 
@@ -334,7 +334,7 @@ Resources:
             - ' }'
             - '};'
       Handler: index.handler
-      Runtime: nodejs8.10
+      Runtime: nodejs10.x
       Timeout: '300'
       Role: !GetAtt 
         - UserPoolClientRole
