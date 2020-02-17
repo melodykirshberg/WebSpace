@@ -50,11 +50,6 @@
         "email"
     ],
     "triggers": "{\"CustomMessage\":[\"verification-link\"]}",
-    "hostedUIDomainName": "webspaceproject3",
-    "authProvidersUserPool": [
-        "Google"
-    ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
     "userPoolGroupList": [],
     "verificationBucketName": "project3bdeaeec5verificationbucket",
     "parentStack": {
@@ -72,5 +67,10 @@
             ]
         }
     ],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://rocky-atoll-63520.herokuapp.com/\"],\"LogoutURLs\":[\"https://rocky-atoll-63520.herokuapp.com/\"]}"
+    "hostedUIDomainName": "project324fc03c3-24fc03c3",
+    "authProvidersUserPool": [
+        "Google"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://thewebspace.herokuapp.com/\"],\"LogoutURLs\":[\"https://thewebspace.herokuapp.com/\"]}"
 }
