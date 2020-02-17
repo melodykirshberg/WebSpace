@@ -103,6 +103,15 @@ Parameters:
       
   triggers:
     Type: String
+              
+  hostedUIDomainName:
+    Type: String
+                      
+  authProvidersUserPool:
+    Type: CommaDelimitedList
+      
+  hostedUIProviderMeta:
+    Type: String
                       
   userPoolGroupList:
     Type: CommaDelimitedList
@@ -119,15 +128,6 @@ Parameters:
   dependsOn:
     Type: CommaDelimitedList
       
-  hostedUIDomainName:
-    Type: String
-                      
-  authProvidersUserPool:
-    Type: CommaDelimitedList
-      
-  hostedUIProviderMeta:
-    Type: String
-              
   hostedUIProviderCreds:
     Type: String
               
@@ -460,7 +460,7 @@ Resources:
 
 
       Handler: index.handler
-      Runtime: nodejs10.x
+      Runtime: nodejs8.10
       Timeout: '300'
       Role: !GetAtt 
         - UserPoolClientRole
@@ -589,7 +589,7 @@ Resources:
             - '} '
 
       Handler: index.handler
-      Runtime: nodejs10.x
+      Runtime: nodejs8.10
       Timeout: '300'
       Role: !GetAtt 
         - UserPoolClientRole
@@ -688,7 +688,7 @@ Resources:
             - '}'
 
       Handler: index.handler
-      Runtime: nodejs10.x
+      Runtime: nodejs8.10
       Timeout: '300'
       Role: !GetAtt 
         - UserPoolClientRole

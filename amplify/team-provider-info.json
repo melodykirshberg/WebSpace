@@ -17,11 +17,6 @@
                     "REDIRECTURL": "https://rocky-atoll-63520.herokuapp.com/",
                     "EMAILSUBJECT": "Confirmation ",
                     "EMAILMESSAGE": "Here is your confirmation link"
-                },
-                "webspaceCustomMessage": {
-                    "REDIRECTURL": "https://thewebspace.herokuapp.com/",
-                    "EMAILSUBJECT": "Verification",
-                    "EMAILMESSAGE": ""
                 }
             },
             "auth": {
