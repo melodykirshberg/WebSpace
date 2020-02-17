@@ -1,6 +1,9 @@
 {
     "name": "project-3",
     "version": "0.1.0",
+    "engines": {
+        "node": "12.13.0"
+    },
     "main": "server.js",
     "scripts": {
         "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",

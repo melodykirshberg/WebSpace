@@ -16,7 +16,7 @@
 WebSpace is a meet-up style app that gives users an opportunity to view pertinent information about other individuals attending the gathering. Whether it’s just their name, company or a quick snippet about themselves, WebSpace allows users a chance to get to know a little more about their fellow attendees in an easy, non-confrontational manner.
 
 ## Deployed Link
-Click [here](https://rocky-atoll-63520.herokuapp.com/).
+Click [here](https://thewebspace.herokuapp.com/).
 
 ## Technologies-Libraries
 Node - Express - JavaScript - Bootstrap - CSS - HTML - React.js - MongoDB - Mongoose - Amazon Cognito - AWS - Amplify - Formik - yup

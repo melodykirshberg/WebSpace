@@ -21,7 +21,8 @@
             },
             "auth": {
                 "project3bdeaeec5": {
-                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"643725319348-gccdbi6rnbvvmu6h0ptg4uibtutovv7o.apps.googleusercontent.com\",\"client_secret\":\"wWW2co6UIUXv1hz1v6tiZu9H\"}]"
+                    "googleClientId": "643725319348-gccdbi6rnbvvmu6h0ptg4uibtutovv7o.apps.googleusercontent.com",
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"643725319348-gccdbi6rnbvvmu6h0ptg4uibtutovv7o.apps.googleusercontent.com\",\"client_secret\":\"yEaE9bkoz20Nh5dp8opbQ9uq\"}]"
                 }
             }
         }
