@@ -4,7 +4,7 @@
     "resourceNameTruncated": "projecbdeaeec5",
     "userPoolName": "project3bdeaeec5_userpool_bdeaeec5",
     "autoVerifiedAttributes": [
-        "email"
+        "phone_number"
     ],
     "mfaConfiguration": "OFF",
     "mfaTypes": [
@@ -44,7 +44,7 @@
             "Arn"
         ]
     },
-    "useDefault": "defaultSocial",
+    "useDefault": "manual",
     "hostedUI": true,
     "usernameAttributes": [
         "email"
@@ -72,5 +72,11 @@
             ]
         }
     ],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://thewebspace.herokuapp.com/\"],\"LogoutURLs\":[\"https://thewebspace.herokuapp.com/\"]}"
+    "thirdPartyAuth": true,
+    "authProviders": [
+        "accounts.google.com"
+    ],
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"implicit\"],\"AllowedOAuthScopes\":[\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://thewebspace.herokuapp.com/\"],\"LogoutURLs\":[\"https://thewebspace.herokuapp.com/\"]}"
 }
