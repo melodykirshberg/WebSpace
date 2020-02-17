@@ -115,7 +115,7 @@
 						"Arn"
 					]
 				},
-				"Runtime": "nodejs8.10",
+				"Runtime": "nodejs10.x",
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-project-3-projfinal-233345-deployment",

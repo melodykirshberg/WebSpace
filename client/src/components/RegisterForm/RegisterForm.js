@@ -1,5 +1,4 @@
-import React, { useState, Component } from "react"
-import Modal from 'react-bootstrap/Modal'
+import React from "react"
 import "./register.css"
 import API from "../../utils/API"
 import { useStoreContext } from "../../utils/Store";
@@ -7,11 +6,8 @@ import { Formik } from "formik"
 import * as Yup from "yup"
 import Error from "./Error";
 
-
-
 //here we have some schema for the validation we are usin YUP a npm package that does that for us. 
 // We can change what it will be displayed to the usere!
-
 const validationSchema = Yup.object().shape({
   name: Yup.string()
     .min(5, "Too Short!")
@@ -52,9 +48,7 @@ function RegisterForm(props) {
         }}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubtmitting }) => {
-          const userEmail = values.email
           ///update the user in the db
-
 
           API.updateUser({
             picture: values.picture,
