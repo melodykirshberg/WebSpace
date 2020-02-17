@@ -1,6 +1,7 @@
 import React, { useState, useReducer } from "react";
 import { Auth } from "aws-amplify";
 import "./Form.css";
+
 const initialFormState = {
   username: "",
   password: "",
