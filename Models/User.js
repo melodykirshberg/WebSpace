@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
-
 const UserSchema = new Schema({
     name: {
         type: String,
@@ -39,7 +37,6 @@ const UserSchema = new Schema({
         default: "https://alumni.crg.eu/sites/default/files/default_images/default-picture_0_0.png"
     }
 });
-
 
 const User = mongoose.model("User", UserSchema);
 module.exports = User;
