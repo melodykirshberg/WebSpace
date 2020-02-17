@@ -69,12 +69,12 @@
 				"FunctionName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"project3bdeaeec5CustomMessage",
+						"demodayproject58d04e29CustomMessage",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"project3bdeaeec5CustomMessage",
+									"demodayproject58d04e29CustomMessage",
 									"-",
 									{
 										"Ref": "env"
@@ -118,8 +118,8 @@
 				"Runtime": "nodejs10.x",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "amplify-project-3-projfinal-233345-deployment",
-					"S3Key": "amplify-builds/project3bdeaeec5CustomMessage-2b744949677055694c77-build.zip"
+					"S3Bucket": "amplify-demodayproject-demodayenv-81157-deployment",
+					"S3Key": "amplify-builds/demodayproject58d04e29CustomMessage-436a7949584574337051-build.zip"
 				}
 			}
 		},
@@ -129,12 +129,12 @@
 				"RoleName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"project3bdeaeec5CustomMessage",
+						"demodayproject58d04e29CustomMessage",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"project3bdeaeec5CustomMessage",
+									"demodayproject58d04e29CustomMessage",
 									"-",
 									{
 										"Ref": "env"

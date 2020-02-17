@@ -1,19 +1,19 @@
 {
 	"function": {
-		"project3bdeaeec5CustomMessage": {
+		"demodayproject58d04e29CustomMessage": {
 			"service": "Lambda",
 			"providerPlugin": "awscloudformation",
 			"build": true
 		}
 	},
 	"auth": {
-		"project3bdeaeec5": {
+		"demodayproject58d04e29": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [
 				{
 					"category": "function",
-					"resourceName": "project3bdeaeec5CustomMessage",
+					"resourceName": "demodayproject58d04e29CustomMessage",
 					"triggerProvider": "Cognito",
 					"attributes": [
 						"Arn",
@@ -21,12 +21,6 @@
 					]
 				}
 			]
-		}
-	},
-	"hosting": {
-		"S3AndCloudFront": {
-			"service": "S3AndCloudFront",
-			"providerPlugin": "awscloudformation"
 		}
 	}
 }

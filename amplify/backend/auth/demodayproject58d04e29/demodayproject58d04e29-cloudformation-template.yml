@@ -11,13 +11,13 @@ Parameters:
   
   
   
-  functionproject3bdeaeec5CustomMessageArn: 
+  functiondemodayproject58d04e29CustomMessageArn: 
     Type: String
-    Default: functionproject3bdeaeec5CustomMessageArn
+    Default: functiondemodayproject58d04e29CustomMessageArn
   
-  functionproject3bdeaeec5CustomMessageName: 
+  functiondemodayproject58d04e29CustomMessageName: 
     Type: String
-    Default: functionproject3bdeaeec5CustomMessageName
+    Default: functiondemodayproject58d04e29CustomMessageName
   
   
   
@@ -103,22 +103,7 @@ Parameters:
       
   triggers:
     Type: String
-                      
-  userPoolGroupList:
-    Type: CommaDelimitedList
-      
-  verificationBucketName:
-    Type: String
-                    
-  parentStack:
-    Type: String
-                
-  permissions:
-    Type: CommaDelimitedList
               
-  dependsOn:
-    Type: CommaDelimitedList
-      
   hostedUIDomainName:
     Type: String
                       
@@ -130,25 +115,25 @@ Parameters:
               
   hostedUIProviderCreds:
     Type: String
-                
-  thirdPartyAuth:
-    Type: String
-                    
-  authProviders:
-    Type: CommaDelimitedList
-      
-  googleClientId:
-    Type: String
-                
-  userPoolGroups:
-    Type: String
               
-  adminQueries:
-    Type: String
-            
   oAuthMetadata:
     Type: String
-                        
+                      
+  userPoolGroupList:
+    Type: CommaDelimitedList
+                  
+  verificationBucketName:
+    Type: String
+                    
+  parentStack:
+    Type: String
+                
+  permissions:
+    Type: CommaDelimitedList
+              
+  dependsOn:
+    Type: CommaDelimitedList
+    
 Conditions:
   ShouldNotCreateEnvResources: !Equals [ !Ref env, NONE ]
 
@@ -181,7 +166,7 @@ Resources:
   # Created to allow the UserPool SMS Config to publish via the Simple Notification Service during MFA Process
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !If [ShouldNotCreateEnvResources, 'projecbdeaeec5_sns-role', !Join ['',[ 'sns', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
+      RoleName: !If [ShouldNotCreateEnvResources, 'demoda58d04e29_sns-role', !Join ['',[ 'sns', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
       AssumeRolePolicyDocument: 
         Version: "2012-10-17"
         Statement: 
@@ -193,10 +178,10 @@ Resources:
               - "sts:AssumeRole"
             Condition: 
               StringEquals:
-                sts:ExternalId: projecbdeaeec5_role_external_id
+                sts:ExternalId: demoda58d04e29_role_external_id
       Policies: 
         - 
-          PolicyName: projecbdeaeec5-sns-policy
+          PolicyName: demoda58d04e29-sns-policy
           PolicyDocument: 
             Version: "2012-10-17"
             Statement: 
@@ -226,7 +211,7 @@ Resources:
       LambdaConfig:
         
         
-          CustomMessage: !Ref functionproject3bdeaeec5CustomMessageArn
+          CustomMessage: !Ref functiondemodayproject58d04e29CustomMessageArn
         
         
         
@@ -239,6 +224,9 @@ Resources:
       
       AutoVerifiedAttributes: !Ref autoVerifiedAttributes
       
+      
+      EmailVerificationMessage: !Ref emailVerificationMessage
+      EmailVerificationSubject: !Ref emailVerificationSubject
             
       Policies:
         PasswordPolicy:
@@ -254,7 +242,7 @@ Resources:
       SmsVerificationMessage: !Ref smsVerificationMessage
       SmsConfiguration: 
         SnsCallerArn: !GetAtt SNSRole.Arn
-        ExternalId: projecbdeaeec5_role_external_id
+        ExternalId: demoda58d04e29_role_external_id
     
   
     
@@ -265,7 +253,7 @@ Resources:
     Properties: 
       Action: "lambda:invokeFunction"
       Principal: "cognito-idp.amazonaws.com"
-      FunctionName: !Ref functionproject3bdeaeec5CustomMessageName
+      FunctionName: !Ref functiondemodayproject58d04e29CustomMessageName
       SourceArn: !GetAtt UserPool.Arn
     
   
@@ -283,7 +271,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: projecbdeaeec5_app_clientWeb
+      ClientName: demoda58d04e29_app_clientWeb
       
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
       UserPoolId: !Ref UserPool
@@ -293,7 +281,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: projecbdeaeec5_app_client
+      ClientName: demoda58d04e29_app_client
       
       GenerateSecret: !Ref userpoolClientGenerateSecret
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
@@ -358,7 +346,7 @@ Resources:
   # Marked as depending on UserPoolClientRole for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: projecbdeaeec5_userpoolclient_lambda_iam_policy
+      PolicyName: demoda58d04e29_userpoolclient_lambda_iam_policy
       Roles: 
         - !Ref UserPoolClientRole
       PolicyDocument:
@@ -375,7 +363,7 @@ Resources:
   # Marked as depending on UserPoolClientLambdaPolicy for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: projecbdeaeec5_userpoolclient_lambda_log_policy
+      PolicyName: demoda58d04e29_userpoolclient_lambda_log_policy
       Roles: 
         - !Ref UserPoolClientRole
       PolicyDocument:
@@ -762,7 +750,7 @@ Resources:
   # Always created
     Type: AWS::Cognito::IdentityPool
     Properties: 
-      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'project3bdeaeec5_identitypool_bdeaeec5', !Join ['',['project3bdeaeec5_identitypool_bdeaeec5', '__', !Ref env]]]
+      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'demodayproject58d04e29_identitypool_58d04e29', !Join ['',['demodayproject58d04e29_identitypool_58d04e29', '__', !Ref env]]]
       
       CognitoIdentityProviders:
         - ClientId:  !Ref UserPoolClient
@@ -774,13 +762,6 @@ Resources:
             - cognito-idp.${region}.amazonaws.com/${client}
             - { region: !Ref "AWS::Region",  client: !Ref UserPool}
             
-      SupportedLoginProviders: 
-        
-        
-        accounts.google.com: !Ref googleClientId
-        
-        
-      
       AllowUnauthenticatedIdentities: !Ref allowUnauthenticatedIdentities
        
        
@@ -830,9 +811,6 @@ Outputs :
   AppClientSecret:
     Value: !GetAtt UserPoolClientInputs.appSecret
   
-  
-  GoogleWebClient:
-    Value: !Ref googleClientId
    
    
   

@@ -1,10 +1,10 @@
 {
-    "identityPoolName": "project3bdeaeec5_identitypool_bdeaeec5",
+    "identityPoolName": "demodayproject58d04e29_identitypool_58d04e29",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "projecbdeaeec5",
-    "userPoolName": "project3bdeaeec5_userpool_bdeaeec5",
+    "resourceNameTruncated": "demoda58d04e29",
+    "userPoolName": "demodayproject58d04e29_userpool_58d04e29",
     "autoVerifiedAttributes": [
-        "phone_number"
+        "email"
     ],
     "mfaConfiguration": "OFF",
     "mfaTypes": [
@@ -28,9 +28,9 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "projecbdeaeec5_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "demoda58d04e29_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "resourceName": "project3bdeaeec5",
+    "resourceName": "demodayproject58d04e29",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -44,14 +44,20 @@
             "Arn"
         ]
     },
-    "useDefault": "manual",
+    "useDefault": "defaultSocial",
     "hostedUI": true,
     "usernameAttributes": [
         "email"
     ],
     "triggers": "{\"CustomMessage\":[\"verification-link\"]}",
+    "hostedUIDomainName": "demoday2020",
+    "authProvidersUserPool": [
+        "Google"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://thewebspace.herokuapp.com/\"],\"LogoutURLs\":[\"https://thewebspace.herokuapp.com/\"]}",
     "userPoolGroupList": [],
-    "verificationBucketName": "project3bdeaeec5verificationbucket",
+    "verificationBucketName": "demodayproject58d04e29verificationbucket",
     "parentStack": {
         "Ref": "AWS::StackId"
     },
@@ -59,28 +65,12 @@
     "dependsOn": [
         {
             "category": "function",
-            "resourceName": "project3bdeaeec5CustomMessage",
+            "resourceName": "demodayproject58d04e29CustomMessage",
             "triggerProvider": "Cognito",
             "attributes": [
                 "Arn",
                 "Name"
             ]
         }
-    ],
-<<<<<<< HEAD
-    "hostedUIDomainName": "project324fc03c3-24fc03c3",
-    "authProvidersUserPool": [
-        "Google"
-    ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://thewebspace.herokuapp.com/\"],\"LogoutURLs\":[\"https://thewebspace.herokuapp.com/\"]}"
-=======
-    "thirdPartyAuth": true,
-    "authProviders": [
-        "accounts.google.com"
-    ],
-    "userPoolGroups": false,
-    "adminQueries": false,
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"implicit\"],\"AllowedOAuthScopes\":[\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://thewebspace.herokuapp.com/\"],\"LogoutURLs\":[\"https://thewebspace.herokuapp.com/\"]}"
->>>>>>> f4d21e72de426ddb3474bde7a51d717cbfa609cb
+    ]
 }
