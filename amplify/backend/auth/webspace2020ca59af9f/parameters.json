@@ -1,10 +1,10 @@
 {
     "identityPoolName": "webspace2020ca59af9f_identitypool_ca59af9f",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "webspaca59af9f",
     "userPoolName": "webspace2020ca59af9f_userpool_ca59af9f",
     "autoVerifiedAttributes": [
-        "email"
+        "phone_number"
     ],
     "mfaConfiguration": "OFF",
     "mfaTypes": [
@@ -21,7 +21,7 @@
         "email"
     ],
     "userpoolClientGenerateSecret": true,
-    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientRefreshTokenValidity": "30",
     "userpoolClientWriteAttributes": [
         "email"
     ],
@@ -44,7 +44,7 @@
             "Arn"
         ]
     },
-    "useDefault": "defaultSocial",
+    "useDefault": "manual",
     "hostedUI": true,
     "usernameAttributes": [
         "email"
@@ -54,7 +54,29 @@
         "Google"
     ],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://thewebspace.herokuapp.com/\"],\"LogoutURLs\":[\"https://thewebspace.herokuapp.com/\"]}",
     "userPoolGroupList": [],
-    "dependsOn": []
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "webspace2020ca59af9fCustomMessage",
+            "triggerProvider": "Cognito",
+            "attributes": [
+                "Arn",
+                "Name"
+            ]
+        }
+    ],
+    "thirdPartyAuth": true,
+    "authProviders": [
+        "accounts.google.com"
+    ],
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "triggers": "{\"CustomMessage\":[\"verification-link\"]}",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"email\",\"openid\",\"profile\"],\"CallbackURLs\":[\"https://thewebspace.herokuapp.com/\"],\"LogoutURLs\":[\"https://thewebspace.herokuapp.com/\"]}",
+    "verificationBucketName": "webspace2020ca59af9fverificationbucket",
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": []
 }

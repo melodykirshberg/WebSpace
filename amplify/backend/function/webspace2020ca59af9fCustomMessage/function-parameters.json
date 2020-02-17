@@ -1,0 +1,14 @@
+{
+    "trigger": true,
+    "modules": [
+        "verification-link"
+    ],
+    "parentResource": "webspace2020ca59af9f",
+    "functionName": "webspace2020ca59af9fCustomMessage",
+    "parentStack": "auth",
+    "triggerEnvs": "[{\"key\":\"RESOURCENAME\",\"value\":\"resourceName\"}]",
+    "triggerTemplate": "CustomMessage.json.ejs",
+    "roleName": "webspace2020ca59af9fCustomMessage",
+    "skipEdit": true,
+    "resourceName": "webspace2020ca59af9fCustomMessage"
+}

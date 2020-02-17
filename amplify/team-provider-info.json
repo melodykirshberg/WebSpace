@@ -14,7 +14,15 @@
         "categories": {
             "auth": {
                 "webspace2020ca59af9f": {
+                    "googleClientId": "507802882885-qlej2bd6b8s1ujkednsc9rdhv4bf0u2v.apps.googleusercontent.com",
                     "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"507802882885-qlej2bd6b8s1ujkednsc9rdhv4bf0u2v.apps.googleusercontent.com\",\"client_secret\":\"3Voxu6AxkcFMk5X6Dn_-a8RF\"}]"
+                }
+            },
+            "function": {
+                "webspace2020ca59af9fCustomMessage": {
+                    "REDIRECTURL": "https://thewebspace.herokuapp.com/",
+                    "EMAILSUBJECT": "Confirmation",
+                    "EMAILMESSAGE": ""
                 }
             }
         }
