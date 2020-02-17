@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"webspace2020ca59af9f": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
