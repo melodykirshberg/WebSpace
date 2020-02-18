@@ -21,6 +21,7 @@ function Authentication(props) {
 
         Auth.currentAuthenticatedUser()
           .then(data => {
+            console.log(data)
             const userName = data.attributes.name
             const userEmail = data.attributes.email
             const userImage = data.attributes.picture
