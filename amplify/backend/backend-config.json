@@ -1,26 +1,27 @@
 {
-    "function": {
-        "project3bdeaeec5CustomMessage": {
-            "service": "Lambda",
-            "providerPlugin": "awscloudformation",
-            "build": true
-        }
-    },
     "auth": {
-        "project3bdeaeec5": {
+        "webspace2020ca59af9f": {
             "service": "Cognito",
             "providerPlugin": "awscloudformation",
             "dependsOn": [
                 {
                     "category": "function",
-                    "resourceName": "project3bdeaeec5CustomMessage",
+                    "resourceName": "webspace2020ca59af9fCustomMessage",
                     "triggerProvider": "Cognito",
                     "attributes": [
                         "Arn",
                         "Name"
                     ]
                 }
-            ]
+            ],
+            "customAuth": false
+        }
+    },
+    "function": {
+        "webspace2020ca59af9fCustomMessage": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true
         }
     }
 }

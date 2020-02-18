@@ -1,27 +1,28 @@
 {
-    "projfinal": {
+    "wsenviron": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-project-3-projfinal-233345-authRole",
-            "UnauthRoleArn": "arn:aws:iam::423845438879:role/amplify-project-3-projfinal-233345-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::423845438879:role/amplify-project-3-projfinal-233345-authRole",
+            "AuthRoleName": "amplify-webspace2020-wsenviron-85239-authRole",
+            "UnauthRoleArn": "arn:aws:iam::423845438879:role/amplify-webspace2020-wsenviron-85239-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::423845438879:role/amplify-webspace2020-wsenviron-85239-authRole",
             "Region": "us-west-2",
-            "DeploymentBucketName": "amplify-project-3-projfinal-233345-deployment",
-            "UnauthRoleName": "amplify-project-3-projfinal-233345-unauthRole",
-            "StackName": "amplify-project-3-projfinal-233345",
-            "StackId": "arn:aws:cloudformation:us-west-2:423845438879:stack/amplify-project-3-projfinal-233345/80acebe0-304e-11ea-ab72-0ac86d6e8b22",
-            "AmplifyAppId": "d26j3a3ujckk5o"
+            "DeploymentBucketName": "amplify-webspace2020-wsenviron-85239-deployment",
+            "UnauthRoleName": "amplify-webspace2020-wsenviron-85239-unauthRole",
+            "StackName": "amplify-webspace2020-wsenviron-85239",
+            "StackId": "arn:aws:cloudformation:us-west-2:423845438879:stack/amplify-webspace2020-wsenviron-85239/884fade0-519d-11ea-a116-0293beb9191e",
+            "AmplifyAppId": "d39tfr4oj2xpkd"
         },
         "categories": {
-            "function": {
-                "project3bdeaeec5CustomMessage": {
-                    "REDIRECTURL": "https://rocky-atoll-63520.herokuapp.com/",
-                    "EMAILSUBJECT": "Confirmation ",
-                    "EMAILMESSAGE": "Here is your confirmation link"
+            "auth": {
+                "webspace2020ca59af9f": {
+                    "googleClientId": "507802882885-qlej2bd6b8s1ujkednsc9rdhv4bf0u2v.apps.googleusercontent.com",
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"507802882885-qlej2bd6b8s1ujkednsc9rdhv4bf0u2v.apps.googleusercontent.com\",\"client_secret\":\"3Voxu6AxkcFMk5X6Dn_-a8RF\"}]"
                 }
             },
-            "auth": {
-                "project3bdeaeec5": {
-                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"643725319348-gccdbi6rnbvvmu6h0ptg4uibtutovv7o.apps.googleusercontent.com\",\"client_secret\":\"wWW2co6UIUXv1hz1v6tiZu9H\"}]"
+            "function": {
+                "webspace2020ca59af9fCustomMessage": {
+                    "REDIRECTURL": "https://thewebspace.herokuapp.com/",
+                    "EMAILSUBJECT": "Confirmation",
+                    "EMAILMESSAGE": ""
                 }
             }
         }

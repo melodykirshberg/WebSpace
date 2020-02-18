@@ -1,6 +1,6 @@
 {
-    "projectName": "project-3",
-    "version": "2.0",
+    "projectName": "webspace2020",
+    "version": "3.0",
     "frontend": "javascript",
     "javascript": {
         "framework": "react",
