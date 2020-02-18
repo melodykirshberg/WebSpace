@@ -34,7 +34,7 @@ const UserSchema = new Schema({
     },
     picture: {
         type: String,
-        default: "https://alumni.crg.eu/sites/default/files/default_images/default-picture_0_0.png"
+        default: "https://pathwayactivities.co.uk/wp-content/uploads/2016/04/Profile_avatar_placeholder_large-circle.png"
     }
 });
 
