@@ -8,7 +8,6 @@ import { useStoreContext } from "../../utils/Store";
 import API from "../../utils/API";
 
 function Authentication(props) {
-  console.log(props);
   const [formState, updateFormState] = useState("base");
   const [state, dispatch] = useStoreContext();
   const [user, setUser] = useState({})
@@ -21,8 +20,8 @@ function Authentication(props) {
 
         Auth.currentAuthenticatedUser()
           .then(data => {
-            console.log(data.name)
-            console.log(data.picture)
+            console.log(payload)
+            console.log(data)
             const userName = data.attributes.name
             const userEmail = data.attributes.email
             const userImage = data.attributes.picture
