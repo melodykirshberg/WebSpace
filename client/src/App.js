@@ -7,7 +7,6 @@ import React from "react";
 import Footer from "./components/Footer/Footer";
 import { StoreProvider } from "./utils/Store"
 
-
 function App() {
   return (
     <StoreProvider>
