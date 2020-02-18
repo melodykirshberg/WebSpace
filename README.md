@@ -1,5 +1,5 @@
 # WebSpace
-![Webspace](/src/webSpace.png)
+![Webspace](/img/webSpace.png)
 
 ### Table of Contents 
 * [Description](#description) 
@@ -10,7 +10,7 @@
 * [Credits](#credits) 
 
 ## Screenshot
-![WebSpace](/src/screenshotWeb.png)
+![WebSpace](/img/screenshotWeb.png)
 
 ## Description
 WebSpace is a meet-up style app that gives users an opportunity to view pertinent information about other individuals attending the gathering. Whether it’s just their name, company or a quick snippet about themselves, WebSpace allows users a chance to get to know a little more about their fellow attendees in an easy, non-confrontational manner.
