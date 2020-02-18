@@ -1,6 +1,6 @@
 {
     "identityPoolName": "webspace2020ca59af9f_identitypool_ca59af9f",
-    "allowUnauthenticatedIdentities": true,
+    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "webspaca59af9f",
     "userPoolName": "webspace2020ca59af9f_userpool_ca59af9f",
     "autoVerifiedAttributes": [
@@ -26,10 +26,12 @@
         "email"
     ],
     "userpoolClientReadAttributes": [
-        "email"
+        "email",
+        "name",
+        "picture"
     ],
     "userpoolClientLambdaRole": "webspaca59af9f_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": false,
+    "userpoolClientSetAttributes": true,
     "resourceName": "webspace2020ca59af9f",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
@@ -73,10 +75,10 @@
     "userPoolGroups": false,
     "adminQueries": false,
     "triggers": "{\"CustomMessage\":[\"verification-link\"]}",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"email\",\"openid\",\"profile\"],\"CallbackURLs\":[\"https://thewebspace.herokuapp.com/\"],\"LogoutURLs\":[\"https://thewebspace.herokuapp.com/\"]}",
     "verificationBucketName": "webspace2020ca59af9fverificationbucket",
     "parentStack": {
         "Ref": "AWS::StackId"
     },
-    "permissions": []
+    "permissions": [],
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"email\",\"openid\",\"profile\"],\"CallbackURLs\":[\"https://thewebspace.herokuapp.com/\"],\"LogoutURLs\":[\"https://thewebspace.herokuapp.com/\"]}"
 }

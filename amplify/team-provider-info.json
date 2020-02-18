@@ -20,9 +20,9 @@
             },
             "function": {
                 "webspace2020ca59af9fCustomMessage": {
+                    "EMAILMESSAGE": "",
                     "REDIRECTURL": "https://thewebspace.herokuapp.com/",
-                    "EMAILSUBJECT": "Confirmation",
-                    "EMAILMESSAGE": ""
+                    "EMAILSUBJECT": "Confirmation"
                 }
             }
         }

@@ -115,19 +115,13 @@ Parameters:
               
   dependsOn:
     Type: CommaDelimitedList
-      
-  hostedUIProviderCreds:
-    Type: String
-                
+        
   thirdPartyAuth:
     Type: String
                     
   authProviders:
     Type: CommaDelimitedList
-      
-  googleClientId:
-    Type: String
-                
+        
   userPoolGroups:
     Type: String
               
@@ -137,9 +131,6 @@ Parameters:
   triggers:
     Type: String
               
-  oAuthMetadata:
-    Type: String
-                          
   verificationBucketName:
     Type: String
                     
@@ -148,7 +139,16 @@ Parameters:
                 
   permissions:
     Type: CommaDelimitedList
-    
+      
+  googleClientId:
+    Type: String
+              
+  hostedUIProviderCreds:
+    Type: String
+              
+  oAuthMetadata:
+    Type: String
+                        
 Conditions:
   ShouldNotCreateEnvResources: !Equals [ !Ref env, NONE ]
 
@@ -285,6 +285,9 @@ Resources:
     Properties:
       ClientName: webspaca59af9f_app_clientWeb
       
+      ReadAttributes: !Ref userpoolClientReadAttributes
+      WriteAttributes: !Ref userpoolClientWriteAttributes
+      
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
       UserPoolId: !Ref UserPool
     DependsOn: UserPool
@@ -294,6 +297,9 @@ Resources:
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
       ClientName: webspaca59af9f_app_client
+      
+      ReadAttributes: !Ref userpoolClientReadAttributes
+      WriteAttributes: !Ref userpoolClientWriteAttributes
       
       GenerateSecret: !Ref userpoolClientGenerateSecret
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity

@@ -7,8 +7,10 @@
     "functionName": "webspace2020ca59af9fCustomMessage",
     "parentStack": "auth",
     "triggerEnvs": "[{\"key\":\"RESOURCENAME\",\"value\":\"resourceName\"}]",
-    "triggerTemplate": "CustomMessage.json.ejs",
+    "triggerDir": "C:\\Users\\Monee\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-category-auth\\provider-utils\\awscloudformation\\utils/../triggers/CustomMessage",
     "roleName": "webspace2020ca59af9fCustomMessage",
+    "triggerTemplate": "CustomMessage.json.ejs",
+    "triggerEventPath": "CustomMessage.event.json",
     "skipEdit": true,
     "resourceName": "webspace2020ca59af9fCustomMessage"
 }
