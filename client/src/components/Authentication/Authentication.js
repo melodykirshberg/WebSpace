@@ -20,12 +20,9 @@ function Authentication(props) {
 
         Auth.currentAuthenticatedUser()
           .then(data => {
-            console.log(payload.data.signInUserSession.idToken.payload.name)
-            console.log(payload.data.signInUserSession.idToken.payload.email)
-            console.log(payload.data.signInUserSession.idToken.payload.picture)
-            const userName = data.attributes.name
-            const userEmail = data.attributes.email
-            const userImage = data.attributes.picture
+            const userName = data.signInUserSession.idToken.payload.name
+            const userEmail = data.signInUserSession.idToken.payload.email
+            const userImage = data.signInUserSession.idToken.payload.picture
             API.getUserByEmail(userEmail).then(userExist => {
               console.log(userExist);
               //checks if user is in the data base and stores information that will be passed to the modal
