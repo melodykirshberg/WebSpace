@@ -20,8 +20,9 @@ function Authentication(props) {
 
         Auth.currentAuthenticatedUser()
           .then(data => {
-            console.log(payload)
-            console.log(data)
+            console.log(payload.data.signInUserSession.idToken.payload.name)
+            console.log(payload.data.signInUserSession.idToken.payload.email)
+            console.log(payload.data.signInUserSession.idToken.payload.picture)
             const userName = data.attributes.name
             const userEmail = data.attributes.email
             const userImage = data.attributes.picture
