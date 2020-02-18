@@ -4,7 +4,7 @@
     "resourceNameTruncated": "webspaca59af9f",
     "userPoolName": "webspace2020ca59af9f_userpool_ca59af9f",
     "autoVerifiedAttributes": [
-        "phone_number"
+        "email"
     ],
     "mfaConfiguration": "OFF",
     "mfaTypes": [
