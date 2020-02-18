@@ -1,6 +1,7 @@
 /* ------------Same footer to all pages------------*/
+
 .appFooter {
-  font-family: "Montserrat", sans-serif;  
+  font-family: "Montserrat", sans-serif;
   width: 100%;
   color: orange;
   text-align: center;
@@ -10,4 +11,8 @@
   margin-top: 0;
   padding: 10px;
   letter-spacing: 1px;
+}
+
+.footerLink {
+  color: white;
 }
