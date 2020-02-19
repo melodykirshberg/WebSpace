@@ -30,10 +30,8 @@ const validationSchema = Yup.object().shape({
 
 
 function RegisterForm(props) {
-  console.log(props)
 
   const [state, dispatch] = useStoreContext();
-  console.log(state);
 
   return (
     <div>
@@ -60,7 +58,7 @@ function RegisterForm(props) {
 
           }).then(res => {
              props.handleModalClose();
-            console.log("Saved to database")
+            // console.log("Saved to database")
           })
         }}
 

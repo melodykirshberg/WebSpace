@@ -28,7 +28,7 @@ async function signUp({ username, password, email }, updateFormType) {
       password,
       attributes: { email }
     });
-    console.log("sign up success!");
+    // console.log("sign up success!");
     updateFormType("confirmSignUp");
   } catch (err) {
     alert(err.message);
@@ -38,7 +38,7 @@ async function signUp({ username, password, email }, updateFormType) {
 async function confirmSignUp({ username, confirmationCode }, updateFormType) {
   try {
     await Auth.confirmSignUp(username, confirmationCode);
-    console.log("confirm sign up success!");
+    // console.log("confirm sign up success!");
     updateFormType("signIn");
   } catch (err) {
     alert(err.message);;
@@ -48,7 +48,7 @@ async function confirmSignUp({ username, confirmationCode }, updateFormType) {
 async function signIn({ username, password }) {
   try {
     await Auth.signIn(username, password);
-    console.log("sign in success!");
+    // console.log("sign in success!");
   } catch (err) {
     alert(err.message);;
   }
