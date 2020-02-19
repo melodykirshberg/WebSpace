@@ -26,7 +26,6 @@ module.exports = {
             })
     },
     create: function (req, res) {
-        console.log("create controller hit");
         db.User
             .create(req.body)
             .then(dbModel => res.json(dbModel))

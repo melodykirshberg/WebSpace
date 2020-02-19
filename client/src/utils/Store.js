@@ -1,8 +1,12 @@
 import React, { createContext, useReducer, useContext } from "react";
 
+// creating new storecontext to allow share 
 const StoreContext = createContext();
+
+// providers allows consuming components to subscribe to context changes
 const { Provider } = StoreContext;
 
+// loadings
 const reducer = (state, action) => {
   switch (action.type) {
     case "SET_USER":
@@ -14,6 +18,7 @@ const reducer = (state, action) => {
   }
 };
 
+// setting inital state
 const initialState = { user: null, loading: true };
 
 const StoreProvider = ({ value = 0, ...props }) => {
